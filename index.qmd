@@ -1,25 +1,189 @@
 ---
-title: "{a11ytables}"
-format: revealjs
+title: '{a11ytables}'
+subtitle: 'EARL 2022'
+author: 'Matt Dray, Civil Service'
+format:
+  revealjs: 
+    theme: earl22.scss
+    footer: 'WORK IN PROGRESS'
 ---
 
-## Quarto
+## tl;dr
 
-Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+> Simple creation of reproducible and accessible spreadsheets.
 
-## Bullets
+* Docs: co-analysis.github.io/a11ytables
+* Source: github.com/co-analysis/a11ytables
 
-When you click the **Render** button a document will be generated that includes:
 
--   Content authored with markdown
--   Output from executable code
+## Me
 
-## Code
+* matt-dray.com
+* github.com/matt-dray
+* twitter.com/mattdray
+* rostrum.blog
 
-When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+# Quick demo
+
+## a11ytable
 
 ```{r}
-1 + 1
+options("width"=70)
+library(a11ytables)
+x <- as_a11ytable(mtcars_df)
+x
 ```
 
 
+:::: {.columns}
+
+::: {.column width="40%"}
+```{r}
+x["table"]
+```
+:::
+
+::: {.column width="60%"}
+```{r}
+str(x[["table"]][[5]], max.level = 1, strict.width = "cut")
+```
+:::
+
+::::
+
+
+## glimpse
+
+```{r}
+str(x, max.level = 1, strict.width = "cut")
+```
+
+# Why
+
+## Choke point
+
+1. Prepare and save individual tables
+3. Copy-paste into spreadsheet
+4. Format
+5. Uhoh, a change that affects all sheets
+6. Rinse and repeat 5
+7. Publish
+8. Start from scratch next year
+9. Waste time
+
+## Need
+
+* CS/CO produce x publications per year
+* Examples of inconsistency/low accessibility
+* Updated GSS best practice guidance
+* Don't want to waste time and effort on multiple solutions
+* CO is a central organisation
+* Reproducible Analytical Pipelines (RAP)
+* gptables not yet updated
+* No R native solution
+
+## Approach
+
+1. Simple
+2. Opinionated
+3. Compliant
+
+## 1. Simple
+
+* Suitable for beginner-level R users
+* Dataframes
+* Pipeable
+* Only two main functions in the package
+
+## 2. Opinionated
+
+* Get quickly from A to B
+* Styles and layout form
+* But some flexibly lost
+* But you can amend the 
+
+## 3. Compliant
+
+* Accessibility checklist
+
+# How
+
+## Install
+
+```
+install.packages("remotes")  # if not already installed
+remotes::install_github("co-analysis/a11ytables")
+```
+
+---
+
+```
+x <- create_a11ytable(
+    tab_titles,   # required char vector
+    sheet_types,  # required char vector
+    sheet_titles, # required char vector
+    blank_cells,  # optional char vector
+    sources,      # optional char vector
+    tables        # listcol of dataframes
+)
+```
+
+* Basically just creates a dataframe from the args
+* Validates, warns, errors, corrects
+* Output has classes 'a11ytable', 'tbl', 'data.frame'
+* Row per sheet
+* Columns for information to build the workbook
+
+---
+
+`y <- generate_workbook(x)`
+`openxlsx::saveWorkbook(y)`
+
+* Creates an {openxlsx} Workbook-class object
+* Contains all the structure and style information to make a workbook
+* This object can be written directly to xlsx
+* There's already a function in {openxlsx} to write
+* Didn't combine these steps so that the user can inspect and adjust the Workbook-class object if they wish
+
+## Output xlsx
+
+* Preview of each sheet in the workbook
+* Attention to 
+  * workbook structure: cover, contents, notes, tables
+  * sheet structure: title, pre-table elements, table
+  * marked up tables
+  * no empty rows, columns; blanks explained
+
+## S3 class
+
+```
+as_a11ytable()  # supply compliant pre-written df
+is_a11ytable()  # logical check
+summary.a11ytable()  # print basic overview
+tbl_sum.a11ytable()  # to print tibble-like output
+```
+
+## RStudio Addin
+
+* Inserts skeletons for you
+* With data.frames or tibbles
+* Parts of workflow (table prep, pre-filled create_a11ytable call) or full workflow
+
+# But
+
+## Limitations
+
+* Saves to xlsx, not ODS
+* Some flexibility lost in e.g. cover layout
+
+## Future
+
+* ODS conversion (command line?)
+* YAML input (easier to provide text inputs)
+* 'Advanced' input?
+* Arbitrary, but controlled, pre-table meta?
+* User research
+* Bugfixes
+* Features (in line with guidance)
+* When I have the time

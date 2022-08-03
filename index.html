@@ -7,8 +7,9 @@
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.0.36">
+  <meta name="generator" content="quarto-1.0.32">
 
+  <meta name="author" content="Matt Dray, Civil Service">
   <title>{a11ytables}</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -319,32 +320,247 @@
 
 <section id="title-slide" class="center">
   <h1 class="title">{a11ytables}</h1>
+  <p class="subtitle">EARL 2022</p>
+  <p class="author">Matt Dray, Civil Service</p>
 </section>
 
-<section id="quarto" class="slide level2">
-<h2>Quarto</h2>
-<p>Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <a href="https://quarto.org/docs/presentations/" class="uri">https://quarto.org/docs/presentations/</a>.</p>
-</section>
-<section id="bullets" class="slide level2">
-<h2>Bullets</h2>
-<p>When you click the <strong>Render</strong> button a document will be generated that includes:</p>
+<section id="tldr" class="slide level2">
+<h2>tl;dr</h2>
+<blockquote>
+<p>Simple creation of reproducible and accessible spreadsheets.</p>
+</blockquote>
 <ul>
-<li>Content authored with markdown</li>
-<li>Output from executable code</li>
+<li>Docs: co-analysis.github.io/a11ytables</li>
+<li>Source: github.com/co-analysis/a11ytables</li>
 </ul>
 </section>
-<section id="code" class="slide level2">
-<h2>Code</h2>
-<p>When you click the <strong>Render</strong> button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:</p>
+<section id="me" class="slide level2">
+<h2>Me</h2>
+<ul>
+<li>matt-dray.com</li>
+<li>github.com/matt-dray</li>
+<li>twitter.com/mattdray</li>
+<li>rostrum.blog</li>
+</ul>
+</section>
+<section>
+<section id="quick-demo" class="title-slide slide level1 center">
+<h1>Quick demo</h1>
+
+</section>
+<section id="a11ytable" class="slide level2">
+<h2>a11ytable</h2>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<pre><code># a11ytable: 5 x 6
+  tab_title sheet_type sheet_title               blank_…¹ source table
+  &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;                     &lt;chr&gt;    &lt;chr&gt;  &lt;lis&gt;
+1 Cover     cover      The 'mtcars' Demo Dataset &lt;NA&gt;     &lt;NA&gt;   &lt;df&gt; 
+2 Contents  contents   Table of contents         &lt;NA&gt;     &lt;NA&gt;   &lt;df&gt; 
+3 Notes     notes      Notes                     &lt;NA&gt;     &lt;NA&gt;   &lt;df&gt; 
+4 Table_1   tables     Table 1: Car Road Tests 1 A blank… Motor… &lt;df&gt; 
+5 Table_2   tables     Table 2: Car Road Tests 2 &lt;NA&gt;     Motor… &lt;df&gt; 
+# … with abbreviated variable name ¹​blank_cells</code></pre>
 </div>
 </div>
-<div class="footer footer-default">
-
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># a11ytable: 5 x 1
+  table       
+  &lt;list&gt;      
+1 &lt;df [3 × 2]&gt;
+2 &lt;df [3 × 2]&gt;
+3 &lt;df [2 × 2]&gt;
+4 &lt;df [6 × 4]&gt;
+5 &lt;df [6 × 3]&gt;</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:60%;">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   6 obs. of  3 variables:
+ $ Car             : chr  "Mazda RX4" "Mazda RX4 Wag" "Datsun 710" "..
+ $ Gross horsepower: num  110 110 93 110 175 105
+ $ Rear axle ratio : num  3.9 3.9 3.85 3.08 3.15 2.76</code></pre>
+</div>
+</div>
+</div>
 </div>
 </section>
+<section id="glimpse" class="slide level2">
+<h2>glimpse</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Classes 'a11ytable', 'tbl' and 'data.frame':    5 obs. of  6 variables:
+ $ tab_title  : chr  "Cover" "Contents" "Notes" "Table_1" ...
+ $ sheet_type : chr  "cover" "contents" "notes" "tables" ...
+ $ sheet_title: chr  "The 'mtcars' Demo Dataset" "Table of contents"..
+ $ blank_cells: chr  NA NA NA "A blank cell in the Notes column ind"..
+ $ source     : chr  NA NA NA "Motor Trend (1974)." ...
+ $ table      :List of 5</code></pre>
+</div>
+</div>
+</section></section>
+<section>
+<section id="why" class="title-slide slide level1 center">
+<h1>Why</h1>
+
+</section>
+<section id="choke-point" class="slide level2">
+<h2>Choke point</h2>
+<ol type="1">
+<li>Prepare and save individual tables</li>
+<li>Copy-paste into spreadsheet</li>
+<li>Format</li>
+<li>Uhoh, a change that affects all sheets</li>
+<li>Rinse and repeat 5</li>
+<li>Publish</li>
+<li>Start from scratch next year</li>
+<li>Waste time</li>
+</ol>
+</section>
+<section id="need" class="slide level2">
+<h2>Need</h2>
+<ul>
+<li>CS/CO produce x publications per year</li>
+<li>Examples of inconsistency/low accessibility</li>
+<li>Updated GSS best practice guidance</li>
+<li>Don’t want to waste time and effort on multiple solutions</li>
+<li>CO is a central organisation</li>
+<li>Reproducible Analytical Pipelines (RAP)</li>
+<li>gptables not yet updated</li>
+<li>No R native solution</li>
+</ul>
+</section>
+<section id="approach" class="slide level2">
+<h2>Approach</h2>
+<ol type="1">
+<li>Simple</li>
+<li>Opinionated</li>
+<li>Compliant</li>
+</ol>
+</section>
+<section id="simple" class="slide level2">
+<h2>1. Simple</h2>
+<ul>
+<li>Suitable for beginner-level R users</li>
+<li>Dataframes</li>
+<li>Pipeable</li>
+<li>Only two main functions in the package</li>
+</ul>
+</section>
+<section id="opinionated" class="slide level2">
+<h2>2. Opinionated</h2>
+<ul>
+<li>Get quickly from A to B</li>
+<li>Styles and layout form</li>
+<li>But some flexibly lost</li>
+<li>But you can amend the</li>
+</ul>
+</section>
+<section id="compliant" class="slide level2">
+<h2>3. Compliant</h2>
+<ul>
+<li>Accessibility checklist</li>
+</ul>
+</section></section>
+<section>
+<section id="how" class="title-slide slide level1 center">
+<h1>How</h1>
+
+</section>
+<section id="install" class="slide level2">
+<h2>Install</h2>
+<pre><code>install.packages("remotes")  # if not already installed
+remotes::install_github("co-analysis/a11ytables")</code></pre>
+</section>
+<section class="slide level2">
+
+<pre><code>x &lt;- create_a11ytable(
+    tab_titles,   # required char vector
+    sheet_types,  # required char vector
+    sheet_titles, # required char vector
+    blank_cells,  # optional char vector
+    sources,      # optional char vector
+    tables        # listcol of dataframes
+)</code></pre>
+<ul>
+<li>Basically just creates a dataframe from the args</li>
+<li>Validates, warns, errors, corrects</li>
+<li>Output has classes ‘a11ytable’, ‘tbl’, ‘data.frame’</li>
+<li>Row per sheet</li>
+<li>Columns for information to build the workbook</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p><code>y &lt;- generate_workbook(x)</code> <code>openxlsx::saveWorkbook(y)</code></p>
+<ul>
+<li>Creates an {openxlsx} Workbook-class object</li>
+<li>Contains all the structure and style information to make a workbook</li>
+<li>This object can be written directly to xlsx</li>
+<li>There’s already a function in {openxlsx} to write</li>
+<li>Didn’t combine these steps so that the user can inspect and adjust the Workbook-class object if they wish</li>
+</ul>
+</section>
+<section id="output-xlsx" class="slide level2">
+<h2>Output xlsx</h2>
+<ul>
+<li>Preview of each sheet in the workbook</li>
+<li>Attention to
+<ul>
+<li>workbook structure: cover, contents, notes, tables</li>
+<li>sheet structure: title, pre-table elements, table</li>
+<li>marked up tables</li>
+<li>no empty rows, columns; blanks explained</li>
+</ul></li>
+</ul>
+</section>
+<section id="s3-class" class="slide level2">
+<h2>S3 class</h2>
+<pre><code>as_a11ytable()  # supply compliant pre-written df
+is_a11ytable()  # logical check
+summary.a11ytable()  # print basic overview
+tbl_sum.a11ytable()  # to print tibble-like output</code></pre>
+</section>
+<section id="rstudio-addin" class="slide level2">
+<h2>RStudio Addin</h2>
+<ul>
+<li>Inserts skeletons for you</li>
+<li>With data.frames or tibbles</li>
+<li>Parts of workflow (table prep, pre-filled create_a11ytable call) or full workflow</li>
+</ul>
+</section></section>
+<section>
+<section id="but" class="title-slide slide level1 center">
+<h1>But</h1>
+
+</section>
+<section id="limitations" class="slide level2">
+<h2>Limitations</h2>
+<ul>
+<li>Saves to xlsx, not ODS</li>
+<li>Some flexibility lost in e.g.&nbsp;cover layout</li>
+</ul>
+</section>
+<section id="future" class="slide level2">
+<h2>Future</h2>
+<ul>
+<li>ODS conversion (command line?)</li>
+<li>YAML input (easier to provide text inputs)</li>
+<li>‘Advanced’ input?</li>
+<li>Arbitrary, but controlled, pre-table meta?</li>
+<li>User research</li>
+<li>Bugfixes</li>
+<li>Features (in line with guidance)</li>
+<li>When I have the time</li>
+</ul>
+<div class="footer footer-default">
+<p>WORK IN PROGRESS</p>
+</div>
+</section></section>
     </div>
   </div>
 
