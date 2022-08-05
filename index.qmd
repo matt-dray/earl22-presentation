@@ -4,17 +4,37 @@ subtitle: 'EARL 2022'
 author: 'Matt Dray, Civil Service'
 format:
   revealjs: 
-    theme: earl22.scss
+    theme: [default, earl22.scss]
     footer: 'WORK IN PROGRESS'
 ---
 
-## tl;dr
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
+options(width = 70)
+library(a11ytables)
+```
 
+## tl;dr
+ 
+:::: {.columns}
+
+::: {.column width="60%"}
 > Simple creation of reproducible and accessible spreadsheets.
 
-* Docs: co-analysis.github.io/a11ytables
-* Source: github.com/co-analysis/a11ytables
+co-analysis.github.io/a11ytables
+:::
 
+::: {.column width="30%"}
+![](images/qr_a11ytables-docs.png){width="300" alt="QR code for the documentation website for the R package 'a11ytables'"}
+:::
+
+::::
+
+## What I do
+
+> ...working to improve the presentation and reproducibility of statistics in the UK public sector, particularly through the use of R. 
+
+> He also runs a personal blog about off-label uses of R for fun and learning
 
 ## Me
 
@@ -23,102 +43,219 @@ format:
 * twitter.com/mattdray
 * rostrum.blog
 
+# Government stats releases
 
-# Quick demo
-
-## a11ytable
-
-```{r}
-options("width"=70)
-library(a11ytables)
-x <- as_a11ytable(mtcars_df)
-x
-```
-
-
-:::: {.columns}
-
-::: {.column width="40%"}
-```{r}
-x["table"]
-```
+::: {.notes}
+* A few examples to demonstrate
+  - accessibility improvements
+  - minor fixes
+  - a lack of consistency
+* The intent is to demonstrate the opportunity
 :::
 
-::: {.column width="60%"}
-```{r}
-str(x[["table"]][[5]], max.level = 1, strict.width = "cut")
-```
+## {background-image='images/screenshot_csps-2019.png'}
+
+::: {.notes}
+* [Link to page](https://www.gov.uk/government/publications/civil-service-people-survey-2019-results)
+* Issues include:
+  - empty rows, columns
+  - merged cells
+  - vertical text
+  - double headers
+  - no true header for column A
+  - section headers _within_ column A
+  - different font sizes
+  - zoom preset to 169%
+  - notes in a footer (offscreen)
+  - no dedicated cover, notes tabs
 :::
 
-::::
+## {background-image='images/screenshot_egg-stats.png'}
 
+::: {.notes}
+* [Link to page](https://www.gov.uk/government/statistics/egg-statistics)
+* Issues include:
+  - empty rows, columns, cells (including A1)
+  - double headers
+  - centred values, mostly
+  - notes in a footer (offscreen)
+  - gridlines sometimes missing, sometimes not
+:::
 
-## glimpse
+## {background-image='images/screenshot_flu-report.png'}
 
-```{r}
-str(x, max.level = 1, strict.width = "cut")
-```
+::: {.notes}
+* [Link to page](https://www.gov.uk/government/statistics/national-flu-and-covid-19-surveillance-reports-2022-to-2023-season)
+* Issues include:
+  - image
+  - empty rows, columns, cells (including A1)
+  - two tables, no forewarning
+  - gridlines sometimes missing, sometimes not
+:::
 
-# Why
+## {background-image='images/screenshot_smungs.png'}
+
+<!-- ![](images/qr_smungs.png){.absolute top="0" right="0" width="200" alt="QR code for the book Spreadsheet Munging Strategies"} -->
+
+::: {.notes}
+* [Link to page](https://nacnudus.github.io/spreadsheet-munging-strategies/)
+* Untidy, inaccessible spreadsheets pose a particular problem for further analysis
+* See [Duncan Garmonsway]()'s [{tidyxl}]() and [{unpivotr}]() R packages for help
+* I want to help limit the need for these tools (sorry Duncan)
+:::
+
 
 ## Choke point
 
 1. Prepare and save individual tables
-3. Copy-paste into spreadsheet
-4. Format
-5. Uhoh, a change that affects all sheets
-6. Rinse and repeat 5
-7. Publish
-8. Start from scratch next year
-9. Waste time
+2. Copy-paste into spreadsheet
+3. Format
+4. Uhoh, a change that affects all sheets
+5. Rinse and repeat 5
+6. Publish
+7. Start from scratch next year
+8. Waste time
 
-## Need
+::: {.notes}
+* Problem: inertia
+* Stattos already have systems in place
+* Time consuming to rework production pipeline
+* Everyone can perform point-and-click tasks 
+:::
 
-* CS/CO produce x publications per year
-* Examples of inconsistency/low accessibility
-* Updated GSS best practice guidance
-* Don't want to waste time and effort on multiple solutions
-* CO is a central organisation
-* Reproducible Analytical Pipelines (RAP)
-* gptables not yet updated
-* No R native solution
+# Making it better
 
-## Approach
+::: {.notes}
+* It's easy to complain
+* What has been done from a 'top-down' level?
+:::
+
+## {background-image='images/screenshot_cops-accessibility.png'}
+
+<!-- ![](images/qr_cops-accessibility.png){.absolute top="0" right="0" width="200" alt="QR code for the book Spreadsheet Munging Strategies"} -->
+
+::: {.notes}
+* [Link to page](https://code.statisticsauthority.gov.uk/the-code/value/v4-innovation-and-improvement/)
+:::
+
+## {background-image='images/screenshot_rap-strategy.png'}
+
+::: {.notes}
+* [Link to page](https://analysisfunction.civilservice.gov.uk/policy-store/reproducible-analytical-pipelines-strategy/)
+:::
+
+## {background-image='images/screenshot_spreadsheet-guidance-govuk.png'}
+
+::: {.notes}
+* [Link to page](https://www.gov.uk/guidance/creating-and-sharing-spreadsheets#optimise-for-accessibility-and-machine-readability)
+:::
+
+## {background-image='images/screenshot_spreadsheet-guidance-af.png'}
+
+::: {.notes}
+* [Link to page](https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/)
+:::
+
+# Solutions
+
+::: {.notes}
+* Many teams have applied the advice to their publications
+* There are still opportunities
+* How can we make things easier:
+  - as part of a RAP?
+  - for entry-level coders?
+  - by taking into account the realities of 'at the coalface' production?
+  - by taking the initiative?
+  - to prevent duplication of effort?
+* 
+:::
+
+## {background-image='images/screenshot_gptables-docs.png'}
+
+::: {.notes}
+* [Link to page](https://gptables.readthedocs.io/en/latest/)
+* This is a 'bottom-up' approach, but is 'official' in that it's produced by the Analysis Function
+* Written for Python, convert pandas dataframes
+* Can be accessed from R via the {reticulate} package, but requires a Python installation and understanding of {reticulate}
+:::
+
+## {background-image='images/screenshot_a11ytables-docs.png'}
+
+::: {.notes}
+* [Link to page](https://co-analysis.github.io/a11ytables/)
+* Bottom-up to solve my own needs, with wider implications
+* R-native solution
+* Created to comply with the _latest_ best practice guidance for releasing stats in spreadsheets, which gptables did not do at the time
+* Slight differences to gptables that may be cleared up with time
+:::
+
+## Requirements
 
 1. Simple
 2. Opinionated
 3. Compliant
 
+::: {.notes}
+* Should be simple for end-user, developer
+* Simplicity means decisions must be made on behalf of the user
+* Should meet the guidance
+:::
+
 ## 1. Simple
 
 * Suitable for beginner-level R users
-* Dataframes
-* Pipeable
+* Automatic, everything taken care of
 * Only two main functions in the package
+* Familiar dataframes, pipeable
+* Two dependencies: {openxlsx}, {pillar}
 
 ## 2. Opinionated
 
-* Get quickly from A to B
-* Styles and layout form
-* But some flexibly lost
-* But you can amend the 
+* Enforcement is good
+* Styles and layout enforced to meet guidance
+* Some choices have to be made, like pre-table metadata
+* Some flexibly lost, not all spreadsheets are simple
+* But you can amend the a11ytable and Workbook
 
 ## 3. Compliant
 
-* Accessibility checklist
+* The whole point is to meet the guidance
+* {a11ytables} accessibility checklist vignette
+* Handles compliance consistently, without fail
 
 # How
 
+## Premise
+
+```{r}
+create_a11ytable() |>
+  generate_workbook() |> 
+  openxlsx::saveWorkbook()
+```
+
+::: {.notes}
+* Organise the required information (supporting and stat tables) into a special dataframe with additional class 'a11ytable'
+* Convert to {openxlsx} 'Workbook' class with structure and style information
+* Write that object to an xlsx file
+:::
+
 ## Install
 
-```
+```{r}
 install.packages("remotes")  # if not already installed
 remotes::install_github("co-analysis/a11ytables")
 ```
 
----
+::: {.notes}
+* GitHub only for now
+* Is this a barrier in some orgs?
+* Still in development, but it has reached version 0.1
+* CRAN is a future goal, maybe
+:::
 
-```
+## Create
+
+```{r}
 x <- create_a11ytable(
     tab_titles,   # required char vector
     sheet_types,  # required char vector
@@ -131,14 +268,51 @@ x <- create_a11ytable(
 
 * Basically just creates a dataframe from the args
 * Validates, warns, errors, corrects
-* Output has classes 'a11ytable', 'tbl', 'data.frame'
+
+
+## An a11ytable
+
+```{r}
+#| echo=FALSE,
+#| eval=TRUE
+library(a11ytables)
+x <- as_a11ytable(mtcars_df)
+x
+```
+
+::: {.notes}
+* Familiar dataframe
 * Row per sheet
-* Columns for information to build the workbook
+* Columns for information, including listcol of dataframes
+* Tables of information hold major content for each sheet
+:::
 
----
+## Structure
 
-`y <- generate_workbook(x)`
-`openxlsx::saveWorkbook(y)`
+```{r}
+#| echo=FALSE,
+#| eval=TRUE
+str(x, max.level = 1, strict.width = "cut")
+```
+
+::: {.notes}
+* Output has classes 'a11ytable', 'tbl', 'data.frame'
+:::
+
+## Warnings
+
+::: {.notes}
+* Will error if something badly wrong
+* Will warn about certain things to fix
+* Will make some adjustments automatically
+:::
+
+## Workbook
+
+```{r}
+y <- generate_workbook(x)
+openxlsx::saveWorkbook(y)
+```
 
 * Creates an {openxlsx} Workbook-class object
 * Contains all the structure and style information to make a workbook
@@ -157,7 +331,7 @@ x <- create_a11ytable(
 
 ## S3 class
 
-```
+```{r}
 as_a11ytable()  # supply compliant pre-written df
 is_a11ytable()  # logical check
 summary.a11ytable()  # print basic overview
@@ -170,14 +344,32 @@ tbl_sum.a11ytable()  # to print tibble-like output
 * With data.frames or tibbles
 * Parts of workflow (table prep, pre-filled create_a11ytable call) or full workflow
 
+::: {.notes}
+* Another way to limit friction
+* {tibble}-based option included
+:::
+
+## Dev simplicity (?)
+
+* `as_a11ytable()` just makes a dataframe with validation
+* `generate_workbook()` has `add_*()`
+
+
+
 # But
 
 ## Limitations
 
 * Saves to xlsx, not ODS
+* Can't update properties
 * Some flexibility lost in e.g. cover layout
+* Surely it's still better to get 95% of the way there?
+* Human should always be checking anyway
 
-## Future
+# Future
+
+
+## Todo
 
 * ODS conversion (command line?)
 * YAML input (easier to provide text inputs)
