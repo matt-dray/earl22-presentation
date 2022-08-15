@@ -25,10 +25,17 @@ co-analysis.github.io/a11ytables
 :::
 
 ::: {.column width="30%"}
-![](images/qr_a11ytables-docs.png){width="300" alt="QR code for the documentation website for the R package 'a11ytables'"}
+![](images/qr_a11ytables-docs.png){width="300" alt="QR code for the documentation website of the R package 'a11ytables'."}
 :::
 
 ::::
+
+::: {.notes}
+* This is a story about about R, of course
+* But it's also about taking the initiative
+* About inclusivity
+* About making things better
+:::
 
 ## What I do
 
@@ -36,24 +43,21 @@ co-analysis.github.io/a11ytables
 
 > He also runs a personal blog about off-label uses of R for fun and learning
 
-## Me
-
+::: {.notes}
 * matt-dray.com
 * github.com/matt-dray
 * twitter.com/mattdray
 * rostrum.blog
-
-# Government stats releases
-
-::: {.notes}
-* A few examples to demonstrate
-  - accessibility improvements
-  - minor fixes
-  - a lack of consistency
-* The intent is to demonstrate the opportunity
 :::
 
-## {background-image='images/screenshot_csps-2019.png'}
+# The problem
+
+::: {.notes}
+* A few government spreadsheets that demonstrate a lack of consistent style and the need for accessibility improvements
+* The intent is to demonstrate opportunity, not to call anyone out
+:::
+
+## {background-image='images/spreadsheet_csps-2019.png'}
 
 ::: {.notes}
 * [Link to page](https://www.gov.uk/government/publications/civil-service-people-survey-2019-results)
@@ -70,7 +74,7 @@ co-analysis.github.io/a11ytables
   - no dedicated cover, notes tabs
 :::
 
-## {background-image='images/screenshot_egg-stats.png'}
+## {background-image='images/spreadsheet_egg-stats.png'}
 
 ::: {.notes}
 * [Link to page](https://www.gov.uk/government/statistics/egg-statistics)
@@ -82,7 +86,7 @@ co-analysis.github.io/a11ytables
   - gridlines sometimes missing, sometimes not
 :::
 
-## {background-image='images/screenshot_flu-report.png'}
+## {background-image='images/spreadsheet_flu-report.png'}
 
 ::: {.notes}
 * [Link to page](https://www.gov.uk/government/statistics/national-flu-and-covid-19-surveillance-reports-2022-to-2023-season)
@@ -93,31 +97,77 @@ co-analysis.github.io/a11ytables
   - gridlines sometimes missing, sometimes not
 :::
 
-## {background-image='images/screenshot_smungs.png'}
-
-<!-- ![](images/qr_smungs.png){.absolute top="0" right="0" width="200" alt="QR code for the book Spreadsheet Munging Strategies"} -->
+## {background-image='images/spreadsheet_fuel-xlsx.png'}
 
 ::: {.notes}
-* [Link to page](https://nacnudus.github.io/spreadsheet-munging-strategies/)
-* Untidy, inaccessible spreadsheets pose a particular problem for further analysis
-* See [Duncan Garmonsway]()'s [{tidyxl}]() and [{unpivotr}]() R packages for help
-* I want to help limit the need for these tools (sorry Duncan)
+* [Link to page](https://www.gov.uk/government/statistics/weekly-road-fuel-prices)
+* Issues include:
+  - image
+  - empty rows, columns, cells, headers
+  - numbers not in cells
+  - units in separate, unlabelled column
+  - alt text doesn't help
+* The cover page does not indicate that the spreadsheet is not accessible
+* Perhaps there's a machine-readable CSV?
 :::
 
+## {background-image='images/spreadsheet_fuel-csv.png'}
 
-## Choke point
+::: {.notes}
+* [Link to page](https://www.gov.uk/government/statistics/weekly-road-fuel-prices)
+* The CSV isn't truly machine-readable either
+* Issues include:
+  - empty rows, columns, cells, headers
+  - double headers
+  - sub-tables (acronyms and rates) not obvious
+:::
+
+## {background-image='images/website_af-empathy.png'}
+
+::: {.notes}
+* [Link to page](https://analysisfunction.civilservice.gov.uk/blog/accessibility-empathy-for-users-of-spreadsheets/)
+* Hannah Thomas works in the Analysis Function
+* Hannah wrote a great blog about accessibility empathy for spreadsheet users
+:::
+
+## {background-image='images/spreadsheet_empathy-hidden.png'}
+
+::: {.notes}
+* [Link to page](https://analysisfunction.civilservice.gov.uk/blog/accessibility-empathy-for-users-of-spreadsheets/)
+* In the blog there is a downloadable spreadsheet and the idea is to answer some questions about the data in the file.
+* But! All of its cells are blacked out.
+* It 'shows you what it is like trying to navigate a data table when you cannot see the layout. 
+* 'This should give you some idea of the issues faced by users with visual impairments.'
+:::
+
+## {background-image='images/spreadsheet_empathy-revealed.png'}
+
+::: {.notes}
+* [Link to page](https://analysisfunction.civilservice.gov.uk/blog/accessibility-empathy-for-users-of-spreadsheets/)
+* When you reveal the data (spoiler alert!) you can see how you could be tripped up by missing rows, for example.
+:::
+
+# Another problem
+
+::: {.notes}
+* The accessibility issue is a gaping one
+* But maybe its driven partly by processes?
+:::
+
+## Steps to publish
 
 1. Prepare and save individual tables
 2. Copy-paste into spreadsheet
 3. Format
-4. Uhoh, a change that affects all sheets
-5. Rinse and repeat 5
-6. Publish
-7. Start from scratch next year
-8. Waste time
+
+::: {.incremental}
+4. Spot a mistake
+5. Repeat the above
+6. Publish (fingers-crossed)
+:::
 
 ::: {.notes}
-* Problem: inertia
+* Problem: inertia, risk
 * Stattos already have systems in place
 * Time consuming to rework production pipeline
 * Everyone can perform point-and-click tasks 
@@ -127,36 +177,43 @@ co-analysis.github.io/a11ytables
 
 ::: {.notes}
 * It's easy to complain
-* What has been done from a 'top-down' level?
+* What are we doing about it?
 :::
 
-## {background-image='images/screenshot_cops-accessibility.png'}
-
-<!-- ![](images/qr_cops-accessibility.png){.absolute top="0" right="0" width="200" alt="QR code for the book Spreadsheet Munging Strategies"} -->
-
-::: {.notes}
-* [Link to page](https://code.statisticsauthority.gov.uk/the-code/value/v4-innovation-and-improvement/)
-:::
-
-## {background-image='images/screenshot_rap-strategy.png'}
-
-::: {.notes}
-* [Link to page](https://analysisfunction.civilservice.gov.uk/policy-store/reproducible-analytical-pipelines-strategy/)
-:::
-
-## {background-image='images/screenshot_spreadsheet-guidance-govuk.png'}
+## {background-image='images/website_spreadsheet-guidance-govuk.png'}
 
 ::: {.notes}
 * [Link to page](https://www.gov.uk/guidance/creating-and-sharing-spreadsheets#optimise-for-accessibility-and-machine-readability)
+* GOV.UK has some generic suggestions for user-friendly spreadsheets
 :::
 
-## {background-image='images/screenshot_spreadsheet-guidance-af.png'}
+## {background-image='images/website_spreadsheet-guidance-af.png'}
 
 ::: {.notes}
 * [Link to page](https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/)
+* The Analysis Function has advice focused on releasing data in spreadsheet format
 :::
 
-# Solutions
+## {background-image='images/website_cops-accessibility.png'}
+
+::: {.notes}
+* [Link to page](https://code.statisticsauthority.gov.uk/the-code/value/v4-innovation-and-improvement/)
+* This is really important, obviously, but accessibility is also one of the 'values' pillars in the Code of Practice for Statistics
+* If your stats publication doesn't adhere, then you are breaking the code
+:::
+
+## {background-image='images/website_rap-strategy.png'}
+
+::: {.notes}
+* [Link to page](https://analysisfunction.civilservice.gov.uk/policy-store/reproducible-analytical-pipelines-strategy/)
+* Reproducible Analytical Pipelines (RAP) is a grassroots movement that's been bubbling around UK government for a few years
+* It's even spread to other countries and to non-governmental organisations
+* RAPs are 'automated statistical and analytical processes [that] incorporate elements of software engineering best practice to ensure that the pipelines are reproducible, auditable, efficient, and high quality.'
+* Automated and version controlled with open software
+* If you're producing a spreadsheet, it's production should be part of a RAP!
+:::
+
+# Practical help 
 
 ::: {.notes}
 * Many teams have applied the advice to their publications
@@ -167,10 +224,9 @@ co-analysis.github.io/a11ytables
   - by taking into account the realities of 'at the coalface' production?
   - by taking the initiative?
   - to prevent duplication of effort?
-* 
 :::
 
-## {background-image='images/screenshot_gptables-docs.png'}
+## {background-image='images/website_gptables-docs.png'}
 
 ::: {.notes}
 * [Link to page](https://gptables.readthedocs.io/en/latest/)
@@ -179,7 +235,7 @@ co-analysis.github.io/a11ytables
 * Can be accessed from R via the {reticulate} package, but requires a Python installation and understanding of {reticulate}
 :::
 
-## {background-image='images/screenshot_a11ytables-docs.png'}
+## {background-image='images/website_a11ytables-docs.png'}
 
 ::: {.notes}
 * [Link to page](https://co-analysis.github.io/a11ytables/)
@@ -379,3 +435,23 @@ tbl_sum.a11ytable()  # to print tibble-like output
 * Bugfixes
 * Features (in line with guidance)
 * When I have the time
+
+# If all else fails
+
+::: {.notes}
+:::
+
+## {background-image='images/website_smungs.png'}
+
+::: {.notes}
+* [Link to page](https://nacnudus.github.io/spreadsheet-munging-strategies/)
+* Untidy, inaccessible spreadsheets pose a particular problem for further analysis
+* See [Duncan Garmonsway]()'s [{tidyxl}]() and [{unpivotr}]() R packages for help
+* I want to help limit the need for these tools (sorry Duncan)
+:::
+
+## Consider
+
+1. How could you improve user experience?
+1. Do you have the right processes in place?
+1. Could you create tools to remove friction?
