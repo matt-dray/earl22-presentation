@@ -382,30 +382,28 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="center">
+<section id="title-slide" data-background-image="images/bg_cells.png" data-background-repeat="repeat" data-background-size="250px" class="center">
   <h1 class="title">{a11ytables}</h1>
-  <p class="subtitle">EARL 2022</p>
+  <p class="subtitle">EARL, September 2022</p>
   <p class="author">Matt Dray, Civil Service</p>
 </section>
 
-<section id="tldr" class="slide level2">
+<section id="tldr" class="slide level2" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
 <h2>tl;dr</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
-<blockquote>
-<p>Simple creation of reproducible and accessible spreadsheets.</p>
-</blockquote>
-<p>co-analysis.github.io/a11ytables</p>
-</div><div class="column" style="width:30%;">
-<p><img data-src="images/qr_a11ytables-docs.png" alt="QR code for the documentation website of the R package 'a11ytables'." width="300"></p>
+<p>Generate best-practice spreadsheets in R with {a11ytables}</p>
+<p><a href="https://www.co-analysis.github.io/a11ytables">co-analysis.github.io/a11ytables</a></p>
+</div><div class="column" style="width:40%;">
+<p><img data-src="images/qr_a11ytables-docs.png" alt="QR code that points to the documentation website of the R package 'a11ytables'." width="250"></p>
 </div>
 </div>
 <aside class="notes">
 <ul>
-<li>This is a story about about R, of course</li>
-<li>But it’s also about taking the initiative</li>
-<li>About inclusivity</li>
-<li>About making things better</li>
+<li>This is a story about about R, of course.</li>
+<li>But it’s also about taking initiative.</li>
+<li>About inclusivity.</li>
+<li>About making things better.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -419,20 +417,19 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="what-i-do" class="slide level2">
-<h2>What I do</h2>
-<blockquote>
-<p>…working to improve the presentation and reproducibility of statistics in the UK public sector, particularly through the use of R.</p>
-</blockquote>
-<blockquote>
-<p>He also runs a personal blog about off-label uses of R for fun and learning</p>
-</blockquote>
+<section id="me" class="slide level2" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
+<h2>Me</h2>
+<p>R and reproducibility in the UK Civil Service</p>
+<p>Make people happier</p>
+<p><br></p>
+<p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M352 256C352 278.2 350.8 299.6 348.7 320H163.3C161.2 299.6 159.1 278.2 159.1 256C159.1 233.8 161.2 212.4 163.3 192H348.7C350.8 212.4 352 233.8 352 256zM503.9 192C509.2 212.5 512 233.9 512 256C512 278.1 509.2 299.5 503.9 320H380.8C382.9 299.4 384 277.1 384 256C384 234 382.9 212.6 380.8 192H503.9zM493.4 160H376.7C366.7 96.14 346.9 42.62 321.4 8.442C399.8 29.09 463.4 85.94 493.4 160zM344.3 160H167.7C173.8 123.6 183.2 91.38 194.7 65.35C205.2 41.74 216.9 24.61 228.2 13.81C239.4 3.178 248.7 0 256 0C263.3 0 272.6 3.178 283.8 13.81C295.1 24.61 306.8 41.74 317.3 65.35C328.8 91.38 338.2 123.6 344.3 160H344.3zM18.61 160C48.59 85.94 112.2 29.09 190.6 8.442C165.1 42.62 145.3 96.14 135.3 160H18.61zM131.2 192C129.1 212.6 127.1 234 127.1 256C127.1 277.1 129.1 299.4 131.2 320H8.065C2.8 299.5 0 278.1 0 256C0 233.9 2.8 212.5 8.065 192H131.2zM194.7 446.6C183.2 420.6 173.8 388.4 167.7 352H344.3C338.2 388.4 328.8 420.6 317.3 446.6C306.8 470.3 295.1 487.4 283.8 498.2C272.6 508.8 263.3 512 255.1 512C248.7 512 239.4 508.8 228.2 498.2C216.9 487.4 205.2 470.3 194.7 446.6H194.7zM190.6 503.6C112.2 482.9 48.59 426.1 18.61 352H135.3C145.3 415.9 165.1 469.4 190.6 503.6V503.6zM321.4 503.6C346.9 469.4 366.7 415.9 376.7 352H493.4C463.4 426.1 399.8 482.9 321.4 503.6V503.6z"></path></svg> <a href="https://www.matt-dray.com">matt-dray.com</a></p>
+<p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M459.4 151.7c.325 4.548 .325 9.097 .325 13.65 0 138.7-105.6 298.6-298.6 298.6-59.45 0-114.7-17.22-161.1-47.11 8.447 .974 16.57 1.299 25.34 1.299 49.06 0 94.21-16.57 130.3-44.83-46.13-.975-84.79-31.19-98.11-72.77 6.498 .974 12.99 1.624 19.82 1.624 9.421 0 18.84-1.3 27.61-3.573-48.08-9.747-84.14-51.98-84.14-102.1v-1.299c13.97 7.797 30.21 12.67 47.43 13.32-28.26-18.84-46.78-51.01-46.78-87.39 0-19.49 5.197-37.36 14.29-52.95 51.65 63.67 129.3 105.3 216.4 109.8-1.624-7.797-2.599-15.92-2.599-24.04 0-57.83 46.78-104.9 104.9-104.9 30.21 0 57.5 12.67 76.67 33.14 23.72-4.548 46.46-13.32 66.6-25.34-7.798 24.37-24.37 44.83-46.13 57.83 21.12-2.273 41.58-8.122 60.43-16.24-14.29 20.79-32.16 39.31-52.63 54.25z"></path></svg> <a href="https://www.twitter.com/mattdray"><span class="citation" data-cites="mattdray">@mattdray</span></a></p>
+<p><svg aria-hidden="true" role="img" viewbox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg> <a href="https://www.github.com/matt-dray">matt-dray</a></p>
+<p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32zM421.7 220.3L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3z"></path></svg> <a href="https://www.rostrum.blog">rostrum.blog</a></p>
 <aside class="notes">
 <ul>
-<li>matt-dray.com</li>
-<li>github.com/matt-dray</li>
-<li>twitter.com/mattdray</li>
-<li>rostrum.blog</li>
+<li>I work in UK government and talking about something I made in that official capacity</li>
+<li>I personally can be found elsewhere in an unofficial capacity</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -447,11 +444,11 @@
       }</style></aside>
 </section>
 <section>
-<section id="the-problem" class="title-slide slide level1 center">
-<h1>The problem</h1>
+<section id="an-opportunity" class="title-slide slide level1 center" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
+<h1>An opportunity</h1>
 <aside class="notes">
 <ul>
-<li>A few government spreadsheets that demonstrate a lack of consistent style and the need for accessibility improvements</li>
+<li>An example of a government spreadsheet that could be improved</li>
 <li>The intent is to demonstrate opportunity, not to call anyone out</li>
 </ul>
 <style type="text/css">
@@ -466,24 +463,13 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="section" class="slide level2" data-background-image="images/spreadsheet_csps-2019.png">
+<section id="section" class="slide level2" data-background-image="images/website_eggs.png">
 <h2></h2>
 <aside class="notes">
 <ul>
-<li><a href="https://www.gov.uk/government/publications/civil-service-people-survey-2019-results">Link to page</a></li>
-<li>Issues include:
-<ul>
-<li>empty rows, columns</li>
-<li>merged cells</li>
-<li>vertical text</li>
-<li>double headers</li>
-<li>no true header for column A</li>
-<li>section headers <em>within</em> column A</li>
-<li>different font sizes</li>
-<li>zoom preset to 169%</li>
-<li>notes in a footer (offscreen)</li>
-<li>no dedicated cover, notes tabs</li>
-</ul></li>
+<li>Defra’s ‘Latest UK egg statistics’</li>
+<li>Branded as National Statistics</li>
+<li><a href="https://www.gov.uk/government/statistics/egg-statistics">Link to page</a></li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -497,19 +483,20 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-1" class="slide level2" data-background-image="images/spreadsheet_egg-stats.png">
+<section id="section-1" class="slide level2" data-background-image="images/spreadsheet_eggs-1.png">
 <h2></h2>
 <aside class="notes">
 <ul>
-<li><a href="https://www.gov.uk/government/statistics/egg-statistics">Link to page</a></li>
-<li>Issues include:
-<ul>
+<li>This is the ‘UK egg packing station throughput and prices dataset’ spreadsheet</li>
+<li>First tab: ‘Packers’</li>
+<li>Issues include:</li>
 <li>empty rows, columns, cells (including A1)</li>
 <li>double headers</li>
 <li>centred values, mostly</li>
 <li>notes in a footer (offscreen)</li>
 <li>gridlines sometimes missing, sometimes not</li>
-</ul></li>
+<li>the number of decimals varies (though Excel hides this)</li>
+<li>there’s some stray values with no explanation</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -523,18 +510,13 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-2" class="slide level2" data-background-image="images/spreadsheet_flu-report.png">
+<section id="section-2" class="slide level2" data-background-image="images/spreadsheet_eggs-2.png">
 <h2></h2>
 <aside class="notes">
 <ul>
-<li><a href="https://www.gov.uk/government/statistics/national-flu-and-covid-19-surveillance-reports-2022-to-2023-season">Link to page</a></li>
-<li>Issues include:
-<ul>
-<li>image</li>
-<li>empty rows, columns, cells (including A1)</li>
-<li>two tables, no forewarning</li>
-<li>gridlines sometimes missing, sometimes not</li>
-</ul></li>
+<li>Second tab: ‘Packers_Annual’</li>
+<li>Issues are same as previous tab</li>
+<li>We also have some rogue values on the far right?</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -548,107 +530,16 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-3" class="slide level2" data-background-image="images/spreadsheet_fuel-xlsx.png">
+<section id="section-3" class="slide level2" data-background-image="images/spreadsheet_eggs-3.png">
 <h2></h2>
 <aside class="notes">
 <ul>
-<li><a href="https://www.gov.uk/government/statistics/weekly-road-fuel-prices">Link to page</a></li>
-<li>Issues include:
-<ul>
-<li>image</li>
-<li>empty rows, columns, cells, headers</li>
-<li>numbers not in cells</li>
-<li>units in separate, unlabelled column</li>
-<li>alt text doesn’t help</li>
-</ul></li>
-<li>The cover page does not indicate that the spreadsheet is not accessible</li>
-<li>Perhaps there’s a machine-readable CSV?</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="section-4" class="slide level2" data-background-image="images/spreadsheet_fuel-csv.png">
-<h2></h2>
-<aside class="notes">
-<ul>
-<li><a href="https://www.gov.uk/government/statistics/weekly-road-fuel-prices">Link to page</a></li>
-<li>The CSV isn’t truly machine-readable either</li>
-<li>Issues include:
-<ul>
-<li>empty rows, columns, cells, headers</li>
-<li>double headers</li>
-<li>sub-tables (acronyms and rates) not obvious</li>
-</ul></li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="section-5" class="slide level2" data-background-image="images/website_af-empathy.png">
-<h2></h2>
-<aside class="notes">
-<ul>
-<li><a href="https://analysisfunction.civilservice.gov.uk/blog/accessibility-empathy-for-users-of-spreadsheets/">Link to page</a></li>
-<li>Hannah Thomas works in the Analysis Function</li>
-<li>Hannah wrote a great blog about accessibility empathy for spreadsheet users</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="section-6" class="slide level2" data-background-image="images/spreadsheet_empathy-hidden.png">
-<h2></h2>
-<aside class="notes">
-<ul>
-<li><a href="https://analysisfunction.civilservice.gov.uk/blog/accessibility-empathy-for-users-of-spreadsheets/">Link to page</a></li>
-<li>In the blog there is a downloadable spreadsheet and the idea is to answer some questions about the data in the file.</li>
-<li>But! All of its cells are blacked out.</li>
-<li>It ’shows you what it is like trying to navigate a data table when you cannot see the layout.</li>
-<li>‘This should give you some idea of the issues faced by users with visual impairments.’</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="section-7" class="slide level2" data-background-image="images/spreadsheet_empathy-revealed.png">
-<h2></h2>
-<aside class="notes">
-<ul>
-<li><a href="https://analysisfunction.civilservice.gov.uk/blog/accessibility-empathy-for-users-of-spreadsheets/">Link to page</a></li>
-<li>When you reveal the data (spoiler alert!) you can see how you could be tripped up by missing rows, for example.</li>
+<li>Third tab: ‘Information’</li>
+<li>Issues include:</li>
+<li>important information on the last page instead of a vocer</li>
+<li>information is in text boxes rather than cells</li>
+<li>update information placement has moved</li>
+<li>GOV.UK link way off to the right</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -663,98 +554,11 @@
       }</style></aside>
 </section></section>
 <section>
-<section id="another-problem" class="title-slide slide level1 center">
-<h1>Another problem</h1>
-<aside class="notes">
-<ul>
-<li>The accessibility issue is a gaping one</li>
-<li>But maybe its driven partly by processes?</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<section id="support" class="title-slide slide level1 center" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
+<h1>Support</h1>
+
 </section>
-<section id="steps-to-publish" class="slide level2">
-<h2>Steps to publish</h2>
-<ol type="1">
-<li>Prepare and save individual tables</li>
-<li>Copy-paste into spreadsheet</li>
-<li>Format</li>
-</ol>
-<div>
-<ol start="4" type="1">
-<li class="fragment">Spot a mistake</li>
-<li class="fragment">Repeat the above</li>
-<li class="fragment">Publish (fingers-crossed)</li>
-</ol>
-</div>
-<aside class="notes">
-<ul>
-<li>Problem: inertia, risk</li>
-<li>Stattos already have systems in place</li>
-<li>Time consuming to rework production pipeline</li>
-<li>Everyone can perform point-and-click tasks</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section></section>
-<section>
-<section id="making-it-better" class="title-slide slide level1 center">
-<h1>Making it better</h1>
-<aside class="notes">
-<ul>
-<li>It’s easy to complain</li>
-<li>What are we doing about it?</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="section-8" class="slide level2" data-background-image="images/website_spreadsheet-guidance-govuk.png">
-<h2></h2>
-<aside class="notes">
-<ul>
-<li><a href="https://www.gov.uk/guidance/creating-and-sharing-spreadsheets#optimise-for-accessibility-and-machine-readability">Link to page</a></li>
-<li>GOV.UK has some generic suggestions for user-friendly spreadsheets</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="section-9" class="slide level2" data-background-image="images/website_spreadsheet-guidance-af.png">
+<section id="section-4" class="slide level2" data-background-image="images/website_spreadsheet-guidance-af.png">
 <h2></h2>
 <aside class="notes">
 <ul>
@@ -772,14 +576,18 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+<!--
+## {background-image='images/website_af-empathy.png'}
+-->
 </section>
-<section id="section-10" class="slide level2" data-background-image="images/website_cops-accessibility.png">
+<section id="section-5" class="slide level2" data-background-image="images/spreadsheet_empathy-hidden.png">
 <h2></h2>
 <aside class="notes">
 <ul>
-<li><a href="https://code.statisticsauthority.gov.uk/the-code/value/v4-innovation-and-improvement/">Link to page</a></li>
-<li>This is really important, obviously, but accessibility is also one of the ‘values’ pillars in the Code of Practice for Statistics</li>
-<li>If your stats publication doesn’t adhere, then you are breaking the code</li>
+<li>Hannah wrote <a href="https://analysisfunction.civilservice.gov.uk/blog/accessibility-empathy-for-users-of-spreadsheets/">a great blog</a> about accessibility empathy for spreadsheet users.</li>
+<li>Can you find information in a spreadsheet where all the cells are blacked out?</li>
+<li>It ’shows you what it is like trying to navigate a data table when you cannot see the layout.</li>
+<li>Gives ‘some idea of the issues faced by users with visual impairments.’</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -792,8 +600,46 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+
+<!--
+
+# Another opportunity {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+
+::: {.notes}
+* We can take steps to improve accessibility
+* But maybe the issue is driven partly by processes?
+* Maybe we can review _how_ the spreadsheet gets produced
+:::
+
+## Steps to publish {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+
+1. Prepare and save individual tables
+2. Copy-paste into spreadsheet
+3. Format
+
+::: {.incremental}
+4. Spot a mistake
+5. Repeat the above
+6. Publish (fingers-crossed)
+:::
+
+::: {.notes}
+* Problem: inertia, risk
+* Stattos already have systems in place
+* Time consuming to rework production pipeline
+* Everyone can perform point-and-click tasks 
+:::
+
+# Top-down support {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+
+::: {.notes}
+* It's easy to complain
+* What are we doing about it?
+:::
+
+-->
 </section>
-<section id="section-11" class="slide level2" data-background-image="images/website_rap-strategy.png">
+<section id="section-6" class="slide level2" data-background-image="images/website_rap-strategy.png">
 <h2></h2>
 <aside class="notes">
 <ul>
@@ -817,20 +663,18 @@
       }</style></aside>
 </section></section>
 <section>
-<section id="practical-help" class="title-slide slide level1 center">
-<h1>Practical help</h1>
+<section id="initiative" class="title-slide slide level1 center" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
+<h1>Initiative</h1>
 <aside class="notes">
 <ul>
 <li>Many teams have applied the advice to their publications</li>
 <li>There are still opportunities</li>
-<li>How can we make things easier:
-<ul>
+<li>How can we make things easier:</li>
 <li>as part of a RAP?</li>
 <li>for entry-level coders?</li>
 <li>by taking into account the realities of ‘at the coalface’ production?</li>
 <li>by taking the initiative?</li>
 <li>to prevent duplication of effort?</li>
-</ul></li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -844,7 +688,7 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-12" class="slide level2" data-background-image="images/website_gptables-docs.png">
+<section id="section-7" class="slide level2" data-background-image="images/website_gptables-docs.png">
 <h2></h2>
 <aside class="notes">
 <ul>
@@ -865,7 +709,7 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-13" class="slide level2" data-background-image="images/website_a11ytables-docs.png">
+<section id="section-8" class="slide level2" data-background-image="images/website_a11ytables-docs.png">
 <h2></h2>
 <aside class="notes">
 <ul>
@@ -887,7 +731,7 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="requirements" class="slide level2">
+<section id="requirements" class="slide level2" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
 <h2>Requirements</h2>
 <ol type="1">
 <li>Simple</li>
@@ -912,7 +756,7 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="simple" class="slide level2">
+<section id="simple" class="slide level2" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
 <h2>1. Simple</h2>
 <ul>
 <li>Suitable for beginner-level R users</li>
@@ -920,9 +764,10 @@
 <li>Only two main functions in the package</li>
 <li>Familiar dataframes, pipeable</li>
 <li>Two dependencies: {openxlsx}, {pillar}</li>
+<li>Dev-friendly?</li>
 </ul>
 </section>
-<section id="opinionated" class="slide level2">
+<section id="opinionated" class="slide level2" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
 <h2>2. Opinionated</h2>
 <ul>
 <li>Enforcement is good</li>
@@ -932,7 +777,7 @@
 <li>But you can amend the a11ytable and Workbook</li>
 </ul>
 </section>
-<section id="compliant" class="slide level2">
+<section id="compliant" class="slide level2" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
 <h2>3. Compliant</h2>
 <ul>
 <li>The whole point is to meet the guidance</li>
@@ -941,40 +786,21 @@
 </ul>
 </section></section>
 <section>
-<section id="how" class="title-slide slide level1 center">
-<h1>How</h1>
+<section id="example" class="title-slide slide level1 center" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
+<h1>Example</h1>
 
 </section>
-<section id="premise" class="slide level2">
-<h2>Premise</h2>
+<section id="install" class="slide level2" data-auto-animate="true" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
+<h2 data-id="quarto-animate-title">Install</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">create_a11ytable</span>() <span class="sc">|&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">generate_workbook</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb1-3"><a href="#cb1-3"></a>  openxlsx<span class="sc">::</span><span class="fu">saveWorkbook</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<aside class="notes">
-<ul>
-<li>Organise the required information (supporting and stat tables) into a special dataframe with additional class ‘a11ytable’</li>
-<li>Convert to {openxlsx} ‘Workbook’ class with structure and style information</li>
-<li>Write that object to an xlsx file</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="install" class="slide level2">
-<h2>Install</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)  <span class="co"># if not already installed</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"co-analysis/a11ytables"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb1-1" class="hljs-ln-code"><a href="#cb1-1"></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
+<span id="cb1-2" class="hljs-ln-code"><a href="#cb1-2"></a></span>
+<span id="cb1-3" class="hljs-ln-code"><a href="#cb1-3"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(</span>
+<span id="cb1-4" class="hljs-ln-code"><a href="#cb1-4"></a>  <span class="st">"co-analysis/a11ytables"</span>,</span>
+<span id="cb1-5" class="hljs-ln-code"><a href="#cb1-5"></a>  <span class="at">build_vignettes =</span> <span class="cn">TRUE</span></span>
+<span id="cb1-6" class="hljs-ln-code"><a href="#cb1-6"></a>)</span>
+<span id="cb1-7" class="hljs-ln-code"><a href="#cb1-7"></a></span>
+<span id="cb1-8" class="hljs-ln-code"><a href="#cb1-8"></a><span class="fu">library</span>(a11ytables)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
 <ul>
@@ -995,44 +821,224 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="create" class="slide level2">
-<h2>Create</h2>
+<section id="overview" class="slide level2" data-auto-animate="true" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
+<h2 data-id="quarto-animate-title">Overview</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>x <span class="ot">&lt;-</span> <span class="fu">create_a11ytable</span>(</span>
-<span id="cb3-2"><a href="#cb3-2"></a>    tab_titles,   <span class="co"># required char vector</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a>    sheet_types,  <span class="co"># required char vector</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a>    sheet_titles, <span class="co"># required char vector</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a>    blank_cells,  <span class="co"># optional char vector</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a>    sources,      <span class="co"># optional char vector</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a>    tables        <span class="co"># listcol of dataframes</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb2-1" class="hljs-ln-code"><a href="#cb2-1"></a><span class="fu">create_a11ytable</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-2" class="hljs-ln-code"><a href="#cb2-2"></a>  <span class="fu">generate_workbook</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-3" class="hljs-ln-code"><a href="#cb2-3"></a>  openxlsx<span class="sc">::</span><span class="fu">saveWorkbook</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<aside class="notes">
+<ol type="1">
+<li>Organise all the required information into a special dataframe with additional class ‘a11ytable’</li>
+<li>Convert to {openxlsx} ‘Workbook’ class with structure and style information</li>
+<li>Write that object to an xlsx file</li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="overview-1" class="slide level2" data-auto-animate="true" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
+<h2 data-id="quarto-animate-title">Overview</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb3-1" class="hljs-ln-code"><a href="#cb3-1"></a><span class="fu">create_a11ytable</span>(</span>
+<span id="cb3-2" class="hljs-ln-code"><a href="#cb3-2"></a>  tab_titles, sheet_types, sheet_titles, <span class="co"># required char vectors</span></span>
+<span id="cb3-3" class="hljs-ln-code"><a href="#cb3-3"></a>  blank_cells, sources,                  <span class="co"># optional char vectors</span></span>
+<span id="cb3-4" class="hljs-ln-code"><a href="#cb3-4"></a>  tables                                 <span class="co"># required listcol of dataframes</span></span>
+<span id="cb3-5" class="hljs-ln-code"><a href="#cb3-5"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb3-6" class="hljs-ln-code"><a href="#cb3-6"></a>  <span class="fu">generate_workbook</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-7" class="hljs-ln-code"><a href="#cb3-7"></a>  openxlsx<span class="sc">::</span><span class="fu">saveWorkbook</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<aside class="notes">
+<ul>
+<li>The <code>create_a11ytable()</code> function takes a few arguments:
+<ul>
+<li><code>tab_titles</code> is a required character vector for the text that goes on the tabs</li>
+<li><code>sheet_types</code> is a required character vector (one of <code>"cover"</code>, <code>"contents"</code>, <code>"notes"</code>, <code>"tables"</code>) that provides information about how the sheet will be styled</li>
+<li><code>sheet_titles</code> is a required character vector of the worksheet titles that will go in cell A1</li>
+<li><code>blank_cells</code> optional character vector of meta-information that explains the meaning of any blank cells in the sheet</li>
+<li><code>sources</code> is an optional character vector of meta-information that contains</li>
+<li><code>tables</code> is a required list-column of dataframes that contain the main bulk of each sheet, particularly the tables of statistical data that go into sheets with <code>sheet_type = "tables"</code></li>
+</ul></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="prep" class="slide level2" data-auto-animate="true" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
+<h2 data-id="quarto-animate-title">Prep</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb4-1" class="hljs-ln-code"><a href="#cb4-1"></a><span class="fu">source</span>(<span class="st">"eggs/eggs.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<aside class="notes">
+<ul>
+<li>I pre-wrote some code to extract data from the eggs spreadsheet.</li>
+<li>You can find the code and original spreadsheet in <a href="https://www.github.com/matt-dray/earl22-presentation">the repo that hosts these slides</a>.</li>
+<li>Importantly, I didn’t mimic the whole process of production for this example; I just copied the data out of the pre-existing spreadsheet.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="prep-1" class="slide level2" data-auto-animate="true" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
+<h2 data-id="quarto-animate-title">Prep</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb5-1" class="hljs-ln-code"><a href="#cb5-1"></a><span class="fu">source</span>(<span class="st">"eggs/eggs.R"</span>)</span>
+<span id="cb5-2" class="hljs-ln-code"><a href="#cb5-2"></a><span class="fu">ls</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "egg_blank_cells"  "egg_sheet_titles" "egg_sheet_types"  "egg_sources"     
+[5] "egg_tab_titles"   "egg_tables"      </code></pre>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li>The code outputs some objects that are ready to be passed to the arguments of <code>create_a11ytable()</code>.</li>
+<li>I recommend generating each object outside of the call to <code>create_a11ytable()</code> where possible; it keeps things cleaner.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="create-an-a11ytable" class="slide level2" data-auto-animate="true" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
+<h2 data-id="quarto-animate-title">Create an a11ytable</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb7-1" class="hljs-ln-code"><a href="#cb7-1"></a>egg_at <span class="ot">&lt;-</span> <span class="fu">create_a11ytable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<aside class="notes">
+<ul>
+<li>Now we can pass our egg objects to the arguments of <code>create_a11ytable()</code>.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="create-an-a11ytable-1" class="slide level2" data-auto-animate="true" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
+<h2 data-id="quarto-animate-title">Create an a11ytable</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb8-1" class="hljs-ln-code"><a href="#cb8-1"></a>egg_at <span class="ot">&lt;-</span> <span class="fu">create_a11ytable</span>(</span>
+<span id="cb8-2" class="hljs-ln-code"><a href="#cb8-2"></a>  <span class="at">tab_titles   =</span> egg_tab_titles, </span>
+<span id="cb8-3" class="hljs-ln-code"><a href="#cb8-3"></a>  <span class="at">sheet_types  =</span> egg_sheet_types, </span>
+<span id="cb8-4" class="hljs-ln-code"><a href="#cb8-4"></a>  <span class="at">sheet_titles =</span> egg_sheet_titles,</span>
+<span id="cb8-5" class="hljs-ln-code"><a href="#cb8-5"></a>  <span class="at">blank_cells  =</span> egg_blank_cells, </span>
+<span id="cb8-6" class="hljs-ln-code"><a href="#cb8-6"></a>  <span class="at">sources      =</span> egg_sources,</span>
+<span id="cb8-7" class="hljs-ln-code"><a href="#cb8-7"></a>  <span class="at">tables       =</span> egg_tables</span>
+<span id="cb8-8" class="hljs-ln-code"><a href="#cb8-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<aside class="notes">
 <ul>
 <li>Basically just creates a dataframe from the args</li>
 <li>Validates, warns, errors, corrects</li>
 </ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="an-a11ytable" class="slide level2">
-<h2>An a11ytable</h2>
+<section id="create-an-a11ytable-2" class="slide level2" data-auto-animate="true" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
+<h2 data-id="quarto-animate-title">Create an a11ytable</h2>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb9-1" class="hljs-ln-code"><a href="#cb9-1"></a>egg_at <span class="ot">&lt;-</span> <span class="fu">create_a11ytable</span>(</span>
+<span id="cb9-2" class="hljs-ln-code"><a href="#cb9-2"></a>  <span class="at">tab_titles   =</span> egg_tab_titles, </span>
+<span id="cb9-3" class="hljs-ln-code"><a href="#cb9-3"></a>  <span class="at">sheet_types  =</span> egg_sheet_types, </span>
+<span id="cb9-4" class="hljs-ln-code"><a href="#cb9-4"></a>  <span class="at">sheet_titles =</span> egg_sheet_titles,</span>
+<span id="cb9-5" class="hljs-ln-code"><a href="#cb9-5"></a>  <span class="at">blank_cells  =</span> egg_blank_cells, </span>
+<span id="cb9-6" class="hljs-ln-code"><a href="#cb9-6"></a>  <span class="at">sources      =</span> egg_sources,</span>
+<span id="cb9-7" class="hljs-ln-code"><a href="#cb9-7"></a>  <span class="at">tables       =</span> egg_tables</span>
+<span id="cb9-8" class="hljs-ln-code"><a href="#cb9-8"></a>)</span>
+<span id="cb9-9" class="hljs-ln-code"><a href="#cb9-9"></a></span>
+<span id="cb9-10" class="hljs-ln-code"><a href="#cb9-10"></a><span class="fu">class</span>(egg_at)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># a11ytable: 5 x 6
-  tab_title sheet_type sheet_title               blank_…¹ source table
-  &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;                     &lt;chr&gt;    &lt;chr&gt;  &lt;lis&gt;
-1 Cover     cover      The 'mtcars' Demo Dataset &lt;NA&gt;     &lt;NA&gt;   &lt;df&gt; 
-2 Contents  contents   Table of contents         &lt;NA&gt;     &lt;NA&gt;   &lt;df&gt; 
-3 Notes     notes      Notes                     &lt;NA&gt;     &lt;NA&gt;   &lt;df&gt; 
-4 Table_1   tables     Table 1: Car Road Tests 1 A blank… Motor… &lt;df&gt; 
-5 Table_2   tables     Table 2: Car Road Tests 2 &lt;NA&gt;     Motor… &lt;df&gt; 
+<pre><code>[1] "a11ytable"  "tbl"        "data.frame"</code></pre>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li>You can see that the object gets the special a11ytables class.</li>
+<li>But it also has classes of ‘tbl’ (i.e.&nbsp;a {tibble} dataframe) and classic ‘data.frame’.</li>
+<li>This means you can manipulate the output much like any dataframe object.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="just-a-dataframe" class="slide level2" data-auto-animate="true" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
+<h2 data-id="quarto-animate-title">Just a dataframe</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb11-1" class="hljs-ln-code"><a href="#cb11-1"></a><span class="fu">head</span>(egg_at)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># a11ytable: 6 x 6
+  tab_title sheet_type sheet_title                          blank…¹ source table
+* &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;                                &lt;chr&gt;   &lt;chr&gt;  &lt;nam&gt;
+1 Cover     cover      UK egg packing station throughput a… &lt;NA&gt;    &lt;NA&gt;   &lt;df&gt; 
+2 Contents  contents   Contents                             &lt;NA&gt;    &lt;NA&gt;   &lt;df&gt; 
+3 Notes     notes      Notes                                &lt;NA&gt;    &lt;NA&gt;   &lt;df&gt; 
+4 Table_1   tables     Table 1: Throughput by country, qua… &lt;NA&gt;    Quart… &lt;df&gt; 
+5 Table_2   tables     Table 2: Throughput by system, quar… &lt;NA&gt;    Quart… &lt;df&gt; 
+6 Table_3   tables     Table 3: Average packer to producer… &lt;NA&gt;    Quart… &lt;df&gt; 
 # … with abbreviated variable name ¹​blank_cells</code></pre>
 </div>
 </div>
 <aside class="notes">
 <ul>
-<li>Familiar dataframe</li>
-<li>Row per sheet</li>
-<li>Columns for information, including listcol of dataframes</li>
-<li>Tables of information hold major content for each sheet</li>
+<li>Familiar dataframe structure holds all the information.</li>
+<li>You can see a row per sheet.</li>
+<li>Each argument has become a column.</li>
+<li>The list of dataframes has become a list-column.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1046,22 +1052,31 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="structure" class="slide level2">
-<h2>Structure</h2>
+<section id="a-row" class="slide level2" data-auto-animate="true" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
+<h2 data-id="quarto-animate-title">A row</h2>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb13-1" class="hljs-ln-code"><a href="#cb13-1"></a><span class="fu">str</span>(egg_at[egg_at<span class="sc">$</span>tab_title <span class="sc">==</span> <span class="st">"Table_2"</span>, ] )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Classes 'a11ytable', 'tbl' and 'data.frame':    5 obs. of  6 variables:
- $ tab_title  : chr  "Cover" "Contents" "Notes" "Table_1" ...
- $ sheet_type : chr  "cover" "contents" "notes" "tables" ...
- $ sheet_title: chr  "The 'mtcars' Demo Dataset" "Table of contents"..
- $ blank_cells: chr  NA NA NA "A blank cell in the Notes column ind"..
- $ source     : chr  NA NA NA "Motor Trend (1974)." ...
- $ table      :List of 5</code></pre>
+<pre><code>Classes 'a11ytable', 'tbl' and 'data.frame':    1 obs. of  6 variables:
+ $ tab_title  : chr "Table_2"
+ $ sheet_type : chr "tables"
+ $ sheet_title: chr "Table 2: Throughput by system, quarterly"
+ $ blank_cells: chr NA
+ $ source     : chr "Quarterly UK Egg Packing Station Survey."
+ $ table      :List of 1
+  ..$ qtrly_system:'data.frame':    106 obs. of  6 variables:
+  .. ..$ Year      : chr  "1996" "1996" "1996" "1996" ...
+  .. ..$ Quarter   : chr  "Q1" "Q2" "Q3" "Q4" ...
+  .. ..$ Enriched  : chr  "151" "151.7" "152.6" "154.2" ...
+  .. ..$ Barn      : chr  "3.2" "2.8" "3.5" "4.6" ...
+  .. ..$ Free Range: chr  "16.6" "17.1" "18.6" "17.8" ...
+  .. ..$ Organic   : chr  "[z]" "[z]" "[z]" "[z]" ...</code></pre>
 </div>
 </div>
 <aside class="notes">
 <ul>
-<li>Output has classes ‘a11ytable’, ‘tbl’, ‘data.frame’</li>
+<li>Each row of the a11ytable is the content required to create a worksheet.</li>
+<li>Here’s the information needed for the sheet that contains Table 1.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1075,63 +1090,116 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="warnings" class="slide level2">
-<h2>Warnings</h2>
-<aside class="notes">
-<ul>
-<li>Will error if something badly wrong</li>
-<li>Will warn about certain things to fix</li>
-<li>Will make some adjustments automatically</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="workbook" class="slide level2">
-<h2>Workbook</h2>
+<section id="generate-a-workbook" class="slide level2" data-auto-animate="true" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
+<h2 data-id="quarto-animate-title">Generate a workbook</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>y <span class="ot">&lt;-</span> <span class="fu">generate_workbook</span>(x)</span>
-<span id="cb6-2"><a href="#cb6-2"></a>openxlsx<span class="sc">::</span><span class="fu">saveWorkbook</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb15-1" class="hljs-ln-code"><a href="#cb15-1"></a>egg_wb <span class="ot">&lt;-</span> <span class="fu">generate_workbook</span>(egg_at)</span>
+<span id="cb15-2" class="hljs-ln-code"><a href="#cb15-2"></a><span class="fu">class</span>(egg_wb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Workbook"
+attr(,"package")
+[1] "openxlsx"</code></pre>
 </div>
+</div>
+<aside class="notes">
 <ul>
-<li>Creates an {openxlsx} Workbook-class object</li>
-<li>Contains all the structure and style information to make a workbook</li>
-<li>This object can be written directly to xlsx</li>
-<li>There’s already a function in {openxlsx} to write</li>
-<li>Didn’t combine these steps so that the user can inspect and adjust the Workbook-class object if they wish</li>
+<li>Creates an {openxlsx} Workbook-class object.</li>
+<li>Contains all the structure and style information to make a workbook.</li>
+<li>This object can be written directly to xlsx.</li>
+<li>There’s already a function in {openxlsx} to write.</li>
+<li>Didn’t combine these steps so that the user can inspect and adjust the Workbook-class object if they wish.</li>
 </ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="output-xlsx" class="slide level2">
-<h2>Output xlsx</h2>
+<section id="output-to-xlsx" class="slide level2" data-auto-animate="true" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
+<h2 data-id="quarto-animate-title">Output to xlsx</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb17-1" class="hljs-ln-code"><a href="#cb17-1"></a>openxlsx<span class="sc">::</span><span class="fu">saveWorkbook</span>(</span>
+<span id="cb17-2" class="hljs-ln-code"><a href="#cb17-2"></a>  egg_wb,</span>
+<span id="cb17-3" class="hljs-ln-code"><a href="#cb17-3"></a>  <span class="st">"eggs/2022-07-28_eggs-packers.xlsx"</span>,</span>
+<span id="cb17-4" class="hljs-ln-code"><a href="#cb17-4"></a>  <span class="at">overwrite =</span> <span class="cn">TRUE</span></span>
+<span id="cb17-5" class="hljs-ln-code"><a href="#cb17-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="output-to-xlsx-1" class="slide level2" data-auto-animate="true" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
+<h2 data-id="quarto-animate-title">Output to xlsx</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb18-1" class="hljs-ln-code"><a href="#cb18-1"></a>openxlsx<span class="sc">::</span><span class="fu">saveWorkbook</span>(</span>
+<span id="cb18-2" class="hljs-ln-code"><a href="#cb18-2"></a>  egg_wb,</span>
+<span id="cb18-3" class="hljs-ln-code"><a href="#cb18-3"></a>  <span class="st">"eggs/2022-07-28_eggs-packers.xlsx"</span>,</span>
+<span id="cb18-4" class="hljs-ln-code"><a href="#cb18-4"></a>  <span class="at">overwrite =</span> <span class="cn">TRUE</span></span>
+<span id="cb18-5" class="hljs-ln-code"><a href="#cb18-5"></a>)</span>
+<span id="cb18-6" class="hljs-ln-code"><a href="#cb18-6"></a></span>
+<span id="cb18-7" class="hljs-ln-code"><a href="#cb18-7"></a><span class="fu">list.files</span>(<span class="st">"eggs"</span>, <span class="at">pattern =</span> <span class="st">".xlsx$"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "2022-07-28_eggs-packers.xlsx"</code></pre>
+</div>
+</div>
+<aside class="notes">
 <ul>
-<li>Preview of each sheet in the workbook</li>
-<li>Attention to
+<li>The file has been created at the location specified.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-9" class="slide level2" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
+<h2></h2>
+<aside class="notes">
+<ul>
+<li>Preview of each sheet in the workbook.</li>
+<li>Attention to:
 <ul>
 <li>workbook structure: cover, contents, notes, tables</li>
 <li>sheet structure: title, pre-table elements, table</li>
 <li>marked up tables</li>
-<li>no empty rows, columns; blanks explained</li>
+<li>no empty rows, columns</li>
 </ul></li>
 </ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="s3-class" class="slide level2">
-<h2>S3 class</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">as_a11ytable</span>()  <span class="co"># supply compliant pre-written df</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">is_a11ytable</span>()  <span class="co"># logical check</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="fu">summary.a11ytable</span>()  <span class="co"># print basic overview</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="fu">tbl_sum.a11ytable</span>()  <span class="co"># to print tibble-like output</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="rstudio-addin" class="slide level2">
+<section id="rstudio-addin" class="slide level2" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
 <h2>RStudio Addin</h2>
 <ul>
 <li>Inserts skeletons for you</li>
@@ -1154,20 +1222,13 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-<section id="dev-simplicity" class="slide level2">
-<h2>Dev simplicity (?)</h2>
-<ul>
-<li><code>as_a11ytable()</code> just makes a dataframe with validation</li>
-<li><code>generate_workbook()</code> has <code>add_*()</code></li>
-</ul>
 </section></section>
 <section>
-<section id="but" class="title-slide slide level1 center">
+<section id="but" class="title-slide slide level1 center" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
 <h1>But</h1>
 
 </section>
-<section id="limitations" class="slide level2">
+<section id="limitations" class="slide level2" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
 <h2>Limitations</h2>
 <ul>
 <li>Saves to xlsx, not ODS</li>
@@ -1178,11 +1239,11 @@
 </ul>
 </section></section>
 <section>
-<section id="future" class="title-slide slide level1 center">
+<section id="future" class="title-slide slide level1 center" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
 <h1>Future</h1>
 
 </section>
-<section id="todo" class="slide level2">
+<section id="todo" class="slide level2" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
 <h2>Todo</h2>
 <ul>
 <li>ODS conversion (command line?)</li>
@@ -1196,7 +1257,7 @@
 </ul>
 </section></section>
 <section>
-<section id="if-all-else-fails" class="title-slide slide level1 center">
+<section id="if-all-else-fails" class="title-slide slide level1 center" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
 <h1>If all else fails</h1>
 <aside class="notes">
 
@@ -1212,7 +1273,7 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-14" class="slide level2" data-background-image="images/website_smungs.png">
+<section id="section-10" class="slide level2" data-background-image="images/website_smungs.png">
 <h2></h2>
 <aside class="notes">
 <ul>
@@ -1233,7 +1294,7 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="consider" class="slide level2">
+<section id="consider" class="slide level2" data-background-image="images/bg_cells.png" data-background-size="250px" data-background-repeat="repeat">
 <h2>Consider</h2>
 <ol type="1">
 <li>How could you improve user experience?</li>

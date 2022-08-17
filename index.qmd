@@ -1,160 +1,154 @@
 ---
 title: '{a11ytables}'
-subtitle: 'EARL 2022'
+subtitle: 'EARL, September 2022'
 author: 'Matt Dray, Civil Service'
 format:
   revealjs: 
     theme: [default, earl22.scss]
     footer: 'WORK IN PROGRESS'
+    title-slide-attributes:
+      data-background-image: 'images/bg_cells.png'
+      data-background-size: '250px'
+      data-background-repeat: 'repeat'
+execute:
+  echo: true
+  eval: false
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
-options(width = 70)
+```{r setup}
+#| include: false
+#| eval: true
+options(width = 80)
 library(a11ytables)
 ```
 
-## tl;dr
- 
+## tl;dr {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+
 :::: {.columns}
 
 ::: {.column width="60%"}
-> Simple creation of reproducible and accessible spreadsheets.
 
-co-analysis.github.io/a11ytables
+Generate best-practice spreadsheets in R with {a11ytables}
+
+[co-analysis.github.io/a11ytables](https://www.co-analysis.github.io/a11ytables)
 :::
 
-::: {.column width="30%"}
-![](images/qr_a11ytables-docs.png){width="300" alt="QR code for the documentation website of the R package 'a11ytables'."}
+::: {.column width="40%"}
+![](images/qr_a11ytables-docs.png){width="250" alt="QR code that points to the documentation website of the R package 'a11ytables'."}
 :::
 
 ::::
 
 ::: {.notes}
-* This is a story about about R, of course
-* But it's also about taking the initiative
-* About inclusivity
-* About making things better
+* This is a story about about R, of course.
+* But it's also about taking initiative.
+* About inclusivity.
+* About making things better.
 :::
 
-## What I do
+## Me {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
-> ...working to improve the presentation and reproducibility of statistics in the UK public sector, particularly through the use of R. 
+R and reproducibility in the UK Civil Service
 
-> He also runs a personal blog about off-label uses of R for fun and learning
+Make people happier 
+
+<br>
+
+`r fontawesome::fa('globe')` [matt-dray.com](https://www.matt-dray.com)
+
+`r fontawesome::fa('twitter')` [@mattdray](https://www.twitter.com/mattdray)
+
+`r fontawesome::fa('github')` [matt-dray](https://www.github.com/matt-dray)
+
+`r fontawesome::fa('pen')` [rostrum.blog](https://www.rostrum.blog)
 
 ::: {.notes}
-* matt-dray.com
-* github.com/matt-dray
-* twitter.com/mattdray
-* rostrum.blog
+* I work in UK government and talking about something I made in that official capacity
+* I personally can be found elsewhere in an unofficial capacity
 :::
 
-# The problem
+# An opportunity {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 ::: {.notes}
-* A few government spreadsheets that demonstrate a lack of consistent style and the need for accessibility improvements
+* An example of a government spreadsheet that could be improved
 * The intent is to demonstrate opportunity, not to call anyone out
 :::
 
-## {background-image='images/spreadsheet_csps-2019.png'}
+## {background-image='images/website_eggs.png'}
 
 ::: {.notes}
-* [Link to page](https://www.gov.uk/government/publications/civil-service-people-survey-2019-results)
-* Issues include:
-  - empty rows, columns
-  - merged cells
-  - vertical text
-  - double headers
-  - no true header for column A
-  - section headers _within_ column A
-  - different font sizes
-  - zoom preset to 169%
-  - notes in a footer (offscreen)
-  - no dedicated cover, notes tabs
-:::
-
-## {background-image='images/spreadsheet_egg-stats.png'}
-
-::: {.notes}
+* Defra's 'Latest UK egg statistics'
+* Branded as National Statistics
 * [Link to page](https://www.gov.uk/government/statistics/egg-statistics)
-* Issues include:
-  - empty rows, columns, cells (including A1)
-  - double headers
-  - centred values, mostly
-  - notes in a footer (offscreen)
-  - gridlines sometimes missing, sometimes not
 :::
 
-## {background-image='images/spreadsheet_flu-report.png'}
+## {background-image='images/spreadsheet_eggs-1.png'}
 
 ::: {.notes}
-* [Link to page](https://www.gov.uk/government/statistics/national-flu-and-covid-19-surveillance-reports-2022-to-2023-season)
+* This is the 'UK egg packing station throughput and prices dataset' spreadsheet
+* First tab: 'Packers'
 * Issues include:
-  - image
-  - empty rows, columns, cells (including A1)
-  - two tables, no forewarning
-  - gridlines sometimes missing, sometimes not
+- empty rows, columns, cells (including A1)
+- double headers
+- centred values, mostly
+- notes in a footer (offscreen)
+- gridlines sometimes missing, sometimes not
+- the number of decimals varies (though Excel hides this)
+- there's some stray values with no explanation
 :::
 
-## {background-image='images/spreadsheet_fuel-xlsx.png'}
+## {background-image='images/spreadsheet_eggs-2.png'}
 
 ::: {.notes}
-* [Link to page](https://www.gov.uk/government/statistics/weekly-road-fuel-prices)
-* Issues include:
-  - image
-  - empty rows, columns, cells, headers
-  - numbers not in cells
-  - units in separate, unlabelled column
-  - alt text doesn't help
-* The cover page does not indicate that the spreadsheet is not accessible
-* Perhaps there's a machine-readable CSV?
+* Second tab: 'Packers_Annual'
+* Issues are same as previous tab
+* We also have some rogue values on the far right?
 :::
 
-## {background-image='images/spreadsheet_fuel-csv.png'}
+## {background-image='images/spreadsheet_eggs-3.png'}
 
 ::: {.notes}
-* [Link to page](https://www.gov.uk/government/statistics/weekly-road-fuel-prices)
-* The CSV isn't truly machine-readable either
+* Third tab: 'Information'
 * Issues include:
-  - empty rows, columns, cells, headers
-  - double headers
-  - sub-tables (acronyms and rates) not obvious
+- important information on the last page instead of a vocer
+- information is in text boxes rather than cells
+- update information placement has moved
+- GOV.UK link way off to the right
 :::
 
+# Support {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+
+## {background-image='images/website_spreadsheet-guidance-af.png'}
+
+::: {.notes}
+* [Link to page](https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/)
+* The Analysis Function has advice focused on releasing data in spreadsheet format
+:::
+
+<!--
 ## {background-image='images/website_af-empathy.png'}
-
-::: {.notes}
-* [Link to page](https://analysisfunction.civilservice.gov.uk/blog/accessibility-empathy-for-users-of-spreadsheets/)
-* Hannah Thomas works in the Analysis Function
-* Hannah wrote a great blog about accessibility empathy for spreadsheet users
-:::
+-->
 
 ## {background-image='images/spreadsheet_empathy-hidden.png'}
 
 ::: {.notes}
-* [Link to page](https://analysisfunction.civilservice.gov.uk/blog/accessibility-empathy-for-users-of-spreadsheets/)
-* In the blog there is a downloadable spreadsheet and the idea is to answer some questions about the data in the file.
-* But! All of its cells are blacked out.
+* Hannah wrote [a great blog](https://analysisfunction.civilservice.gov.uk/blog/accessibility-empathy-for-users-of-spreadsheets/) about accessibility empathy for spreadsheet users.
+* Can you find information in a spreadsheet where all the cells are blacked out?
 * It 'shows you what it is like trying to navigate a data table when you cannot see the layout. 
-* 'This should give you some idea of the issues faced by users with visual impairments.'
+* Gives 'some idea of the issues faced by users with visual impairments.'
 :::
 
-## {background-image='images/spreadsheet_empathy-revealed.png'}
+<!--
+
+# Another opportunity {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 ::: {.notes}
-* [Link to page](https://analysisfunction.civilservice.gov.uk/blog/accessibility-empathy-for-users-of-spreadsheets/)
-* When you reveal the data (spoiler alert!) you can see how you could be tripped up by missing rows, for example.
+* We can take steps to improve accessibility
+* But maybe the issue is driven partly by processes?
+* Maybe we can review _how_ the spreadsheet gets produced
 :::
 
-# Another problem
-
-::: {.notes}
-* The accessibility issue is a gaping one
-* But maybe its driven partly by processes?
-:::
-
-## Steps to publish
+## Steps to publish {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 1. Prepare and save individual tables
 2. Copy-paste into spreadsheet
@@ -173,34 +167,14 @@ co-analysis.github.io/a11ytables
 * Everyone can perform point-and-click tasks 
 :::
 
-# Making it better
+# Top-down support {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 ::: {.notes}
 * It's easy to complain
 * What are we doing about it?
 :::
 
-## {background-image='images/website_spreadsheet-guidance-govuk.png'}
-
-::: {.notes}
-* [Link to page](https://www.gov.uk/guidance/creating-and-sharing-spreadsheets#optimise-for-accessibility-and-machine-readability)
-* GOV.UK has some generic suggestions for user-friendly spreadsheets
-:::
-
-## {background-image='images/website_spreadsheet-guidance-af.png'}
-
-::: {.notes}
-* [Link to page](https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/)
-* The Analysis Function has advice focused on releasing data in spreadsheet format
-:::
-
-## {background-image='images/website_cops-accessibility.png'}
-
-::: {.notes}
-* [Link to page](https://code.statisticsauthority.gov.uk/the-code/value/v4-innovation-and-improvement/)
-* This is really important, obviously, but accessibility is also one of the 'values' pillars in the Code of Practice for Statistics
-* If your stats publication doesn't adhere, then you are breaking the code
-:::
+-->
 
 ## {background-image='images/website_rap-strategy.png'}
 
@@ -213,17 +187,17 @@ co-analysis.github.io/a11ytables
 * If you're producing a spreadsheet, it's production should be part of a RAP!
 :::
 
-# Practical help 
+# Initiative {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 ::: {.notes}
 * Many teams have applied the advice to their publications
 * There are still opportunities
 * How can we make things easier:
-  - as part of a RAP?
-  - for entry-level coders?
-  - by taking into account the realities of 'at the coalface' production?
-  - by taking the initiative?
-  - to prevent duplication of effort?
+- as part of a RAP?
+- for entry-level coders?
+- by taking into account the realities of 'at the coalface' production?
+- by taking the initiative?
+- to prevent duplication of effort?
 :::
 
 ## {background-image='images/website_gptables-docs.png'}
@@ -245,7 +219,7 @@ co-analysis.github.io/a11ytables
 * Slight differences to gptables that may be cleared up with time
 :::
 
-## Requirements
+## Requirements {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 1. Simple
 2. Opinionated
@@ -257,15 +231,16 @@ co-analysis.github.io/a11ytables
 * Should meet the guidance
 :::
 
-## 1. Simple
+## 1. Simple {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 * Suitable for beginner-level R users
 * Automatic, everything taken care of
 * Only two main functions in the package
 * Familiar dataframes, pipeable
 * Two dependencies: {openxlsx}, {pillar}
+* Dev-friendly?
 
-## 2. Opinionated
+## 2. Opinionated {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 * Enforcement is good
 * Styles and layout enforced to meet guidance
@@ -273,33 +248,25 @@ co-analysis.github.io/a11ytables
 * Some flexibly lost, not all spreadsheets are simple
 * But you can amend the a11ytable and Workbook
 
-## 3. Compliant
+## 3. Compliant {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 * The whole point is to meet the guidance
 * {a11ytables} accessibility checklist vignette
 * Handles compliance consistently, without fail
 
-# How
+# Example {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
-## Premise
-
-```{r}
-create_a11ytable() |>
-  generate_workbook() |> 
-  openxlsx::saveWorkbook()
-```
-
-::: {.notes}
-* Organise the required information (supporting and stat tables) into a special dataframe with additional class 'a11ytable'
-* Convert to {openxlsx} 'Workbook' class with structure and style information
-* Write that object to an xlsx file
-:::
-
-## Install
+## Install {auto-animate='true' background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 ```{r}
-install.packages("remotes")  # if not already installed
-remotes::install_github("co-analysis/a11ytables")
+install.packages("remotes")
+
+remotes::install_github(
+  "co-analysis/a11ytables",
+  build_vignettes = TRUE
+)
+
+library(a11ytables)
 ```
 
 ::: {.notes}
@@ -309,92 +276,209 @@ remotes::install_github("co-analysis/a11ytables")
 * CRAN is a future goal, maybe
 :::
 
-## Create
+## Overview {auto-animate='true' background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 ```{r}
-x <- create_a11ytable(
-    tab_titles,   # required char vector
-    sheet_types,  # required char vector
-    sheet_titles, # required char vector
-    blank_cells,  # optional char vector
-    sources,      # optional char vector
-    tables        # listcol of dataframes
+create_a11ytable() |>
+  generate_workbook() |>
+  openxlsx::saveWorkbook()
+```
+
+::: {.notes}
+1. Organise all the required information into a special dataframe with additional class 'a11ytable'
+1. Convert to {openxlsx} 'Workbook' class with structure and style information
+1. Write that object to an xlsx file
+:::
+
+## Overview {auto-animate='true' background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+
+```{r}
+create_a11ytable(
+  tab_titles, sheet_types, sheet_titles, # required char vectors
+  blank_cells, sources,                  # optional char vectors
+  tables                                 # required listcol of dataframes
+) |>
+  generate_workbook() |>
+  openxlsx::saveWorkbook()
+```
+
+::: {.notes}
+* The `create_a11ytable()` function takes a few arguments:
+  - `tab_titles` is a required character vector for the text that goes on the tabs
+  - `sheet_types` is a required character vector (one of `"cover"`, `"contents"`, `"notes"`, `"tables"`) that provides information about how the sheet will be styled
+  - `sheet_titles` is a required character vector of the worksheet titles that will go in cell A1
+  - `blank_cells` optional character vector of meta-information that explains the meaning of any blank cells in the sheet
+  - `sources` is an optional character vector of meta-information that contains 
+  - `tables` is a required list-column of dataframes that contain the main bulk of each sheet, particularly the tables of statistical data that go into sheets with `sheet_type = "tables"`
+:::
+
+## Prep {auto-animate='true' background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+
+```{r}
+#| eval: true
+source("eggs/eggs.R")
+```
+
+::: {.notes}
+* I pre-wrote some code to extract data from the eggs spreadsheet.
+* You can find the code and original spreadsheet in [the repo that hosts these slides](https://www.github.com/matt-dray/earl22-presentation).
+* Importantly, I didn't mimic the whole process of production for this example; I just copied the data out of the pre-existing spreadsheet.
+:::
+
+## Prep {auto-animate='true' background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+
+```{r}
+#| eval: true
+source("eggs/eggs.R")
+ls()
+```
+
+::: {.notes}
+* The code outputs some objects that are ready to be passed to the arguments of `create_a11ytable()`.
+* I recommend generating each object outside of the call to `create_a11ytable()` where possible; it keeps things cleaner.
+:::
+
+## Create an a11ytable {auto-animate='true' background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+
+```{r}
+egg_at <- create_a11ytable()
+```
+
+::: {.notes}
+* Now we can pass our egg objects to the arguments of `create_a11ytable()`.
+:::
+
+## Create an a11ytable {auto-animate='true' background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+
+```{r}
+#| eval: true
+egg_at <- create_a11ytable(
+  tab_titles   = egg_tab_titles, 
+  sheet_types  = egg_sheet_types, 
+  sheet_titles = egg_sheet_titles,
+  blank_cells  = egg_blank_cells, 
+  sources      = egg_sources,
+  tables       = egg_tables
 )
 ```
 
+::: {.notes}
 * Basically just creates a dataframe from the args
 * Validates, warns, errors, corrects
+:::
 
-
-## An a11ytable
+## Create an a11ytable {auto-animate='true' background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 ```{r}
-#| echo=FALSE,
-#| eval=TRUE
-library(a11ytables)
-x <- as_a11ytable(mtcars_df)
-x
+#| eval: true
+egg_at <- create_a11ytable(
+  tab_titles   = egg_tab_titles, 
+  sheet_types  = egg_sheet_types, 
+  sheet_titles = egg_sheet_titles,
+  blank_cells  = egg_blank_cells, 
+  sources      = egg_sources,
+  tables       = egg_tables
+)
+
+class(egg_at)
 ```
 
 ::: {.notes}
-* Familiar dataframe
-* Row per sheet
-* Columns for information, including listcol of dataframes
-* Tables of information hold major content for each sheet
+* You can see that the object gets the special a11ytables class.
+* But it also has classes of 'tbl' (i.e. a {tibble} dataframe) and classic 'data.frame'.
+* This means you can manipulate the output much like any dataframe object.
 :::
 
-## Structure
+## Just a dataframe {auto-animate='true' background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 ```{r}
-#| echo=FALSE,
-#| eval=TRUE
-str(x, max.level = 1, strict.width = "cut")
+#| echo: true
+#| eval: true
+head(egg_at)
 ```
 
 ::: {.notes}
-* Output has classes 'a11ytable', 'tbl', 'data.frame'
+* Familiar dataframe structure holds all the information.
+* You can see a row per sheet.
+* Each argument has become a column.
+* The list of dataframes has become a list-column.
 :::
 
-## Warnings
+## A row {auto-animate='true' background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+
+```{r}
+#| echo: true
+#| eval: true
+str(egg_at[egg_at$tab_title == "Table_2", ] )
+```
 
 ::: {.notes}
-* Will error if something badly wrong
-* Will warn about certain things to fix
-* Will make some adjustments automatically
+* Each row of the a11ytable is the content required to create a worksheet.
+* Here's the information needed for the sheet that contains Table 1.
 :::
 
-## Workbook
+## Generate a workbook {auto-animate='true' background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 ```{r}
-y <- generate_workbook(x)
-openxlsx::saveWorkbook(y)
+#| eval: true
+egg_wb <- generate_workbook(egg_at)
+class(egg_wb)
 ```
 
-* Creates an {openxlsx} Workbook-class object
-* Contains all the structure and style information to make a workbook
-* This object can be written directly to xlsx
-* There's already a function in {openxlsx} to write
-* Didn't combine these steps so that the user can inspect and adjust the Workbook-class object if they wish
+::: {.notes}
+* Creates an {openxlsx} Workbook-class object.
+* Contains all the structure and style information to make a workbook.
+* This object can be written directly to xlsx.
+* There's already a function in {openxlsx} to write.
+* Didn't combine these steps so that the user can inspect and adjust the Workbook-class object if they wish.
+:::
 
-## Output xlsx
-
-* Preview of each sheet in the workbook
-* Attention to 
-  * workbook structure: cover, contents, notes, tables
-  * sheet structure: title, pre-table elements, table
-  * marked up tables
-  * no empty rows, columns; blanks explained
-
-## S3 class
+## Output to xlsx {auto-animate='true' background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 ```{r}
-as_a11ytable()  # supply compliant pre-written df
-is_a11ytable()  # logical check
-summary.a11ytable()  # print basic overview
-tbl_sum.a11ytable()  # to print tibble-like output
+#| eval: true
+openxlsx::saveWorkbook(
+  egg_wb,
+  "eggs/2022-07-28_eggs-packers.xlsx",
+  overwrite = TRUE
+)
 ```
 
-## RStudio Addin
+::: {.notes}
+
+:::
+
+## Output to xlsx {auto-animate='true' background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+
+```{r}
+#| eval: true
+openxlsx::saveWorkbook(
+  egg_wb,
+  "eggs/2022-07-28_eggs-packers.xlsx",
+  overwrite = TRUE
+)
+
+list.files("eggs", pattern = ".xlsx$")
+```
+
+::: {.notes}
+* The file has been created at the location specified.
+:::
+
+## {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+
+::: {.notes}
+* Preview of each sheet in the workbook.
+* Attention to:
+  - workbook structure: cover, contents, notes, tables
+  - sheet structure: title, pre-table elements, table
+  - marked up tables
+  - no empty rows, columns
+:::
+
+
+
+## RStudio Addin {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 * Inserts skeletons for you
 * With data.frames or tibbles
@@ -405,16 +489,9 @@ tbl_sum.a11ytable()  # to print tibble-like output
 * {tibble}-based option included
 :::
 
-## Dev simplicity (?)
+# But {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
-* `as_a11ytable()` just makes a dataframe with validation
-* `generate_workbook()` has `add_*()`
-
-
-
-# But
-
-## Limitations
+## Limitations {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 * Saves to xlsx, not ODS
 * Can't update properties
@@ -422,10 +499,9 @@ tbl_sum.a11ytable()  # to print tibble-like output
 * Surely it's still better to get 95% of the way there?
 * Human should always be checking anyway
 
-# Future
+# Future {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
-
-## Todo
+## Todo {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 * ODS conversion (command line?)
 * YAML input (easier to provide text inputs)
@@ -436,7 +512,7 @@ tbl_sum.a11ytable()  # to print tibble-like output
 * Features (in line with guidance)
 * When I have the time
 
-# If all else fails
+# If all else fails {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 ::: {.notes}
 :::
@@ -450,7 +526,7 @@ tbl_sum.a11ytable()  # to print tibble-like output
 * I want to help limit the need for these tools (sorry Duncan)
 :::
 
-## Consider
+## Consider  {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 1. How could you improve user experience?
 1. Do you have the right processes in place?

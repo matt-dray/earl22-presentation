@@ -2,14 +2,26 @@
 // Fonts
 
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 
 /*-- scss:defaults --*/
 
+// https://quarto.org/docs/presentations/revealjs/themes.html#sass-variables
+
 $headingFont: 'Atkinson Hyperlegible', sans-serif;
 $mainFont: 'Atkinson Hyperlegible', sans-serif;
-$codeFont: 'Courier Prime', monospace;
+$codeFont: 'Inconsolata', monospace;
+
 $theme-blue: #4D4E53;
+$theme-green: #D1E9CB;
+
+$body-bg: lighten($theme-green, 10%);
+$body-color: darken($theme-green, 70%);
+
+$presentation-heading-line-height: 1.8;
+
+$code-block-border-color: $body-bg;
+$code-block-font-size: 25px;
 
 /*-- scss:rules --*/
+
