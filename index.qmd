@@ -40,10 +40,10 @@ Generate best-practice spreadsheets in R with {a11ytables}
 ::::
 
 ::: {.notes}
-* This is a story about about R, of course.
-* But it's also about taking initiative.
-* About inclusivity.
-* About making things better.
+* The main take-away is that there's an R package called {a11ytables} you can use and contribute to.
+* It helps automate and make reproducible the steps needed to comply with best-practice guidance about spreadsheets.
+* The talk is about the package, of course.
+* But it's also about inclusivity, taking the initiative and making things better.
 :::
 
 ## Me {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
@@ -63,15 +63,15 @@ Make people happier
 `r fontawesome::fa('pen')` [rostrum.blog](https://www.rostrum.blog)
 
 ::: {.notes}
-* I work in UK government and talking about something I made in that official capacity
-* I personally can be found elsewhere in an unofficial capacity
+* I work in UK government and talking about something I made in that official capacity.
+* I personally can be found elsewhere in an unofficial capacity.
 :::
 
 # An opportunity {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 ::: {.notes}
-* An example of a government spreadsheet that could be improved
-* The intent is to demonstrate opportunity, not to call anyone out
+* An example of a government spreadsheet that could be improved.
+* The intent is to demonstrate opportunity, not to call anyone out.
 :::
 
 ## {background-image='images/website_eggs.png'}
@@ -85,35 +85,35 @@ Make people happier
 ## {background-image='images/spreadsheet_eggs-1.png'}
 
 ::: {.notes}
-* This is the 'UK egg packing station throughput and prices dataset' spreadsheet
-* First tab: 'Packers'
+* This is the 'UK egg packing station throughput and prices dataset' spreadsheet.
+* First tab: 'Packers'.
 * Issues include:
-- empty rows, columns, cells (including A1)
-- double headers
-- centred values, mostly
-- notes in a footer (offscreen)
-- gridlines sometimes missing, sometimes not
-- the number of decimals varies (though Excel hides this)
-- there's some stray values with no explanation
+  - empty rows, columns, cells (including A1)
+  - double headers
+  - centred values, mostly
+  - notes in a footer (offscreen)
+  - gridlines sometimes missing, sometimes not
+  - the number of decimals varies (though Excel hides this)
+  - there's some stray values with no explanation
 :::
 
 ## {background-image='images/spreadsheet_eggs-2.png'}
 
 ::: {.notes}
-* Second tab: 'Packers_Annual'
-* Issues are same as previous tab
+* Second tab: 'Packers_Annual'.
+* Issues are same as previous tab.
 * We also have some rogue values on the far right?
 :::
 
 ## {background-image='images/spreadsheet_eggs-3.png'}
 
 ::: {.notes}
-* Third tab: 'Information'
+* Third tab: 'Information'.
 * Issues include:
-- important information on the last page instead of a vocer
-- information is in text boxes rather than cells
-- update information placement has moved
-- GOV.UK link way off to the right
+  - important information on the last page instead of a vocer
+  - information is in text boxes rather than cells
+  - update information placement has moved
+  - GOV.UK link way off to the right
 :::
 
 # Support {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
@@ -125,10 +125,6 @@ Make people happier
 * The Analysis Function has advice focused on releasing data in spreadsheet format
 :::
 
-<!--
-## {background-image='images/website_af-empathy.png'}
--->
-
 ## {background-image='images/spreadsheet_empathy-hidden.png'}
 
 ::: {.notes}
@@ -137,44 +133,6 @@ Make people happier
 * It 'shows you what it is like trying to navigate a data table when you cannot see the layout. 
 * Gives 'some idea of the issues faced by users with visual impairments.'
 :::
-
-<!--
-
-# Another opportunity {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
-
-::: {.notes}
-* We can take steps to improve accessibility
-* But maybe the issue is driven partly by processes?
-* Maybe we can review _how_ the spreadsheet gets produced
-:::
-
-## Steps to publish {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
-
-1. Prepare and save individual tables
-2. Copy-paste into spreadsheet
-3. Format
-
-::: {.incremental}
-4. Spot a mistake
-5. Repeat the above
-6. Publish (fingers-crossed)
-:::
-
-::: {.notes}
-* Problem: inertia, risk
-* Stattos already have systems in place
-* Time consuming to rework production pipeline
-* Everyone can perform point-and-click tasks 
-:::
-
-# Top-down support {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
-
-::: {.notes}
-* It's easy to complain
-* What are we doing about it?
-:::
-
--->
 
 ## {background-image='images/website_rap-strategy.png'}
 
@@ -212,11 +170,11 @@ Make people happier
 ## {background-image='images/website_a11ytables-docs.png'}
 
 ::: {.notes}
-* [Link to page](https://co-analysis.github.io/a11ytables/)
-* Bottom-up to solve my own needs, with wider implications
-* R-native solution
-* Created to comply with the _latest_ best practice guidance for releasing stats in spreadsheets, which gptables did not do at the time
-* Slight differences to gptables that may be cleared up with time
+* [Link to page](https://co-analysis.github.io/a11ytables/).
+* Bottom-up to solve my own needs, with wider implications.
+* R-native solution.
+* Created to comply with the _latest_ best practice guidance for releasing stats in spreadsheets, which gptables did not do at the time.
+* Slight differences to gptables that may be cleared up with time.
 :::
 
 ## Requirements {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
@@ -270,10 +228,10 @@ library(a11ytables)
 ```
 
 ::: {.notes}
-* GitHub only for now
+* GitHub only for now.
 * Is this a barrier in some orgs?
-* Still in development, but it has reached version 0.1
-* CRAN is a future goal, maybe
+* Still in development, but it has reached version 0.1.
+* CRAN is a future goal, maybe.
 :::
 
 ## Overview {auto-animate='true' background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
@@ -394,7 +352,7 @@ class(egg_at)
 ```{r}
 #| echo: true
 #| eval: true
-head(egg_at)
+egg_at
 ```
 
 ::: {.notes}
@@ -433,13 +391,28 @@ class(egg_wb)
 * Didn't combine these steps so that the user can inspect and adjust the Workbook-class object if they wish.
 :::
 
+## Generate a workbook {auto-animate='true' background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+
+```{r}
+#| eval: true
+egg_wb
+```
+
+::: {.notes}
+* Creates an {openxlsx} Workbook-class object.
+* Contains all the structure and style information to make a workbook.
+* This object can be written directly to xlsx.
+* There's already a function in {openxlsx} to write.
+* Didn't combine these steps so that the user can inspect and adjust the Workbook-class object if they wish.
+:::
+
 ## Output to xlsx {auto-animate='true' background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 ```{r}
 #| eval: true
 openxlsx::saveWorkbook(
   egg_wb,
-  "eggs/2022-07-28_eggs-packers.xlsx",
+  "eggs/2022-07-28_eggs-packers_test.xlsx",
   overwrite = TRUE
 )
 ```
@@ -454,7 +427,7 @@ openxlsx::saveWorkbook(
 #| eval: true
 openxlsx::saveWorkbook(
   egg_wb,
-  "eggs/2022-07-28_eggs-packers.xlsx",
+  "eggs/2022-07-28_eggs-packers_test.xlsx",
   overwrite = TRUE
 )
 
@@ -520,10 +493,10 @@ list.files("eggs", pattern = ".xlsx$")
 ## {background-image='images/website_smungs.png'}
 
 ::: {.notes}
-* [Link to page](https://nacnudus.github.io/spreadsheet-munging-strategies/)
-* Untidy, inaccessible spreadsheets pose a particular problem for further analysis
-* See [Duncan Garmonsway]()'s [{tidyxl}]() and [{unpivotr}]() R packages for help
-* I want to help limit the need for these tools (sorry Duncan)
+* [Link to page](https://nacnudus.github.io/spreadsheet-munging-strategies/).
+* Untidy, inaccessible spreadsheets pose a particular problem for further analysis.
+* See [Duncan Garmonsway](https://nacnudus.github.io/duncangarmonsway/)'s [{tidyxl}](https://nacnudus.github.io/tidyxl/index.html) and [{unpivotr}](https://nacnudus.github.io/unpivotr/) R packages for help.
+* I want to help limit the need for these tools (sorry Duncan).
 :::
 
 ## Consider  {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
