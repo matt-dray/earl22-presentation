@@ -22,197 +22,184 @@ options(width = 80)
 library(a11ytables)
 ```
 
-## tl;dr {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+## tl;dr {.center background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 :::: {.columns}
 
-::: {.column width="60%"}
+::: {.column width='70%'}
+Generate best-practice spreadsheets with [{a11ytables}](https://www.co-analysis.github.io/a11ytables)
 
-Generate best-practice spreadsheets in R with {a11ytables}
-
-[co-analysis.github.io/a11ytables](https://www.co-analysis.github.io/a11ytables)
+Make the world a better place (marginally)
 :::
 
-::: {.column width="40%"}
-![](images/qr_a11ytables-docs.png){width="250" alt="QR code that points to the documentation website of the R package 'a11ytables'."}
+::: {.column width='30%'}
+![](images/qr_a11ytables-docs.png){alt="QR code that points to the documentation website of the R package 'a11ytables'."}
 :::
 
 ::::
 
 ::: {.notes}
-* The main take-away is that there's an R package called {a11ytables} you can use and contribute to.
-* It helps automate and make reproducible the steps needed to comply with best-practice guidance about spreadsheets.
-* The talk is about the package, of course.
-* But it's also about inclusivity, taking the initiative and making things better.
+* The package helps bring automation, consistency and reproducibility to usable spreadsheets; it does the hard work for you.
+* It can make your life easier.
+* But the talk is also about inclusivity, taking the initiative and fixing things.
+* Which makes everyone's lives better.
 :::
 
-## Me {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+## Ahoy {.center background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
-R and reproducibility in the UK Civil Service
+My jam: R for reproducibility (and memes)
 
-Make people happier 
-
-<br>
-
-`r fontawesome::fa('globe')` [matt-dray.com](https://www.matt-dray.com)
-
-`r fontawesome::fa('twitter')` [@mattdray](https://www.twitter.com/mattdray)
-
-`r fontawesome::fa('github')` [matt-dray](https://www.github.com/matt-dray)
-
-`r fontawesome::fa('pen')` [rostrum.blog](https://www.rostrum.blog)
+`r fontawesome::fa('globe')` [matt-dray.com](https://www.matt-dray.com) 
+`r fontawesome::fa('twitter')` [@mattdray](https://www.twitter.com/mattdray) 
 
 ::: {.notes}
-* I work in UK government and talking about something I made in that official capacity.
+* I work in UK government and I'm talking about something I made in that official capacity.
 * I personally can be found elsewhere in an unofficial capacity.
+* You can [read blogposts](https://www.rostrum.blog/) about building an interactive roguelike videogame in R; making a Twitterbot with R and GitHub Actions; trolling about assignment operators; and more.
 :::
 
 # An opportunity {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 ::: {.notes}
-* An example of a government spreadsheet that could be improved.
-* The intent is to demonstrate opportunity, not to call anyone out.
+* Who has opened an 'official' spreadsheet and immediately winced?
+* Yes, they sometimes hurt my eyes too, but rather than complain, maybe we can see the opportunity. 
+* I'll show an example of a government spreadsheet that could be improved. It was one of the first ones that came up in my search of GOV.UK statistics.
+* The intent is to demonstrate opportunity, not to call anyone out. The maintainer of the statistics knows I'm talking about this.
 :::
 
 ## {background-image='images/website_eggs.png'}
 
 ::: {.notes}
-* Defra's 'Latest UK egg statistics'
-* Branded as National Statistics
-* [Link to page](https://www.gov.uk/government/statistics/egg-statistics)
+* Defra's ['Latest UK egg statistics'](https://www.gov.uk/government/statistics/egg-statistics).
+* Mundane? Definitely a classic government spreadsheet.
+* Collects data on egg production and prices from a survey.
+* Branded as National Statistics. That's important.
 :::
 
-## {background-image='images/spreadsheet_eggs-1.png'}
+## {auto-animate=true auto-animate-easing='ease-in-out' background-image='images/spreadsheet_old-eggs-1.png'}
+
+![](images/not-clippy.png){.absolute top='3%' left='55%' width='100'}
 
 ::: {.notes}
 * This is the 'UK egg packing station throughput and prices dataset' spreadsheet.
 * First tab: 'Packers'.
-* Issues include:
+* Being nitpicky, how would this fare for machine readability? Screenreaders?
+* Look out for:
   - empty rows, columns, cells (including A1)
-  - double headers
-  - centred values, mostly
-  - notes in a footer (offscreen)
   - gridlines sometimes missing, sometimes not
+  - triple headers
+  - centred values (mostly)
   - the number of decimals varies (though Excel hides this)
   - there's some stray values with no explanation
 :::
 
-## {background-image='images/spreadsheet_eggs-2.png'}
+## {auto-animate=true auto-animate-easing='ease-in-out' background-image='images/spreadsheet_old-eggs-2.png'}
+
+![](images/not-clippy.png){.absolute top='75%' left='45%' width='100'}
 
 ::: {.notes}
 * Second tab: 'Packers_Annual'.
-* Issues are same as previous tab.
-* We also have some rogue values on the far right?
+* Look out for same as previous tab, plus:
+  - notes in a footer, not labelled
+  - two 'year' columns?
+  - some rogue values on the far right
+  - shorthand not fully conforming to guidance ('c' rather than '[c]'?)
 :::
 
-## {background-image='images/spreadsheet_eggs-3.png'}
+## {background-image='images/spreadsheet_old-eggs-3.png' auto-animate=true auto-animate-easing='ease-in-out'}
+
+![](images/not-clippy.png){.absolute top='25%' left='27%' width='100'}
 
 ::: {.notes}
 * Third tab: 'Information'.
-* Issues include:
-  - important information on the last page instead of a vocer
+* Look out for:
+  - important information on the last page instead of a cover or explicit annex
   - information is in text boxes rather than cells
-  - update information placement has moved
+  - 'updated' information is in a different place
   - GOV.UK link way off to the right
 :::
 
 # Support {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
+::: {.notes}
+* Maybe you can see the things you'd like to fix, maybe some are obvious, maybe some are more subjective.
+* Luckily, there is some codified and exhaustive guidance on the preferred outcomes.
+:::
+
 ## {background-image='images/website_spreadsheet-guidance-af.png'}
 
 ::: {.notes}
-* [Link to page](https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/)
-* The Analysis Function has advice focused on releasing data in spreadsheet format
+* The Analysis Function has a webpage with [some bumper advice](https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/) on releasing data in spreadsheet format. This was coordinated by Hannah Thomas.
+* This is important role of the newly-formed Analysis Function: unify guidance across the analytical professions. 
+* Promotes consistency and usability, but particularly accessibility.
 :::
 
 ## {background-image='images/spreadsheet_empathy-hidden.png'}
 
 ::: {.notes}
-* Hannah wrote [a great blog](https://analysisfunction.civilservice.gov.uk/blog/accessibility-empathy-for-users-of-spreadsheets/) about accessibility empathy for spreadsheet users.
+* On accessibility in particular, Hannah wrote [a great blog](https://analysisfunction.civilservice.gov.uk/blog/accessibility-empathy-for-users-of-spreadsheets/) about accessibility empathy for spreadsheet users.
 * Can you find information in a spreadsheet where all the cells are blacked out?
 * It 'shows you what it is like trying to navigate a data table when you cannot see the layout. 
 * Gives 'some idea of the issues faced by users with visual impairments.'
+* Hannah also runs an accessibility clinic for civil servants to chat through concerns or ideas.
 :::
 
 ## {background-image='images/website_rap-strategy.png'}
 
 ::: {.notes}
-* [Link to page](https://analysisfunction.civilservice.gov.uk/policy-store/reproducible-analytical-pipelines-strategy/)
-* Reproducible Analytical Pipelines (RAP) is a grassroots movement that's been bubbling around UK government for a few years
+* We can help make users' lives better with better spreadsheets. But there's also a way to make out lives easier as producers.
+* [Reproducible Analytical Pipelines (RAP)](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/) is a grassroots movement that's been bubbling around UK government for a few years and there's now [a formal strategy for adoption](https://analysisfunction.civilservice.gov.uk/policy-store/reproducible-analytical-pipelines-strategy/).
 * It's even spread to other countries and to non-governmental organisations
 * RAPs are 'automated statistical and analytical processes [that] incorporate elements of software engineering best practice to ensure that the pipelines are reproducible, auditable, efficient, and high quality.'
-* Automated and version controlled with open software
 * If you're producing a spreadsheet, it's production should be part of a RAP!
 :::
 
-# Initiative {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+# Building a tool {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 ::: {.notes}
 * Many teams have applied the advice to their publications
 * There are still opportunities
 * How can we make things easier:
-- as part of a RAP?
-- for entry-level coders?
-- by taking into account the realities of 'at the coalface' production?
-- by taking the initiative?
-- to prevent duplication of effort?
+  - as part of a RAP?
+  - for entry-level coders?
+  - by taking into account the realities of 'at the coalface' production?
+  - by taking the initiative?
+  - to prevent duplication of effort?
 :::
 
-## {background-image='images/website_gptables-docs.png'}
-
-::: {.notes}
-* [Link to page](https://gptables.readthedocs.io/en/latest/)
-* This is a 'bottom-up' approach, but is 'official' in that it's produced by the Analysis Function
-* Written for Python, convert pandas dataframes
-* Can be accessed from R via the {reticulate} package, but requires a Python installation and understanding of {reticulate}
-:::
-
-## {background-image='images/website_a11ytables-docs.png'}
-
-::: {.notes}
-* [Link to page](https://co-analysis.github.io/a11ytables/).
-* Bottom-up to solve my own needs, with wider implications.
-* R-native solution.
-* Created to comply with the _latest_ best practice guidance for releasing stats in spreadsheets, which gptables did not do at the time.
-* Slight differences to gptables that may be cleared up with time.
-:::
-
-## Requirements {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+## Requirements {.center background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 1. Simple
 2. Opinionated
 3. Compliant
 
 ::: {.notes}
-* Should be simple for end-user, developer
-* Simplicity means decisions must be made on behalf of the user
-* Should meet the guidance
+1. Simple user-interface/API, internal structure should be understood by devs
+2. Decisions should be taken for you to help speed things up and maintain consistency.
+3. The whole point is to meet the guidance, {a11ytables} accessibility checklist vignette.
 :::
 
-## 1. Simple {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+## {background-image='images/website_a11ytables-docs.png'}
 
-* Suitable for beginner-level R users
-* Automatic, everything taken care of
-* Only two main functions in the package
-* Familiar dataframes, pipeable
-* Two dependencies: {openxlsx}, {pillar}
-* Dev-friendly?
+::: {.notes}
+* [Documentation](https://co-analysis.github.io/a11ytables/).
+* Bottom-up to solve my own needs, with wider implications.
+1. Simple: interface has only two main functions; only two dependencies are {openxlsx} and {pillar}; familiarity of dataframes and pipes; user brings data and information, {a11ytables} does the rest.
+2. Opinionated: some flexibly lost, not all spreadsheets are simple, but you can intervene.
+3. Compliant: a vignette compares the package's functionality to to the accessibility checklist in the guidance.
+:::
 
-## 2. Opinionated {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+## {background-image='images/website_gptables-docs.png'}
 
-* Enforcement is good
-* Styles and layout enforced to meet guidance
-* Some choices have to be made, like pre-table metadata
-* Some flexibly lost, not all spreadsheets are simple
-* But you can amend the a11ytable and Workbook
+::: {.notes}
+* [Documentation](https://gptables.readthedocs.io/en/latest/)
+* Written for Python, convert pandas dataframes.
+* {a11ytables} was created to comply with the _latest_ best practice guidance for releasing stats in spreadsheets, which gptables did not do at the time.
+* Can be accessed from R via the {reticulate} package, but requires a Python installation and understanding of {reticulate}.
+* Slight differences between {a11ytables} and gptables exist, hopefully will clear these up.
+:::
 
-## 3. Compliant {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
-
-* The whole point is to meet the guidance
-* {a11ytables} accessibility checklist vignette
-* Handles compliance consistently, without fail
-
-# Example {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+# How {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 ## Install {auto-animate='true' background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
@@ -257,7 +244,7 @@ create_a11ytable(
   tables                                 # required listcol of dataframes
 ) |>
   generate_workbook() |>
-  openxlsx::saveWorkbook()
+  openxlsx::saveWorkbook("file.csv")
 ```
 
 ::: {.notes}
@@ -267,7 +254,7 @@ create_a11ytable(
   - `sheet_titles` is a required character vector of the worksheet titles that will go in cell A1
   - `blank_cells` optional character vector of meta-information that explains the meaning of any blank cells in the sheet
   - `sources` is an optional character vector of meta-information that contains 
-  - `tables` is a required list-column of dataframes that contain the main bulk of each sheet, particularly the tables of statistical data that go into sheets with `sheet_type = "tables"`
+  - `tables` is a required list-column of dataframes that contain the main bulk of each sheet (stats tables are obviously tables, but the cover and notes are also given as tables; you also provide the cover as a dataframe, where each row becomes a subsection with a title and body)
 :::
 
 ## Prep {auto-animate='true' background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
@@ -321,8 +308,9 @@ egg_at <- create_a11ytable(
 ```
 
 ::: {.notes}
-* Basically just creates a dataframe from the args
-* Validates, warns, errors, corrects
+* Basically, each arg becomes a column in a dataframe.
+* User is warned and/or errors raised and/or corrections applied if the provided information is insufficient.
+* User provides the info, function does the rest.
 :::
 
 ## Create an a11ytable {auto-animate='true' background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
@@ -342,7 +330,7 @@ class(egg_at)
 ```
 
 ::: {.notes}
-* You can see that the object gets the special a11ytables class.
+* You can see that the object gets the special 'a11ytables' S3 class, which helps with validation.
 * But it also has classes of 'tbl' (i.e. a {tibble} dataframe) and classic 'data.frame'.
 * This means you can manipulate the output much like any dataframe object.
 :::
@@ -372,7 +360,8 @@ str(egg_at[egg_at$tab_title == "Table_2", ] )
 
 ::: {.notes}
 * Each row of the a11ytable is the content required to create a worksheet.
-* Here's the information needed for the sheet that contains Table 1.
+* Here's the information needed for the sheet that contains Table 2.
+* You can see the character vectors contain the information needed in that sheet, along with the dataframe that contains the stat table itself.
 :::
 
 ## Generate a workbook {auto-animate='true' background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
@@ -384,11 +373,9 @@ class(egg_wb)
 ```
 
 ::: {.notes}
-* Creates an {openxlsx} Workbook-class object.
-* Contains all the structure and style information to make a workbook.
-* This object can be written directly to xlsx.
-* There's already a function in {openxlsx} to write.
-* Didn't combine these steps so that the user can inspect and adjust the Workbook-class object if they wish.
+* Next step is to turn the a11ytable-class object into an {openxlsx} Workbook-class object.
+* This adds all the required structure and style information without the user needing to do anything.
+* Works with a series of underlying `add_*()` functions to add elements to each sheet and `style_*()` functions that do simple stuff like adjust the font, but also dynamically change column widths and detect numeric columns that are stored as character due to notes or shorthand.
 :::
 
 ## Generate a workbook {auto-animate='true' background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
@@ -399,14 +386,10 @@ egg_wb
 ```
 
 ::: {.notes}
-* Creates an {openxlsx} Workbook-class object.
-* Contains all the structure and style information to make a workbook.
-* This object can be written directly to xlsx.
-* There's already a function in {openxlsx} to write.
-* Didn't combine these steps so that the user can inspect and adjust the Workbook-class object if they wish.
+* Doesn't really matter what the Workbook-class object looks like, but the summary shows the worksheets that have been created and some of the custom changes, like row heights.
 :::
 
-## Output to xlsx {auto-animate='true' background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+## Write to xlsx {auto-animate='true' background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 ```{r}
 #| eval: true
@@ -418,10 +401,11 @@ openxlsx::saveWorkbook(
 ```
 
 ::: {.notes}
-
+* {openxlsx} already has a function to write a Workbook-class object to disk.
+* This saves us hassle.
 :::
 
-## Output to xlsx {auto-animate='true' background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+## Write to xlsx {auto-animate='true' background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
 ```{r}
 #| eval: true
@@ -435,55 +419,103 @@ list.files("eggs", pattern = ".xlsx$")
 ```
 
 ::: {.notes}
-* The file has been created at the location specified.
+* The file has been provably created at the location specified.
 :::
 
-## {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+# Output {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+
+## {auto-animate=true auto-animate-easing='ease-in-out' background-image='images/spreadsheet_new-eggs-cover.png'}
+
+![](images/not-clippy.png){.absolute top='40%' left='35%' width='100'}
 
 ::: {.notes}
-* Preview of each sheet in the workbook.
-* Attention to:
-  - workbook structure: cover, contents, notes, tables
-  - sheet structure: title, pre-table elements, table
-  - marked up tables
-  - no empty rows, columns
+* Most of this information was in the 'information' tab or footnotes of the original spreadsheet.
+* Now it's up front and provides an introduction to the workbook.
+* Note on the cover that:
+  - the font is Arial 12
+  - the title is in larger font and in A1
+  - the font subsection headers are also adjusted
+  - the subsection titles are in tall rows to create the illusion of whitespace without leaving an empty row
 :::
 
+## {auto-animate=true auto-animate-easing='ease-in-out' background-image='images/spreadsheet_new-eggs-contents.png'}
 
-
-## RStudio Addin {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
-
-* Inserts skeletons for you
-* With data.frames or tibbles
-* Parts of workflow (table prep, pre-filled create_a11ytable call) or full workflow
+![](images/not-clippy.png){.absolute top='2%' left='25%' width='100'}
 
 ::: {.notes}
-* Another way to limit friction
-* {tibble}-based option included
+* Note in the contents that:
+  - there is up-front screenreader-friendly information about the number of tables in the sheet
+  - the table has no empty rows or columns
+  - the columns have clear header names indicated by bold font
+  - the table is marked up as a table (there's a small marker in the lower right to indicate this), which is important
+:::
+
+## {auto-animate=true auto-animate-easing='ease-in-out' background-image='images/spreadsheet_new-eggs-notes.png'}
+
+![](images/not-clippy.png){.absolute top='20%' left='35%' width='100'}
+
+::: {.notes}
+* On the notes page, note that:
+  - the theming follows on from the cover and contents
+  - the notes are in the standardised style of 'note x' written in square brackets
+:::
+
+## {auto-animate=true auto-animate-easing='ease-in-out' background-image='images/spreadsheet_new-eggs-t1.png'}
+
+![](images/not-clippy.png){.absolute top='3%' left='35%' width='100'}
+
+::: {.notes}
+* Note in Table 1 that:
+  - the theming again follows on from the other sheets
+  - there is a new metadata element that provides the data source
+  - the table has been dynamically placed in row 4 this time, after the three pre-table elements (was only two for the contents and notes pages)
+:::
+
+## {auto-animate=true auto-animate-easing='ease-in-out' background-image='images/spreadsheet_new-eggs-t2.png'}
+
+![](images/not-clippy.png){.absolute  top='5%' left='35%' top=20 left=400 width='100'}
+
+::: {.notes}
+* Note in Table 2 that:
+  - this table has a note in it, so there's a new dynamically generated pre-table metadata row so users of screenreaders can be made aware early 
+  - the placement of the table is again dynamic; there are four pre-table metadata elements, so the table begins in row 5
+:::
+
+## {auto-animate=true auto-animate-easing='ease-in-out' background-image='images/spreadsheet_new-eggs-t5.png'}
+
+![](images/not-clippy.png){.absolute  top='30%' left='15%' width='100'}
+
+::: {.notes}
+* Table 5 has something different again, which is that the long header has led to an opinionated decision for the column to be widened
+* An extra pre-table metadata row would also appear if we had provided information to the `blank_cells` argument of `create_a11ytable()`
 :::
 
 # But {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
-## Limitations {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+## Current issues {.center background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
-* Saves to xlsx, not ODS
-* Can't update properties
-* Some flexibility lost in e.g. cover layout
-* Surely it's still better to get 95% of the way there?
-* Human should always be checking anyway
+* Writes to xlsx, not ods
+* {openxlsx} has limitations
+* Opinionated approach
 
-# Future {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+::: {.notes}
+* The package doesn't get you a 100% compliant output.
+* In particular, published spreadsheets should be in an open format, but {openxlsx} nor other packages write Workbook-class objects to ODS.
+* {openxlsx} is versatile, but some things are tricky (placeholder zeroes in decimals, filling in file properties, etc), but I'm keeping an eye on {openxlsx2}.
+* The package is opinionated for simplicity and is not completely flexible as a result (e.g. each cover subsection has only a single body row, the pre-table metadata is only table count, note presence, blank-cell meaning and data source).
+* Leave an issue or pull request.
+:::
 
-## Todo {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
+## Future {.center background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
-* ODS conversion (command line?)
-* YAML input (easier to provide text inputs)
-* 'Advanced' input?
-* Arbitrary, but controlled, pre-table meta?
-* User research
-* Bugfixes
-* Features (in line with guidance)
-* When I have the time
+* Bugfixes, requests
+* Mimic gptables
+* YAML input
+
+::: {.notes}
+* There's plenty to be done to improve the package.
+* Leave an issue or pull request.
+:::
 
 # If all else fails {background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
