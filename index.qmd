@@ -198,11 +198,13 @@ It looks like you're trying to improve a spreadsheet.
 1. Simple
 2. Opinionated
 3. Compliant
+4. Known
 
 ::: {.notes}
 1. Simple user-interface/API, internal structure should be understood by devs
 2. Decisions should be taken for you to help speed things up and maintain consistency.
 3. The whole point is to meet the guidance, {a11ytables} accessibility checklist vignette.
+4. Should try to be a generic cross-government, unified solution to prevent duplicated effort (perhaps easier for my department, which is a the centre of government).
 :::
 
 ## {background-image='images/website_a11ytables-docs.png'}
@@ -530,42 +532,61 @@ list.files("eggs", pattern = ".xlsx$")
 
 # But 
 
-## Current issues {.center}
+## Not perfect {.center}
 
-* Writes to xlsx, not ods
-* {openxlsx} has limitations
-* Opinionated approach
+* User-input
+* Opinionated
+* User-testing
 
 ::: {.notes}
 * The package doesn't get you a 100% compliant output.
+* Can't guarantee bad user input.
+* To keep the package simple, certain choices may not suit the user; some extra editing of the a11ytable or Workbook may be required, but this can be made part of the analyst pipeline.
+* The package is opinionated for simplicity and is not completely flexible as a result (e.g. each cover subsection has only a single body row, the pre-table metadata is only table count, note presence, blank-cell meaning and data source).
+* The package is not yet fully user tested.
+* Leave an issue or pull request.
+:::
+
+## Clunk {.center}
+
+* Not ods
+* {openxlsx} has limitations
+* Notes
+
+::: {.notes}
 * In particular, published spreadsheets should be in an open format, but {openxlsx} nor other packages write Workbook-class objects to ODS.
 * {openxlsx} is versatile, but some things are tricky (placeholder zeroes in decimals, filling in file properties, etc), but I'm keeping an eye on {openxlsx2}.
-* The package is opinionated for simplicity and is not completely flexible as a result (e.g. each cover subsection has only a single body row, the pre-table metadata is only table count, note presence, blank-cell meaning and data source).
+* A more focused example: notes are pretty clunky to add; might be a better solution?
 * Leave an issue or pull request.
 :::
 
 ## Future {.center}
 
 * Bugfixes, requests
-* Mimic gptables
-* YAML input
+* Mirror gptables output?
+* YAML input?
 
 ::: {.notes}
 * There's plenty to be done to improve the package.
-* Leave an issue or pull request.
+* As ever, user feedback and bugs.
+* gptables and a11ytables should converge as much as possible so that analyst users can expect the same compliant output despite which tool they use. What are the optimum opinionated features?
+* The problem is I have no time!
 :::
 
 # If all else fails 
 
 ::: {.notes}
+* The idea is to fix the problem at the source..
+* But this won't be possible for older spreadsheets and for pipelines that have inertia.
+* What can you do?
 :::
 
 ## {background-image='images/website_smungs.png'}
 
 ::: {.notes}
-* [Link to page](https://nacnudus.github.io/spreadsheet-munging-strategies/).
+* [Spreadsheet Munging Strategies](https://nacnudus.github.io/spreadsheet-munging-strategies/) by another colleague, [Duncan Garmonsway](https://nacnudus.github.io/duncangarmonsway/).
 * Untidy, inaccessible spreadsheets pose a particular problem for further analysis.
-* See [Duncan Garmonsway](https://nacnudus.github.io/duncangarmonsway/)'s [{tidyxl}](https://nacnudus.github.io/tidyxl/index.html) and [{unpivotr}](https://nacnudus.github.io/unpivotr/) R packages for help.
+* See Duncan's [{tidyxl}](https://nacnudus.github.io/tidyxl/index.html) and [{unpivotr}](https://nacnudus.github.io/unpivotr/) R packages.
 * I want to help limit the need for these tools (sorry Duncan).
 :::
 
@@ -574,3 +595,19 @@ list.files("eggs", pattern = ".xlsx$")
 1. How could you improve user experience?
 1. Do you have the right processes in place?
 1. Could you create tools to remove friction?
+
+## tl;dr {.center}
+
+:::: {.columns}
+
+::: {.column width='70%'}
+Generate best-practice spreadsheets with [{a11ytables}](https://www.co-analysis.github.io/a11ytables)
+
+Make the world a better place (marginally)
+:::
+
+::: {.column width='30%'}
+![](images/qr_a11ytables-docs.png){alt="QR code that points to the documentation website of the R package 'a11ytables'."}
+:::
+
+::::

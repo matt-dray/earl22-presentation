@@ -701,12 +701,14 @@
 <li>Simple</li>
 <li>Opinionated</li>
 <li>Compliant</li>
+<li>Known</li>
 </ol>
 <aside class="notes">
 <ol type="1">
 <li>Simple user-interface/API, internal structure should be understood by devs</li>
 <li>Decisions should be taken for you to help speed things up and maintain consistency.</li>
 <li>The whole point is to meet the guidance, {a11ytables} accessibility checklist vignette.</li>
+<li>Should try to be a generic cross-government, unified solution to prevent duplicated effort (perhaps easier for my department, which is a the centre of government).</li>
 </ol>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1435,19 +1437,46 @@ Worksheets:
 <h1>But</h1>
 
 </section>
-<section id="current-issues" class="slide level2 center">
-<h2>Current issues</h2>
+<section id="not-perfect" class="slide level2 center">
+<h2>Not perfect</h2>
 <ul>
-<li>Writes to xlsx, not ods</li>
-<li>{openxlsx} has limitations</li>
-<li>Opinionated approach</li>
+<li>User-input</li>
+<li>Opinionated</li>
+<li>User-testing</li>
 </ul>
 <aside class="notes">
 <ul>
 <li>The package doesn’t get you a 100% compliant output.</li>
+<li>Can’t guarantee bad user input.</li>
+<li>To keep the package simple, certain choices may not suit the user; some extra editing of the a11ytable or Workbook may be required, but this can be made part of the analyst pipeline.</li>
+<li>The package is opinionated for simplicity and is not completely flexible as a result (e.g.&nbsp;each cover subsection has only a single body row, the pre-table metadata is only table count, note presence, blank-cell meaning and data source).</li>
+<li>The package is not yet fully user tested.</li>
+<li>Leave an issue or pull request.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="clunk" class="slide level2 center">
+<h2>Clunk</h2>
+<ul>
+<li>Not ods</li>
+<li>{openxlsx} has limitations</li>
+<li>Notes</li>
+</ul>
+<aside class="notes">
+<ul>
 <li>In particular, published spreadsheets should be in an open format, but {openxlsx} nor other packages write Workbook-class objects to ODS.</li>
 <li>{openxlsx} is versatile, but some things are tricky (placeholder zeroes in decimals, filling in file properties, etc), but I’m keeping an eye on {openxlsx2}.</li>
-<li>The package is opinionated for simplicity and is not completely flexible as a result (e.g.&nbsp;each cover subsection has only a single body row, the pre-table metadata is only table count, note presence, blank-cell meaning and data source).</li>
+<li>A more focused example: notes are pretty clunky to add; might be a better solution?</li>
 <li>Leave an issue or pull request.</li>
 </ul>
 <style type="text/css">
@@ -1466,13 +1495,15 @@ Worksheets:
 <h2>Future</h2>
 <ul>
 <li>Bugfixes, requests</li>
-<li>Mimic gptables</li>
-<li>YAML input</li>
+<li>Mirror gptables output?</li>
+<li>YAML input?</li>
 </ul>
 <aside class="notes">
 <ul>
 <li>There’s plenty to be done to improve the package.</li>
-<li>Leave an issue or pull request.</li>
+<li>As ever, user feedback and bugs.</li>
+<li>gptables and a11ytables should converge as much as possible so that analyst users can expect the same compliant output despite which tool they use. What are the optimum opinionated features?</li>
+<li>The problem is I have no time!</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1490,7 +1521,11 @@ Worksheets:
 <section id="if-all-else-fails" class="title-slide slide level1 center">
 <h1>If all else fails</h1>
 <aside class="notes">
-
+<ul>
+<li>The idea is to fix the problem at the source..</li>
+<li>But this won’t be possible for older spreadsheets and for pipelines that have inertia.</li>
+<li>What can you do?</li>
+</ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1507,9 +1542,9 @@ Worksheets:
 <h2></h2>
 <aside class="notes">
 <ul>
-<li><a href="https://nacnudus.github.io/spreadsheet-munging-strategies/">Link to page</a>.</li>
+<li><a href="https://nacnudus.github.io/spreadsheet-munging-strategies/">Spreadsheet Munging Strategies</a> by another colleague, <a href="https://nacnudus.github.io/duncangarmonsway/">Duncan Garmonsway</a>.</li>
 <li>Untidy, inaccessible spreadsheets pose a particular problem for further analysis.</li>
-<li>See <a href="https://nacnudus.github.io/duncangarmonsway/">Duncan Garmonsway</a>’s <a href="https://nacnudus.github.io/tidyxl/index.html">{tidyxl}</a> and <a href="https://nacnudus.github.io/unpivotr/">{unpivotr}</a> R packages for help.</li>
+<li>See Duncan’s <a href="https://nacnudus.github.io/tidyxl/index.html">{tidyxl}</a> and <a href="https://nacnudus.github.io/unpivotr/">{unpivotr}</a> R packages.</li>
 <li>I want to help limit the need for these tools (sorry Duncan).</li>
 </ul>
 <style type="text/css">
@@ -1531,6 +1566,17 @@ Worksheets:
 <li>Do you have the right processes in place?</li>
 <li>Could you create tools to remove friction?</li>
 </ol>
+</section>
+<section id="tldr-1" class="slide level2 center">
+<h2>tl;dr</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p>Generate best-practice spreadsheets with <a href="https://www.co-analysis.github.io/a11ytables">{a11ytables}</a></p>
+<p>Make the world a better place (marginally)</p>
+</div><div class="column" style="width:30%;">
+<p><img data-src="images/qr_a11ytables-docs.png" alt="QR code that points to the documentation website of the R package 'a11ytables'."></p>
+</div>
+</div>
 <div class="footer footer-default">
 <p>WORK IN PROGRESS</p>
 </div>
