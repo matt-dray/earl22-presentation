@@ -47,10 +47,21 @@ Make the world a better place (marginally)
 
 ## Ahoy {.center background-image='images/bg_cells.png' background-size='250px' background-repeat='repeat'}
 
-My jam: R for reproducibility (and memes)
+:::: {.columns}
 
-`r fontawesome::fa('globe')` [matt-dray.com](https://www.matt-dray.com) 
-`r fontawesome::fa('twitter')` [@mattdray](https://www.twitter.com/mattdray) 
+::: {.column width='70%'}
+I like R for reproducibility 
+
+(And for memes)
+
+`r fontawesome::fa('twitter')` [@mattdray](https://www.twitter.com/mattdray) `r fontawesome::fa('globe')` [matt-dray.com](https://www.matt-dray.com) 
+:::
+
+::: {.column width='30%'}
+![](images/mattdray-avatar.png){alt="16 by 16 pixel image of the author's face, which has big eyebrows and a goatee."}
+:::
+
+::::
 
 ::: {.notes}
 * I work in UK government and I'm talking about something I made in that official capacity.
@@ -67,7 +78,9 @@ My jam: R for reproducibility (and memes)
 * The intent is to demonstrate opportunity, not to call anyone out. The maintainer of the statistics knows I'm talking about this.
 :::
 
-## {background-image='images/website_eggs.png'}
+## {auto-animate=true auto-animate-easing='ease-in-out' background-image='images/website_eggs.png'}
+
+![](images/not-clippy.png){.absolute top='10%' left='90%' width='100'}
 
 ::: {.notes}
 * Defra's ['Latest UK egg statistics'](https://www.gov.uk/government/statistics/egg-statistics).
@@ -135,6 +148,8 @@ My jam: R for reproducibility (and memes)
 :::
 
 ## {background-image='images/spreadsheet_empathy-hidden.png'}
+
+![](images/not-clippy-inverse.png){.absolute top='70%' left='95%' width='100'}
 
 ::: {.notes}
 * On accessibility in particular, Hannah wrote [a great blog](https://analysisfunction.civilservice.gov.uk/blog/accessibility-empathy-for-users-of-spreadsheets/) about accessibility empathy for spreadsheet users.
