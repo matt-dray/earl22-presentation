@@ -3,6 +3,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
 
 /*-- scss:defaults --*/
 
@@ -27,3 +28,15 @@ $link-color: darken($theme-green, 50%);
 
 /*-- scss:rules --*/
 
+.clippy-speech {
+  background: #FFFFC8; 
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 10px; 
+  width: 175px; 
+  height: 175px; 
+  margin: 10px; 
+  font-family: 'Comic Neue'; 
+  font-size: 30px; 
+  color: black;
+}

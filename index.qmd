@@ -80,7 +80,19 @@ I like R for reproducibility
 
 ## {auto-animate=true auto-animate-easing='ease-in-out' background-image='images/website_eggs.png'}
 
-![](images/not-clippy.png){.absolute top='10%' left='90%' width='100'}
+::: {.clippy-speech .absolute top='150%' left='150%' data-id='speech' }
+It looks like you're trying to improve a spreadsheet.
+:::
+
+![](images/not-clippy.png){.absolute top='150%' left='150%' width='100'}
+
+## {auto-animate=true auto-animate-easing='ease-in-out' background-image='images/website_eggs.png'}
+
+::: {.clippy-speech .absolute top='15%' left='45%' data-id='speech' }
+It looks like you're trying to improve a spreadsheet.
+:::
+
+![](images/not-clippy.png){.absolute top='30%' left='65%' width='100'}
 
 ::: {.notes}
 * Defra's ['Latest UK egg statistics'](https://www.gov.uk/government/statistics/egg-statistics).
