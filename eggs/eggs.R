@@ -33,8 +33,7 @@ args_df <- data.frame(
 )
 
 # Read in all the subtables
-data_in <- pmap(args_df, readODS::read_ods) |> 
-  set_names(table_names)
+data_in <- pmap(args_df, readODS::read_ods) |> set_names(table_names)
 
 # Full years (quarterly data does go to 2022 Q2)
 year_range <- 1996:2021
@@ -106,7 +105,9 @@ pivot_features <- tribble(
 )
 
 # Map over each set of features to pivot longer and correct numeric rounding
-tables_list <- pmap(pivot_features, lengthen_tables) |> set_names(table_names)
+tables_list <- pmap(pivot_features, lengthen_tables) |> 
+  map(as.data.frame) |>  # convert from tibbles for demo purposes
+  set_names(table_names)
 
 
 # Prepare tables for meta sheets ------------------------------------------

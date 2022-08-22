@@ -25,7 +25,7 @@ library(a11ytables)
 :::: {.columns}
 
 ::: {.column width="70%"}
-Generate best-practice spreadsheets with {a11ytables}
+Generate best-practice spreadsheets with help from {a11ytables}
 
 <br>
 
@@ -41,8 +41,7 @@ Generate best-practice spreadsheets with {a11ytables}
 ::::
 
 ::: {.notes}
-* The package helps bring automation, consistency and reproducibility to usable spreadsheets; it does the hard work for you.
-* It can make your life easier.
+* The package helps bring automation, consistency and reproducibility; it does the hard work for you.
 * But the talk is also about inclusivity, taking the initiative and fixing things.
 * Which makes everyone's lives better.
 :::
@@ -52,11 +51,10 @@ Generate best-practice spreadsheets with {a11ytables}
 :::: {.columns}
 
 ::: {.column width="70%"}
-I like R for automation/reproducibility
+* R for reproducibility (official)
+* Off-piste R (personal)
 
-...and for memes
 
-<br>
 
 `r fontawesome::fa('twitter')` [@mattdray](https://www.twitter.com/mattdray)
 
@@ -64,7 +62,7 @@ I like R for automation/reproducibility
 :::
 
 ::: {.column width="30%"}
-![](images/mattdray-avatar.png){alt="16 by 16 pixel image of the author's face, which has big eyebrows and a goatee."}
+![](images/mattdray-avatar.png){alt="16 by 16 pixelated image of the author's face, which has big eyebrows and a goatee."}
 :::
 
 ::::
@@ -219,16 +217,6 @@ It looks like you're trying to improve a spreadsheet.
 4. Should try to be a generic cross-government, unified solution to prevent duplicated effort (perhaps easier for my department, which is a the centre of government); it needs to put out there for discussion and improvement. (Also because I wanted the acronym to spell 'SOCK'.)
 :::
 
-## {background-image="images/website_a11ytables.png" alt="Screesnhot of the documentation website for the R package called 'a11ytables', which is open on the README page."}
-
-::: {.notes}
-* [Documentation](https://co-analysis.github.io/a11ytables/).
-* Bottom-up to solve my own needs, with wider implications.
-1. Simple: interface has only two main functions; only two dependencies are {openxlsx} and {pillar}; familiarity of dataframes and pipes; user brings data and information, {a11ytables} does the rest.
-2. Opinionated: some flexibly lost, not all spreadsheets are simple, but you can intervene.
-3. Compliant: a vignette compares the package's functionality to to the accessibility checklist in the guidance.
-:::
-
 ## {background-image="images/website_gptables.png" alt="Screesnhot of the documentation website for the Python package called 'gptables', which is open on the README page."}
 
 ::: {.notes}
@@ -239,7 +227,22 @@ It looks like you're trying to improve a spreadsheet.
 * Slight differences between {a11ytables} and gptables exist, hopefully will clear these up.
 :::
 
-# How 
+## {background-image="images/website_a11ytables.png" alt="Screesnhot of the documentation website for the R package called 'a11ytables', which is open on the README page."}
+
+::: {.notes}
+* [Documentation](https://co-analysis.github.io/a11ytables/).
+* Bottom-up to solve my own needs, with wider implications.
+1. Simple: interface has only two main functions; only two dependencies are {openxlsx} and {pillar}; familiarity of dataframes and pipes; user brings data and information, {a11ytables} does the rest.
+2. Opinionated: some flexibly lost, not all spreadsheets are simple, but you can intervene.
+3. Compliant: a vignette compares the package's functionality to to the accessibility checklist in the guidance.
+:::
+
+# Fresh eggs?
+
+::: {.notes}
+* A demo: let's convert the published eggs spreadsheet with {a11ytables}.
+* From installing the package to a vanilla spreadsheet output.
+:::
 
 ## Install {auto-animate="true"}
 
@@ -251,13 +254,15 @@ remotes::install_github(
   build_vignettes = TRUE
 )
 
+# also installs {openxlsx}, {pillar}
+
 library(a11ytables)
 ```
 
 ::: {.notes}
-* GitHub only for now.
+* The package hasn't reached a v1 yet; there's more to do.
+* So it's GitHub only for now.
 * Is this a barrier in some orgs?
-* Still in development, but it has reached version 0.1.
 * CRAN is a future goal, maybe.
 :::
 
@@ -266,7 +271,7 @@ library(a11ytables)
 ```{r}
 create_a11ytable() |>
   generate_workbook() |>
-  openxlsx::saveWorkbook()
+  openxlsx::saveWorkbook("file.xlsx")
 ```
 
 ::: {.notes}
@@ -284,7 +289,7 @@ create_a11ytable(
   tables                                 # required listcol of dataframes
 ) |>
   generate_workbook() |>
-  openxlsx::saveWorkbook("file.csv")
+  openxlsx::saveWorkbook("file.xlsx")
 ```
 
 ::: {.notes}
@@ -297,67 +302,59 @@ create_a11ytable(
   - `tables` is a required list-column of dataframes that contain the main bulk of each sheet (stats tables are obviously tables, but the cover and notes are also given as tables; you also provide the cover as a dataframe, where each row becomes a subsection with a title and body)
 :::
 
-## Prep {auto-animate="true"}
+## Prep inputs {auto-animate="true"}
 
 ```{r}
 #| eval: true
 source("eggs/eggs.R")
+ls()
 ```
 
 ::: {.notes}
 * I pre-wrote some code to extract data from the eggs spreadsheet.
 * You can find the code and original spreadsheet in [the repo that hosts these slides](https://www.github.com/matt-dray/earl22-presentation).
 * Importantly, I didn't mimic the whole process of production for this example; I just copied the data out of the pre-existing spreadsheet.
-:::
-
-## Prep {auto-animate="true"}
-
-```{r}
-#| eval: true
-source("eggs/eggs.R")
-ls()
-```
-
-::: {.notes}
 * The code outputs some objects that are ready to be passed to the arguments of `create_a11ytable()`.
 * I recommend generating each object outside of the call to `create_a11ytable()` where possible; it keeps things cleaner.
+* For smaller spreadsheets it would be fine to provide the arguments in the function call itself.
 :::
 
-## Prep {auto-animate="true"}
+## Prep inputs {auto-animate="true"}
 
 ```{r}
 #| eval: true
 source("eggs/eggs.R")
 ls()
-egg_sheet_titles
+egg_sheet_titles[1:4]
+class(egg_tables)
 ```
 
 ::: {.notes}
 * Here's `the sheet_titles` object, which is a required character vector that contains the titles of each worksheet, for example.
 :::
 
-## Create {auto-animate="true"}
+## Combine {auto-animate="true"}
 
 ```{r}
-egg_at <- create_a11ytable()
+create_a11ytable()
 ```
 
 ::: {.notes}
 * Now we can pass our egg objects to the arguments of `create_a11ytable()`.
 :::
 
-## Create {auto-animate="true"}
+## Combine {auto-animate="true"}
 
 ```{r}
 #| eval: true
-egg_at <- create_a11ytable(
+create_a11ytable(
   tab_titles   = egg_tab_titles, 
   sheet_types  = egg_sheet_types, 
   sheet_titles = egg_sheet_titles,
   blank_cells  = egg_blank_cells, 
   sources      = egg_sources,
   tables       = egg_tables
-)
+) -> egg_at
 ```
 
 ::: {.notes}
@@ -366,18 +363,18 @@ egg_at <- create_a11ytable(
 * User provides the info, function does the rest.
 :::
 
-## Create {auto-animate="true"}
+## Combine {auto-animate="true"}
 
 ```{r}
 #| eval: true
-egg_at <- create_a11ytable(
+create_a11ytable(
   tab_titles   = egg_tab_titles, 
   sheet_types  = egg_sheet_types, 
   sheet_titles = egg_sheet_titles,
   blank_cells  = egg_blank_cells, 
   sources      = egg_sources,
   tables       = egg_tables
-)
+) -> egg_at
 
 class(egg_at)
 ```
@@ -529,45 +526,44 @@ openxlsx::saveWorkbook(
 
 # But 
 
-## Not perfect {.center}
+## Outputs are imperfect {.center}
 
+* Final tweaks needed
+* Assumes simple spreadsheets
 * Garbage in, garbage out
-* Opinionated
-* User testing
 
 ::: {.notes}
 * The package doesn't get you a 100% compliant output.
-* Can't guarantee bad user input.
 * To keep the package simple, certain choices may not suit the user; some extra editing of the a11ytable or Workbook may be required, but this can be made part of the analyst pipeline.
 * The package is opinionated for simplicity and is not completely flexible as a result (e.g. each cover subsection has only a single body row, the pre-table metadata is only table count, note presence, blank-cell meaning and data source).
-* The package is not yet fully user tested.
-* Leave an issue or pull request.
+* Thousands of spreadsheets are produced; there's likely more complicated ones out there.
+* Can't completely protect from bad user input.
 :::
 
-## Clunk {.center}
+## Clunk! {.center}
 
-* Not ods
 * {openxlsx} has limitations
-* Fiddly prep?
+* Output isn't ODS
+* Prep is fiddly
 
 ::: {.notes}
-* In particular, published spreadsheets should be in an open format, but {openxlsx} nor other packages write Workbook-class objects to ODS.
 * {openxlsx} is versatile, but some things are tricky (placeholder zeroes in decimals, filling in file properties, etc), but I'm keeping an eye on {openxlsx2}.
+* In particular, published spreadsheets should be in an open format, but {openxlsx} nor other packages write Workbook-class objects to ODS.
 * A more focused example: notes are pretty clunky to add; might be a better solution?
-* Leave an issue or pull request.
 :::
 
 ## Future {.center}
 
+* Bugfixes, requests, user testing
 * YAML input
-* Mirror gptables output
-* Bugfixes, requests
+* Converge with gptables
 
 ::: {.notes}
 * There's plenty to be done to improve the package.
-* As ever, user feedback and bugs.
+* As ever, user feedback and bugs; particularly testing internally with developers and externally with people who use assistive tech.
+* Perhaps a new, more readable input option, like YAML, to arrange input to `create_a11ytable()`.
 * gptables and a11ytables should converge as much as possible so that analyst users can expect the same compliant output despite which tool they use. What are the optimum opinionated features?
-* The problem is I have no time!
+* The problem is I have no time! PRs always welcome.
 :::
 
 # So
@@ -578,30 +574,39 @@ openxlsx::saveWorkbook(
 
 ## Can you {.center}
 
-* improve accessibility?
-* improve your processes?
+* improve user experience?
+* make it easier for you?
 * create common tools?
 
 ::: {.notes}
-* Help others.
-* Help yourself.
+* Improve accessibility.
+* Simplify creation of complex things.
+* Stop divided, wasted effort to solve the same problem.
 :::
 
 ## tl;dr {.center}
 
 :::: {.columns}
 
-::: {.column width="70%"}
-Take a sad spreadsheet and make it better with {a11ytables}
-
-<br>
+::: {.column width="40%"}
+Help for generating best-practice spreadsheets
 
 `r fontawesome::fa('twitter')` [@mattdray](https://www.twitter.com/mattdray)
 
 `r fontawesome::fa('globe')` [matt-dray.com](https://www.matt-dray.com) 
 :::
 
-::: {.column width="30%"}
+::: {.column width="5%"}
+:::
+
+::: {.column width="25%"}
+![](images/hex_a11ytables-logo.png){width="85%" height="85%" alt="Hex logo for the a11ytables R package. Letters of the word are split into separatae cells of a grid."}
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="25%"}
 ![](images/qr_a11ytables-docs.png){alt="QR code that points to the documentation website of the R package 'a11ytables'."}
 :::
 
@@ -611,7 +616,7 @@ Take a sad spreadsheet and make it better with {a11ytables}
 
 ## Credits {.center}
 
-* Spreadsheet guidance: Hannah Thomas, Analysis Function
+* Guidance docs: Hannah Thomas, Analysis Function
 * gptables: Rowan Hemsi and contributors
 * {a11ytables} contributors: Tim Taylor, Matt Kerlogue
 * {openxlsx} and {pillar} contributors/maintainers
