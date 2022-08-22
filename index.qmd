@@ -25,13 +25,13 @@ library(a11ytables)
 
 :::: {.columns}
 
-::: {.column width='70%'}
+::: {.column width="70%"}
 Generate best-practice spreadsheets with [{a11ytables}](https://www.co-analysis.github.io/a11ytables)
 
 Make the world a better place (marginally)
 :::
 
-::: {.column width='30%'}
+::: {.column width="30%"}
 ![](images/qr_a11ytables-docs.png){alt="QR code that points to the documentation website of the R package 'a11ytables'."}
 :::
 
@@ -48,7 +48,7 @@ Make the world a better place (marginally)
 
 :::: {.columns}
 
-::: {.column width='70%'}
+::: {.column width="70%"}
 I like R for reproducibility 
 
 (And for memes)
@@ -56,7 +56,7 @@ I like R for reproducibility
 `r fontawesome::fa('twitter')` [@mattdray](https://www.twitter.com/mattdray) `r fontawesome::fa('globe')` [matt-dray.com](https://www.matt-dray.com) 
 :::
 
-::: {.column width='30%'}
+::: {.column width="30%"}
 ![](images/mattdray-avatar.png){alt="16 by 16 pixel image of the author's face, which has big eyebrows and a goatee."}
 :::
 
@@ -77,21 +77,21 @@ I like R for reproducibility
 * The intent is to demonstrate opportunity, not to call anyone out. The maintainer of the statistics knows I'm talking about this.
 :::
 
-## {auto-animate=true auto-animate-easing='ease-in-out' background-image='images/website_eggs.png'}
+## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/website_eggs.png" alt="Screenshot of the GOV.UK webpage containing data released as part of the latest UK egg statistics, which has the National Statistics badge."}
 
-::: {.clippy-speech .absolute top='120%' left='120%' data-id='speech'}
+::: {.clippy-speech .absolute top="120%" left="120%" data-id="speech" alt="A yellow speech bubble that says 'it looks like you're trying to improve a spreadsheet', which is being spoken by the Microsoft Office mascot Clippy."}
 It looks like you're trying to improve a spreadsheet.
 :::
 
-![](images/not-clippy.png){.absolute top='120%' left='120%' width='100'}
+![](images/not-clippy.png){.absolute top="120%" left="120%" width="100"  alt="An unofficial of the The Microsoft Office mascot Clippy, a paperclip with eyes."}
 
-## {auto-animate=true auto-animate-easing='ease-in-out' background-image='images/website_eggs.png'}
+## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/website_eggs.png" alt="Screenshot of the GOV.UK webpage containing data released as part of the latest UK egg statistics, which has the National Statistics badge."}
 
-::: {.clippy-speech .absolute top='10%' left='45%' data-id='speech'}
+::: {.clippy-speech .absolute top="10%" left="45%" data-id='speech' alt="A yellow speech bubble that says 'it looks like you're trying to improve a spreadsheet', which is being spoken by the Microsoft Office mascot Clippy."}
 It looks like you're trying to improve a spreadsheet.
 :::
 
-![](images/not-clippy.png){.absolute top='30%' left='65%' width='100'}
+![](images/not-clippy.png){.absolute top="30%" left="65%" width="100" alt="An unofficial of the The Microsoft Office mascot Clippy, a paperclip with eyes."}
 
 ::: {.notes}
 * Defra's ['Latest UK egg statistics'](https://www.gov.uk/government/statistics/egg-statistics).
@@ -100,9 +100,9 @@ It looks like you're trying to improve a spreadsheet.
 * Branded as National Statistics. That's important.
 :::
 
-## {auto-animate=true auto-animate-easing='ease-in-out' background-image='images/spreadsheet_old-eggs-1.png'}
+## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/spreadsheet_old-eggs-1.png" alt="Screenshot of an Excel file that contains egg data. There are some accessibility issues such as blank cells. Other issues include inconsistent cell borders."}
 
-![](images/not-clippy.png){.absolute top='3%' left='55%' width='100'}
+![](images/not-clippy.png){.absolute top="3%" left="55%" width="100" alt="An unofficial of the The Microsoft Office mascot Clippy, a paperclip with eyes."}
 
 ::: {.notes}
 * This is the 'UK egg packing station throughput and prices dataset' spreadsheet.
@@ -117,9 +117,9 @@ It looks like you're trying to improve a spreadsheet.
   - there's some stray values with no explanation
 :::
 
-## {auto-animate=true auto-animate-easing='ease-in-out' background-image='images/spreadsheet_old-eggs-2.png'}
+## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/spreadsheet_old-eggs-2.png" alt="Screenshot of an Excel file that contains egg data. There are some accessibility issues such as blank cells. Other issues include unlabelled footnotes."}
 
-![](images/not-clippy.png){.absolute top='75%' left='45%' width='100'}
+![](images/not-clippy.png){.absolute top="75%" left="45%" width="100" alt="An unofficial of the The Microsoft Office mascot Clippy, a paperclip with eyes."}
 
 ::: {.notes}
 * Second tab: 'Packers_Annual'.
@@ -130,9 +130,9 @@ It looks like you're trying to improve a spreadsheet.
   - shorthand not fully conforming to guidance ('c' rather than '[c]'?)
 :::
 
-## {background-image='images/spreadsheet_old-eggs-3.png' auto-animate=true auto-animate-easing='ease-in-out'}
+## {background-image="images/spreadsheet_old-eggs-3.png" auto-animate="true" auto-animate-easing="ease-in-out" alt="Screenshot of an Excel file that contains egg data. This is a tab labelled 'information' that contains important information, except it's the final tab and the data are held in text boxes rather than in cells."}
 
-![](images/not-clippy.png){.absolute top='25%' left='27%' width='100'}
+![](images/not-clippy.png){.absolute top="25%" left="27%" width="100" alt="An unofficial of the The Microsoft Office mascot Clippy, a paperclip with eyes."}
 
 ::: {.notes}
 * Third tab: 'Information'.
@@ -151,7 +151,7 @@ It looks like you're trying to improve a spreadsheet.
 * However, there is a place to start: some codified and exhaustive guidance on the preferred outcomes.
 :::
 
-## {background-image='images/website_spreadsheet-guidance-af.png'}
+## {background-image="images/website_spreadsheet-guidance-af.png" alt="Screenshot of a page of the UK government's Analysis Function website, which contains guidance called 'releasing statistics in spreadsheets'."}
 
 ::: {.notes}
 * The Analysis Function has a webpage with [some bumper advice](https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/) on releasing data in spreadsheet format. This was coordinated by Hannah Thomas.
@@ -159,9 +159,9 @@ It looks like you're trying to improve a spreadsheet.
 * Promotes consistency and usability, but particularly accessibility.
 :::
 
-## {background-image='images/spreadsheet_empathy-hidden.png'}
+## {background-image="images/spreadsheet_empathy-hidden.png" alt="Screenshot of an Excel workbook where all cells of the current sheet are filled black, obscuring the text. The user is expected to retrieve information from the sheet to empathise with users of assistive technology, etc."}
 
-![](images/not-clippy-inverse.png){.absolute top='70%' left='95%' width='100'}
+![](images/not-clippy-inverse.png){.absolute top="70%" left="95%" width="100" alt="An unofficial of the The Microsoft Office mascot Clippy, a paperclip with eyes."}
 
 ::: {.notes}
 * On accessibility in particular, Hannah wrote [a great blog](https://analysisfunction.civilservice.gov.uk/blog/accessibility-empathy-for-users-of-spreadsheets/) about accessibility empathy for spreadsheet users.
@@ -171,7 +171,7 @@ It looks like you're trying to improve a spreadsheet.
 * Hannah also runs an accessibility clinic for civil servants to chat through concerns or ideas.
 :::
 
-## {background-image='images/website_rap-strategy.png'}
+## {background-image="images/website_rap-strategy.png" alt="Screenshot of the UK government's Analysis Function website, on a page that contains the Reproducible Analytrical Pipelines (RAP) strategy."}
 
 ::: {.notes}
 * We can help make users' lives better with better spreadsheets. But there's also a way to make out lives easier as producers.
@@ -207,7 +207,7 @@ It looks like you're trying to improve a spreadsheet.
 4. Should try to be a generic cross-government, unified solution to prevent duplicated effort (perhaps easier for my department, which is a the centre of government).
 :::
 
-## {background-image='images/website_a11ytables-docs.png'}
+## {background-image="images/website_a11ytables-docs.png" alt="Screesnhot of the documentation website for the R package called 'a11ytables', which is open on the README page."}
 
 ::: {.notes}
 * [Documentation](https://co-analysis.github.io/a11ytables/).
@@ -217,7 +217,7 @@ It looks like you're trying to improve a spreadsheet.
 3. Compliant: a vignette compares the package's functionality to to the accessibility checklist in the guidance.
 :::
 
-## {background-image='images/website_gptables-docs.png'}
+## {background-image="images/website_gptables-docs.png" alt="Screesnhot of the documentation website for the Python package called 'gptables', which is open on the README page."}
 
 ::: {.notes}
 * [Documentation](https://gptables.readthedocs.io/en/latest/)
@@ -229,7 +229,7 @@ It looks like you're trying to improve a spreadsheet.
 
 # How 
 
-## Install {auto-animate='true'}
+## Install {auto-animate="true"}
 
 ```{r}
 install.packages("remotes")
@@ -249,7 +249,7 @@ library(a11ytables)
 * CRAN is a future goal, maybe.
 :::
 
-## Overview {auto-animate='true'}
+## Overview {auto-animate="true"}
 
 ```{r}
 create_a11ytable() |>
@@ -263,7 +263,7 @@ create_a11ytable() |>
 1. Write that object to an xlsx file
 :::
 
-## Overview {auto-animate='true'}
+## Overview {auto-animate="true"}
 
 ```{r}
 create_a11ytable(
@@ -285,7 +285,7 @@ create_a11ytable(
   - `tables` is a required list-column of dataframes that contain the main bulk of each sheet (stats tables are obviously tables, but the cover and notes are also given as tables; you also provide the cover as a dataframe, where each row becomes a subsection with a title and body)
 :::
 
-## Prep {auto-animate='true'}
+## Prep {auto-animate="true"}
 
 ```{r}
 #| eval: true
@@ -298,7 +298,7 @@ source("eggs/eggs.R")
 * Importantly, I didn't mimic the whole process of production for this example; I just copied the data out of the pre-existing spreadsheet.
 :::
 
-## Prep {auto-animate='true'}
+## Prep {auto-animate="true"}
 
 ```{r}
 #| eval: true
@@ -311,7 +311,7 @@ ls()
 * I recommend generating each object outside of the call to `create_a11ytable()` where possible; it keeps things cleaner.
 :::
 
-## Prep {auto-animate='true'}
+## Prep {auto-animate="true"}
 
 ```{r}
 #| eval: true
@@ -324,7 +324,7 @@ egg_sheet_titles
 * Here's `the sheet_titles` object, which is a required character vector that contains the titles of each worksheet, for example.
 :::
 
-## Create {auto-animate='true'}
+## Create {auto-animate="true"}
 
 ```{r}
 egg_at <- create_a11ytable()
@@ -334,7 +334,7 @@ egg_at <- create_a11ytable()
 * Now we can pass our egg objects to the arguments of `create_a11ytable()`.
 :::
 
-## Create {auto-animate='true'}
+## Create {auto-animate="true"}
 
 ```{r}
 #| eval: true
@@ -354,7 +354,7 @@ egg_at <- create_a11ytable(
 * User provides the info, function does the rest.
 :::
 
-## Create {auto-animate='true'}
+## Create {auto-animate="true"}
 
 ```{r}
 #| eval: true
@@ -376,7 +376,7 @@ class(egg_at)
 * This means you can manipulate the output much like any dataframe object.
 :::
 
-## A dataframe? {auto-animate='true'}
+## A dataframe! {auto-animate="true"}
 
 ```{r}
 #| echo: true
@@ -391,7 +391,7 @@ egg_at
 * The list of dataframes has become a list-column.
 :::
 
-## A row {auto-animate='true'}
+## One row, one sheet {auto-animate="true"}
 
 ```{r}
 #| echo: true
@@ -405,7 +405,7 @@ str(egg_at[egg_at$tab_title == "Table_2", ] )
 * You can see the character vectors contain the information needed in that sheet, along with the dataframe that contains the stat table itself.
 :::
 
-## Workbook {auto-animate='true'}
+## Convert to Workbook {auto-animate="true"}
 
 ```{r}
 #| eval: true
@@ -419,7 +419,7 @@ class(egg_wb)
 * Works with a series of underlying `add_*()` functions to add elements to each sheet and `style_*()` functions that do simple stuff like adjust the font, but also dynamically change column widths and detect numeric columns that are stored as character due to notes or shorthand.
 :::
 
-## Workbook {auto-animate='true'}
+## Structured, styled {auto-animate="true"}
 
 ```{r}
 #| eval: true
@@ -430,7 +430,7 @@ egg_wb
 * Doesn't really matter what the Workbook-class object looks like, but the summary shows the worksheets that have been created and some of the custom changes, like row heights.
 :::
 
-## Write {auto-animate='true'}
+## Write {auto-animate="true"}
 
 ```{r}
 openxlsx::saveWorkbook(
@@ -443,9 +443,10 @@ openxlsx::saveWorkbook(
 ::: {.notes}
 * {openxlsx} already has a function to write a Workbook-class object to disk.
 * This saves us hassle.
+* There's also a handy `openXL()` function for opening a temporary copy.
 :::
 
-## Write {auto-animate='true'}
+## Write {auto-animate="true"}
 
 ```{r}
 #| eval: true
@@ -464,9 +465,9 @@ list.files("eggs", pattern = ".xlsx$")
 
 # Output 
 
-## {auto-animate=true auto-animate-easing='ease-in-out' background-image='images/spreadsheet_new-eggs-cover.png'}
+## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/spreadsheet_new-eggs-cover.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is the cover page with information structured and styled for usability and accessibility."}
 
-![](images/not-clippy-heart.png){.absolute top='40%' left='35%' width='100'}
+![](images/not-clippy-heart.png){.absolute top="40%" left="35%" width="100" alt="An unofficial of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head."}
 
 ::: {.notes}
 * Most of this information was in the 'information' tab or footnotes of the original spreadsheet.
@@ -478,9 +479,9 @@ list.files("eggs", pattern = ".xlsx$")
   - the subsection titles are in tall rows to create the illusion of whitespace without leaving an empty row
 :::
 
-## {auto-animate=true auto-animate-easing='ease-in-out' background-image='images/spreadsheet_new-eggs-contents.png'}
+## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/spreadsheet_new-eggs-contents.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is the contents page, which lets users navigate the workbook."}
 
-![](images/not-clippy-heart.png){.absolute top='2%' left='25%' width='100'}
+![](images/not-clippy-heart.png){.absolute top="2%" left="25%" width="100" alt="An unofficial of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head."}
 
 ::: {.notes}
 * Note in the contents that:
@@ -490,9 +491,9 @@ list.files("eggs", pattern = ".xlsx$")
   - the table is marked up as a table (there's a small marker in the lower right to indicate this), which is important
 :::
 
-## {auto-animate=true auto-animate-easing='ease-in-out' background-image='images/spreadsheet_new-eggs-notes.png'}
+## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/spreadsheet_new-eggs-notes.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is the notes page, which centralises and numbers the notes in the workbook."}
 
-![](images/not-clippy-heart.png){.absolute top='20%' left='35%' width='100'}
+![](images/not-clippy-heart.png){.absolute top="20%" left="35%" width="100" alt="An unofficial of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head."}
 
 ::: {.notes}
 * On the notes page, note that:
@@ -500,20 +501,21 @@ list.files("eggs", pattern = ".xlsx$")
   - the notes are in the standardised style of 'note x' written in square brackets
 :::
 
-## {auto-animate=true auto-animate-easing='ease-in-out' background-image='images/spreadsheet_new-eggs-t1.png'}
+## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/spreadsheet_new-eggs-t1.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is Table 5, which demonstrates how the 'a11ytables' package automatically widens columns with long names and also right-aligns numeric columns even if they contain text, like shorthand for missing or confidential data."}
 
-![](images/not-clippy-heart.png){.absolute top='3%' left='35%' width='100'}
+![](images/not-clippy-heart.png){.absolute top="3%" left="35%" width="100" alt="An unofficial of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head."}
 
 ::: {.notes}
 * Note in Table 1 that:
   - the theming again follows on from the other sheets
   - there is a new metadata element that provides the data source
   - the table has been dynamically placed in row 4 this time, after the three pre-table elements (was only two for the contents and notes pages)
+  - the column has been judged by {a11ytables} to be numeric, despite the shorthand it contains, and so it has been correctly right-aligned
 :::
 
-## {auto-animate=true auto-animate-easing='ease-in-out' background-image='images/spreadsheet_new-eggs-t2.png'}
+## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/spreadsheet_new-eggs-t2.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is Table 2, which demonstrates how the meta information above a table can be inserted dynamically without leaving blank rows. There is a row with the message that 'this table contains notes', which was absent in Table 1."}
 
-![](images/not-clippy-heart.png){.absolute  top='5%' left='35%' top=20 left=400 width='100'}
+![](images/not-clippy-heart.png){.absolute top="5%" left="35%" width="100" alt="An unofficial of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head."}
 
 ::: {.notes}
 * Note in Table 2 that:
@@ -521,9 +523,9 @@ list.files("eggs", pattern = ".xlsx$")
   - the placement of the table is again dynamic; there are four pre-table metadata elements, so the table begins in row 5
 :::
 
-## {auto-animate=true auto-animate-easing='ease-in-out' background-image='images/spreadsheet_new-eggs-t5.png'}
+## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/spreadsheet_new-eggs-t5.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is Table 1, which has a header with information that's useful for screenreaders, like 'this worksheet contains 1 table'. The data are in a flat table with no blank cells.."}
 
-![](images/not-clippy-heart.png){.absolute  top='30%' left='15%' width='100'}
+![](images/not-clippy-heart.png){.absolute  top="30%" left='15%' width="100" alt="An unofficial of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head."}
 
 ::: {.notes}
 * Table 5 has something different again, which is that the long header has led to an opinionated decision for the column to be widened
@@ -534,9 +536,9 @@ list.files("eggs", pattern = ".xlsx$")
 
 ## Not perfect {.center}
 
-* User-input
+* Garbage in, garbage out
 * Opinionated
-* User-testing
+* User testing
 
 ::: {.notes}
 * The package doesn't get you a 100% compliant output.
@@ -551,7 +553,7 @@ list.files("eggs", pattern = ".xlsx$")
 
 * Not ods
 * {openxlsx} has limitations
-* Notes
+* Fiddly prep?
 
 ::: {.notes}
 * In particular, published spreadsheets should be in an open format, but {openxlsx} nor other packages write Workbook-class objects to ODS.
@@ -562,9 +564,9 @@ list.files("eggs", pattern = ".xlsx$")
 
 ## Future {.center}
 
+* YAML input
+* Mirror gptables output
 * Bugfixes, requests
-* Mirror gptables output?
-* YAML input?
 
 ::: {.notes}
 * There's plenty to be done to improve the package.
@@ -581,7 +583,7 @@ list.files("eggs", pattern = ".xlsx$")
 * What can you do?
 :::
 
-## {background-image='images/website_smungs.png'}
+## {background-image="images/website_smungs.png" alt="Screenshot of the website for the book 'Spreadsheet Munging Strategies' by Duncan Garmonsway, which advises people how to extract data from spreadsheets using his packages 'unpivotr' and 'tidyxl'."}
 
 ::: {.notes}
 * [Spreadsheet Munging Strategies](https://nacnudus.github.io/spreadsheet-munging-strategies/) by another colleague, [Duncan Garmonsway](https://nacnudus.github.io/duncangarmonsway/).
@@ -590,24 +592,37 @@ list.files("eggs", pattern = ".xlsx$")
 * I want to help limit the need for these tools (sorry Duncan).
 :::
 
-## Consider  
+## Consider {.center}
 
 1. How could you improve user experience?
 1. Do you have the right processes in place?
-1. Could you create tools to remove friction?
+1. Could you create common tools to remove friction?
 
 ## tl;dr {.center}
 
 :::: {.columns}
 
-::: {.column width='70%'}
+::: {.column width="70%"}
 Generate best-practice spreadsheets with [{a11ytables}](https://www.co-analysis.github.io/a11ytables)
 
-Make the world a better place (marginally)
+<br>
+
+`r fontawesome::fa('twitter')` [@mattdray](https://www.twitter.com/mattdray) `r fontawesome::fa('globe')` [matt-dray.com](https://www.matt-dray.com) 
 :::
 
-::: {.column width='30%'}
+::: {.column width="30%"}
 ![](images/qr_a11ytables-docs.png){alt="QR code that points to the documentation website of the R package 'a11ytables'."}
 :::
 
 ::::
+
+## {background-color="black"}
+
+## Credits {.center}
+
+* Analysis Function accessibility: Hannah Thomas
+* gptables: Rowan Hemsi and contributors
+* {a11ytables} contributors: Tim Taylor, Matt Kerlogue
+* {openxlsx} and {pillar} contributors/maintainers
+* [OpenMoji](https://openmoji.org/): paperclip, heart (edited, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/#))
+
