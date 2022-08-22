@@ -1,6 +1,6 @@
 ---
 title: '{a11ytables}'
-subtitle: 'EARL, September 2022'
+subtitle: '#EarlConf, September 2022'
 author: 'Matt Dray, Civil Service'
 format:
   revealjs: 
@@ -25,9 +25,13 @@ library(a11ytables)
 :::: {.columns}
 
 ::: {.column width="70%"}
-Generate best-practice spreadsheets with [{a11ytables}](https://www.co-analysis.github.io/a11ytables)
+Generate best-practice spreadsheets with {a11ytables}
 
-Make the world a better place (marginally)
+<br>
+
+`r fontawesome::fa('github')` [github.com/co-analysis/a11ytables](https://www.github.com/co-analysis/a11ytables)
+
+`r fontawesome::fa('globe')` [co-analysis.github.io/a11ytables](https://co-analysis.github.io/a11ytables) 
 :::
 
 ::: {.column width="30%"}
@@ -48,11 +52,15 @@ Make the world a better place (marginally)
 :::: {.columns}
 
 ::: {.column width="70%"}
-I like R for reproducibility 
+I like R for automation/reproducibility
 
-(And for memes)
+...and for memes
 
-`r fontawesome::fa('twitter')` [@mattdray](https://www.twitter.com/mattdray) `r fontawesome::fa('globe')` [matt-dray.com](https://www.matt-dray.com) 
+<br>
+
+`r fontawesome::fa('twitter')` [@mattdray](https://www.twitter.com/mattdray)
+
+`r fontawesome::fa('globe')` [matt-dray.com](https://www.matt-dray.com) 
 :::
 
 ::: {.column width="30%"}
@@ -76,7 +84,7 @@ I like R for reproducibility
 * The intent is to demonstrate opportunity, not to call anyone out. The maintainer of the statistics knows I'm talking about this.
 :::
 
-## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/website_eggs.png" alt="Screenshot of the GOV.UK webpage containing data released as part of the latest UK egg statistics, which has the National Statistics badge."}
+## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/website_defra-eggs.png" alt="Screenshot of the GOV.UK webpage containing data released as part of the latest UK egg statistics, which has the National Statistics badge."}
 
 ::: {.clippy-speech .absolute top="120%" left="120%" data-id="speech" alt="A yellow speech bubble that says 'it looks like you're trying to improve a spreadsheet', which is being spoken by the Microsoft Office mascot Clippy."}
 It looks like you're trying to improve a spreadsheet.
@@ -84,7 +92,7 @@ It looks like you're trying to improve a spreadsheet.
 
 ![](images/not-clippy.png){.absolute top="120%" left="120%" width="100"  alt="An unofficial of the The Microsoft Office mascot Clippy, a paperclip with eyes."}
 
-## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/website_eggs.png" alt="Screenshot of the GOV.UK webpage containing data released as part of the latest UK egg statistics, which has the National Statistics badge."}
+## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/website_defra-eggs.png" alt="Screenshot of the GOV.UK webpage containing data released as part of the latest UK egg statistics, which has the National Statistics badge."}
 
 ::: {.clippy-speech .absolute top="10%" left="45%" data-id='speech' alt="A yellow speech bubble that says 'it looks like you're trying to improve a spreadsheet', which is being spoken by the Microsoft Office mascot Clippy."}
 It looks like you're trying to improve a spreadsheet.
@@ -142,7 +150,7 @@ It looks like you're trying to improve a spreadsheet.
   - GOV.UK link way off to the right
 :::
 
-# Support 
+# Guidance
 
 ::: {.notes}
 * Maybe you can see the things you'd like to fix, maybe some are obvious, maybe some are more subjective.
@@ -150,7 +158,7 @@ It looks like you're trying to improve a spreadsheet.
 * However, there is a place to start: some codified and exhaustive guidance on the preferred outcomes.
 :::
 
-## {background-image="images/website_spreadsheet-guidance-af.png" alt="Screenshot of a page of the UK government's Analysis Function website, which contains guidance called 'releasing statistics in spreadsheets'."}
+## {background-image="images/website_af-spreadsheet.png" alt="Screenshot of a page of the UK government's Analysis Function website, which contains guidance called 'releasing statistics in spreadsheets'."}
 
 ::: {.notes}
 * The Analysis Function has a webpage with [some bumper advice](https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/) on releasing data in spreadsheet format. This was coordinated by Hannah Thomas.
@@ -158,19 +166,24 @@ It looks like you're trying to improve a spreadsheet.
 * Promotes consistency and usability, but particularly accessibility.
 :::
 
-## {background-image="images/spreadsheet_empathy-hidden.png" alt="Screenshot of an Excel workbook where all cells of the current sheet are filled black, obscuring the text. The user is expected to retrieve information from the sheet to empathise with users of assistive technology, etc."}
-
-![](images/not-clippy-inverse.png){.absolute top="70%" left="95%" width="100" alt="An unofficial of the The Microsoft Office mascot Clippy, a paperclip with eyes."}
+## {background-image="images/website_af-checklist.png" alt="Screenshot of a page of the UK government's Analysis Function website, which contains guidance called 'making spreadsheets accessible: a checklist of the basics'."}
 
 ::: {.notes}
-* On accessibility in particular, Hannah wrote [a great blog](https://analysisfunction.civilservice.gov.uk/blog/accessibility-empathy-for-users-of-spreadsheets/) about accessibility empathy for spreadsheet users.
+* The Analysis Function also has a handy [checklist of the basics for accessibility](https://analysisfunction.civilservice.gov.uk/policy-store/making-spreadsheets-accessible-a-brief-checklist-of-the-basics/).
+* This gives a quick lookup for the minimum requirements and more.
+:::
+
+## {background-image="images/spreadsheet_empathy-hidden.png" alt="Screenshot of an Excel workbook where all cells of the current sheet are filled black, obscuring the text. The user is expected to retrieve information from the sheet to empathise with users of assistive technology, etc."}
+
+::: {.notes}
+* Hannah also wrote [a great blog](https://analysisfunction.civilservice.gov.uk/blog/accessibility-empathy-for-users-of-spreadsheets/) about accessibility empathy for spreadsheet users.
 * Can you find information in a spreadsheet where all the cells are blacked out?
 * It 'shows you what it is like trying to navigate a data table when you cannot see the layout. 
 * Gives 'some idea of the issues faced by users with visual impairments.'
 * Hannah also runs an accessibility clinic for civil servants to chat through concerns or ideas.
 :::
 
-## {background-image="images/website_rap-strategy.png" alt="Screenshot of the UK government's Analysis Function website, on a page that contains the Reproducible Analytrical Pipelines (RAP) strategy."}
+## {background-image="images/website_rap-strategy.png" alt="Screenshot of the UK government's Analysis Function website, on a page that contains the Reproducible Analytical Pipelines (RAP) strategy."}
 
 ::: {.notes}
 * We can help make users' lives better with better spreadsheets. But there's also a way to make out lives easier as producers.
@@ -203,10 +216,10 @@ It looks like you're trying to improve a spreadsheet.
 1. Simple user-interface/API, internal structure should be understood by devs
 2. Decisions should be taken for you to help speed things up and maintain consistency.
 3. The whole point is to meet the guidance, {a11ytables} accessibility checklist vignette.
-4. Should try to be a generic cross-government, unified solution to prevent duplicated effort (perhaps easier for my department, which is a the centre of government).
+4. Should try to be a generic cross-government, unified solution to prevent duplicated effort (perhaps easier for my department, which is a the centre of government); it needs to put out there for discussion and improvement. (Also because I wanted the acronym to spell 'SOCK'.)
 :::
 
-## {background-image="images/website_a11ytables-docs.png" alt="Screesnhot of the documentation website for the R package called 'a11ytables', which is open on the README page."}
+## {background-image="images/website_a11ytables.png" alt="Screesnhot of the documentation website for the R package called 'a11ytables', which is open on the README page."}
 
 ::: {.notes}
 * [Documentation](https://co-analysis.github.io/a11ytables/).
@@ -216,7 +229,7 @@ It looks like you're trying to improve a spreadsheet.
 3. Compliant: a vignette compares the package's functionality to to the accessibility checklist in the guidance.
 :::
 
-## {background-image="images/website_gptables-docs.png" alt="Screesnhot of the documentation website for the Python package called 'gptables', which is open on the README page."}
+## {background-image="images/website_gptables.png" alt="Screesnhot of the documentation website for the Python package called 'gptables', which is open on the README page."}
 
 ::: {.notes}
 * [Documentation](https://gptables.readthedocs.io/en/latest/)
@@ -445,23 +458,6 @@ openxlsx::saveWorkbook(
 * There's also a handy `openXL()` function for opening a temporary copy.
 :::
 
-## Write {auto-animate="true"}
-
-```{r}
-#| eval: true
-openxlsx::saveWorkbook(
-  egg_wb,
-  "eggs/2022-07-28_eggs-packers_test.xlsx",
-  overwrite = TRUE
-)
-
-list.files("eggs", pattern = ".xlsx$")
-```
-
-::: {.notes}
-* The file has been provably created at the location specified.
-:::
-
 # Output 
 
 ## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/spreadsheet_new-eggs-cover.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is the cover page with information structured and styled for usability and accessibility."}
@@ -574,39 +570,35 @@ list.files("eggs", pattern = ".xlsx$")
 * The problem is I have no time!
 :::
 
-# If all else fails 
+# So
 
 ::: {.notes}
-* The idea is to fix the problem at the source..
-* But this won't be possible for older spreadsheets and for pipelines that have inertia.
-* What can you do?
+* So what am I telling you to do?
 :::
 
-## {background-image="images/website_smungs.png" alt="Screenshot of the website for the book 'Spreadsheet Munging Strategies' by Duncan Garmonsway, which advises people how to extract data from spreadsheets using his packages 'unpivotr' and 'tidyxl'."}
+## Can you {.center}
+
+* improve accessibility?
+* improve your processes?
+* create common tools?
 
 ::: {.notes}
-* [Spreadsheet Munging Strategies](https://nacnudus.github.io/spreadsheet-munging-strategies/) by another colleague, [Duncan Garmonsway](https://nacnudus.github.io/duncangarmonsway/).
-* Untidy, inaccessible spreadsheets pose a particular problem for further analysis.
-* See Duncan's [{tidyxl}](https://nacnudus.github.io/tidyxl/index.html) and [{unpivotr}](https://nacnudus.github.io/unpivotr/) R packages.
-* I want to help limit the need for these tools (sorry Duncan).
+* Help others.
+* Help yourself.
 :::
-
-## Consider {.center}
-
-1. How could you improve user experience?
-1. Do you have the right processes in place?
-1. Could you create common tools to remove friction?
 
 ## tl;dr {.center}
 
 :::: {.columns}
 
 ::: {.column width="70%"}
-Generate best-practice spreadsheets with [{a11ytables}](https://www.co-analysis.github.io/a11ytables)
+Take a sad spreadsheet and make it better with {a11ytables}
 
 <br>
 
-`r fontawesome::fa('twitter')` [@mattdray](https://www.twitter.com/mattdray) `r fontawesome::fa('globe')` [matt-dray.com](https://www.matt-dray.com) 
+`r fontawesome::fa('twitter')` [@mattdray](https://www.twitter.com/mattdray)
+
+`r fontawesome::fa('globe')` [matt-dray.com](https://www.matt-dray.com) 
 :::
 
 ::: {.column width="30%"}
@@ -615,13 +607,24 @@ Generate best-practice spreadsheets with [{a11ytables}](https://www.co-analysis.
 
 ::::
 
-## {background-color="black"}
+## 
 
 ## Credits {.center}
 
-* Analysis Function accessibility: Hannah Thomas
+* Spreadsheet guidance: Hannah Thomas, Analysis Function
 * gptables: Rowan Hemsi and contributors
 * {a11ytables} contributors: Tim Taylor, Matt Kerlogue
 * {openxlsx} and {pillar} contributors/maintainers
 * [OpenMoji](https://openmoji.org/): paperclip, heart (edited, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/#))
 
+## {background-image="images/website_smungs.png" alt="Screenshot of the website for the book 'Spreadsheet Munging Strategies' by Duncan Garmonsway, which advises people how to extract data from spreadsheets using his packages 'unpivotr' and 'tidyxl'."}
+
+::: {.notes}
+* The idea is to fix the problem at the source.
+* But this won't be possible for older spreadsheets and for pipelines that have inertia.
+* What can you do?
+* [Spreadsheet Munging Strategies](https://nacnudus.github.io/spreadsheet-munging-strategies/) by another colleague, [Duncan Garmonsway](https://nacnudus.github.io/duncangarmonsway/).
+* Untidy, inaccessible spreadsheets pose a particular problem for further analysis.
+* See Duncan's [{tidyxl}](https://nacnudus.github.io/tidyxl/index.html) and [{unpivotr}](https://nacnudus.github.io/unpivotr/) R packages.
+* I want to help limit the need for these tools (sorry Duncan).
+:::
