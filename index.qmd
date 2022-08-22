@@ -5,7 +5,6 @@ author: 'Matt Dray, Civil Service'
 format:
   revealjs: 
     theme: [default, earl22.scss]
-    footer: 'WORK IN PROGRESS'
     background-image: 'images/bg_cells.png'
     background-size: '250px'
     background-repeat: 'repeat'
