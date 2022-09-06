@@ -88,7 +88,14 @@ Generate best-practice spreadsheets with help from {a11ytables}
 It looks like you're trying to improve a spreadsheet.
 :::
 
-![](images/not-clippy.png){.absolute top="120%" left="120%" width="100"  alt="An unofficial of the The Microsoft Office mascot Clippy, a paperclip with eyes."}
+![](images/not-clippy.png){.absolute top="120%" left="120%" width="100"  alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes."}
+
+::: {.notes}
+* Defra's ['Latest UK egg statistics'](https://www.gov.uk/government/statistics/egg-statistics).
+* Mundane? Definitely a classic government spreadsheet.
+* Collects data on egg production and prices from a survey.
+* Branded as National Statistics. That's important.
+:::
 
 ## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/website_defra-eggs.png" alt="Screenshot of the GOV.UK webpage containing data released as part of the latest UK egg statistics, which has the National Statistics badge."}
 
@@ -96,7 +103,7 @@ It looks like you're trying to improve a spreadsheet.
 It looks like you're trying to improve a spreadsheet.
 :::
 
-![](images/not-clippy.png){.absolute top="30%" left="65%" width="100" alt="An unofficial of the The Microsoft Office mascot Clippy, a paperclip with eyes."}
+![](images/not-clippy.png){.absolute top="30%" left="65%" width="100" alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes."}
 
 ::: {.notes}
 * Defra's ['Latest UK egg statistics'](https://www.gov.uk/government/statistics/egg-statistics).
@@ -107,7 +114,7 @@ It looks like you're trying to improve a spreadsheet.
 
 ## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/spreadsheet_old-eggs-1.png" alt="Screenshot of an Excel file that contains egg data. There are some accessibility issues such as blank cells. Other issues include inconsistent cell borders."}
 
-![](images/not-clippy.png){.absolute top="3%" left="55%" width="100" alt="An unofficial of the The Microsoft Office mascot Clippy, a paperclip with eyes."}
+![](images/not-clippy.png){.absolute top="3%" left="55%" width="100" alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes."}
 
 ::: {.notes}
 * This is the 'UK egg packing station throughput and prices dataset' spreadsheet.
@@ -124,7 +131,7 @@ It looks like you're trying to improve a spreadsheet.
 
 ## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/spreadsheet_old-eggs-2.png" alt="Screenshot of an Excel file that contains egg data. There are some accessibility issues such as blank cells. Other issues include unlabelled footnotes."}
 
-![](images/not-clippy.png){.absolute top="75%" left="45%" width="100" alt="An unofficial of the The Microsoft Office mascot Clippy, a paperclip with eyes."}
+![](images/not-clippy.png){.absolute top="75%" left="45%" width="100" alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes."}
 
 ::: {.notes}
 * Second tab: 'Packers_Annual'.
@@ -137,7 +144,7 @@ It looks like you're trying to improve a spreadsheet.
 
 ## {background-image="images/spreadsheet_old-eggs-3.png" auto-animate="true" auto-animate-easing="ease-in-out" alt="Screenshot of an Excel file that contains egg data. This is a tab labelled 'information' that contains important information, except it's the final tab and the data are held in text boxes rather than in cells."}
 
-![](images/not-clippy.png){.absolute top="25%" left="27%" width="100" alt="An unofficial of the The Microsoft Office mascot Clippy, a paperclip with eyes."}
+![](images/not-clippy.png){.absolute top="25%" left="27%" width="100" alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes."}
 
 ::: {.notes}
 * Third tab: 'Information'.
@@ -459,7 +466,7 @@ openxlsx::saveWorkbook(
 
 ## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/spreadsheet_new-eggs-cover.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is the cover page with information structured and styled for usability and accessibility."}
 
-![](images/not-clippy-heart.png){.absolute top="40%" left="35%" width="100" alt="An unofficial of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head."}
+![](images/not-clippy-heart.png){.absolute top="40%" left="35%" width="100" alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head."}
 
 ::: {.notes}
 * Most of this information was in the 'information' tab or footnotes of the original spreadsheet.
@@ -473,7 +480,7 @@ openxlsx::saveWorkbook(
 
 ## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/spreadsheet_new-eggs-contents.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is the contents page, which lets users navigate the workbook."}
 
-![](images/not-clippy-heart.png){.absolute top="2%" left="25%" width="100" alt="An unofficial of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head."}
+![](images/not-clippy-heart.png){.absolute top="2%" left="25%" width="100" alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head."}
 
 ::: {.notes}
 * Note in the contents that:
@@ -485,7 +492,7 @@ openxlsx::saveWorkbook(
 
 ## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/spreadsheet_new-eggs-notes.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is the notes page, which centralises and numbers the notes in the workbook."}
 
-![](images/not-clippy-heart.png){.absolute top="20%" left="35%" width="100" alt="An unofficial of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head."}
+![](images/not-clippy-heart.png){.absolute top="20%" left="35%" width="100" alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head."}
 
 ::: {.notes}
 * On the notes page, note that:
@@ -495,7 +502,7 @@ openxlsx::saveWorkbook(
 
 ## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/spreadsheet_new-eggs-t1.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is Table 5, which demonstrates how the 'a11ytables' package automatically widens columns with long names and also right-aligns numeric columns even if they contain text, like shorthand for missing or confidential data."}
 
-![](images/not-clippy-heart.png){.absolute top="3%" left="35%" width="100" alt="An unofficial of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head."}
+![](images/not-clippy-heart.png){.absolute top="3%" left="35%" width="100" alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head."}
 
 ::: {.notes}
 * Note in Table 1 that:
@@ -507,7 +514,7 @@ openxlsx::saveWorkbook(
 
 ## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/spreadsheet_new-eggs-t2.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is Table 2, which demonstrates how the meta information above a table can be inserted dynamically without leaving blank rows. There is a row with the message that 'this table contains notes', which was absent in Table 1."}
 
-![](images/not-clippy-heart.png){.absolute top="5%" left="35%" width="100" alt="An unofficial of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head."}
+![](images/not-clippy-heart.png){.absolute top="5%" left="35%" width="100" alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head."}
 
 ::: {.notes}
 * Note in Table 2 that:
@@ -517,7 +524,7 @@ openxlsx::saveWorkbook(
 
 ## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/spreadsheet_new-eggs-t5.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is Table 1, which has a header with information that's useful for screenreaders, like 'this worksheet contains 1 table'. The data are in a flat table with no blank cells.."}
 
-![](images/not-clippy-heart.png){.absolute  top="30%" left='15%' width="100" alt="An unofficial of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head."}
+![](images/not-clippy-heart.png){.absolute  top="30%" left='15%' width="100" alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head."}
 
 ::: {.notes}
 * Table 5 has something different again, which is that the long header has led to an opinionated decision for the column to be widened
