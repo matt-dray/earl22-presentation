@@ -41,8 +41,8 @@ Generate best-practice spreadsheets with help from {a11ytables}
 ::::
 
 ::: {.notes}
-* The package helps bring automation, consistency and reproducibility; it does the hard work for you.
-* But the talk is also about inclusivity, taking the initiative and fixing things.
+* The package brings automation, consistency and reproducibility; it does the hard work for you.
+* Yes, I want to tell you about the package, but also I'm tricking you: I want to tell you about the importance of inclusivity, taking the initiative and fixing things.
 * Which makes everyone's lives better.
 :::
 
@@ -68,9 +68,10 @@ Generate best-practice spreadsheets with help from {a11ytables}
 ::::
 
 ::: {.notes}
-* I work in UK government and I'm talking about something I made in that official capacity.
-* I personally can be found elsewhere in an unofficial capacity.
-* You can [read blogposts](https://www.rostrum.blog/) about building an interactive roguelike videogame in R; making a Twitterbot with R and GitHub Actions; trolling about assignment operators; and more.
+* I work in the Civil Service and obviously nothing interesting is happening this week in government, so I decided to come to EARL.
+* I'm talking today about something I made in an official capacity.
+* I personally can be found elsewhere in an unofficial capacity (e.g. website and Twitter).
+* You can [read blogposts at rostrum.blog](https://www.rostrum.blog/) about building an interactive roguelike videogame in R; making a Twitterbot with R and GitHub Actions; trolling about assignment operators; and more.
 :::
 
 # An opportunity 
@@ -106,10 +107,8 @@ It looks like you're trying to improve a spreadsheet.
 ![](images/not-clippy.png){.absolute top="30%" left="65%" width="100" alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes."}
 
 ::: {.notes}
-* Defra's ['Latest UK egg statistics'](https://www.gov.uk/government/statistics/egg-statistics).
-* Mundane? Definitely a classic government spreadsheet.
-* Collects data on egg production and prices from a survey.
-* Branded as National Statistics. That's important.
+* This is unofficial use of the celebrity digital assistant, Clippy (apologies to Microsoft staff in the audience, please don't sue me).
+* Yes, for the lolz, but also because I want to suggest some areas to improve in a non-threatening manner (depending on how threatening you think Clippy is).
 :::
 
 ## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/spreadsheet_old-eggs-1.png" alt="Screenshot of an Excel file that contains egg data. There are some accessibility issues such as blank cells. Other issues include inconsistent cell borders."}
@@ -203,7 +202,7 @@ It looks like you're trying to improve a spreadsheet.
 * Many teams have applied the advice to their publications
 * There are still opportunities
 * How can we make things easier:
-  - as part of a RAP?
+  - as part of a RAP (we're not converting 'bad' spreadsheets, we're adding a tool into the process)?
   - for entry-level coders?
   - by taking into account the realities of 'at the coalface' production?
   - by taking the initiative?
@@ -237,11 +236,13 @@ It looks like you're trying to improve a spreadsheet.
 ## {background-image="images/website_a11ytables.png" alt="Screesnhot of the documentation website for the R package called 'a11ytables', which is open on the README page."}
 
 ::: {.notes}
-* [Documentation](https://co-analysis.github.io/a11ytables/).
+* 'A11y' is short for 'accessibility' (there's 11 letters betrween the 'A' and the 'Y').
+* This is the [documentation website (co-analysis.github.io/a11ytables/)](https://co-analysis.github.io/a11ytables/),  made with {pkgdown}.
 * Bottom-up to solve my own needs, with wider implications.
 1. Simple: interface has only two main functions; only two dependencies are {openxlsx} and {pillar}; familiarity of dataframes and pipes; user brings data and information, {a11ytables} does the rest.
-2. Opinionated: some flexibly lost, not all spreadsheets are simple, but you can intervene.
-3. Compliant: a vignette compares the package's functionality to to the accessibility checklist in the guidance.
+2. Opinionated: the package makes some choices for you so you don't have to think very hard; some flexibly is lost, not all spreadsheets are simple, but you can intervene.
+3. Compliant: a vignette compares the package's functionality to to the accessibility checklist in the guidance and shows that it meets the guidance.
+4. Known: have been sharing this in cross-government fora, Twitter, presentation champions meeting, Scottish government. And here I am.
 :::
 
 # Fresh eggs?
@@ -471,6 +472,8 @@ openxlsx::saveWorkbook(
 ::: {.notes}
 * Most of this information was in the 'information' tab or footnotes of the original spreadsheet.
 * Now it's up front and provides an introduction to the workbook.
+* Note the intentional simplicty in structure and style, which is in the best practice guidance.
+* Makes it more accessible, useable, consistent.
 * Note on the cover that:
   - the font is Arial 12
   - the title is in larger font and in A1
