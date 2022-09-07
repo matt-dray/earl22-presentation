@@ -29,9 +29,9 @@ Generate best-practice spreadsheets with help from {a11ytables}
 
 <br>
 
-`r fontawesome::fa('github')` [github.com/co-analysis/a11ytables](https://www.github.com/co-analysis/a11ytables)
+`r fontawesome::fa('globe')` [co-analysis.github.io/a11ytables](https://co-analysis.github.io/a11ytables)
 
-`r fontawesome::fa('globe')` [co-analysis.github.io/a11ytables](https://co-analysis.github.io/a11ytables) 
+`r fontawesome::fa('github')` [github.com/co-analysis/a11ytables](https://www.github.com/co-analysis/a11ytables)
 :::
 
 ::: {.column width="30%"}
@@ -41,9 +41,9 @@ Generate best-practice spreadsheets with help from {a11ytables}
 ::::
 
 ::: {.notes}
-* The package brings automation, consistency and reproducibility; it does the hard work for you.
+* I'm not talking about anything complex in this talk, but in case you get bored or feel sleepy, you only need to take a photo of this page.
 * Yes, I want to tell you about the package, but also I'm tricking you: I want to tell you about the importance of inclusivity, taking the initiative and fixing things.
-* Which makes everyone's lives better.
+* So keep listening for more about that.
 :::
 
 ## Ahoy {.center}
@@ -77,6 +77,7 @@ Generate best-practice spreadsheets with help from {a11ytables}
 # An opportunity 
 
 ::: {.notes}
+* The UK government has an extremely pressing problem... spreadhseets.
 * Who has opened an 'official' spreadsheet and immediately winced?
 * Yes, they sometimes hurt my eyes too, but rather than complain, maybe we can see the opportunity. 
 * I'll show an example of a government spreadsheet that could be improved. It was one of the first ones that came up in my search of GOV.UK statistics.
@@ -89,7 +90,7 @@ Generate best-practice spreadsheets with help from {a11ytables}
 It looks like you're trying to improve a spreadsheet.
 :::
 
-![](images/not-clippy.png){.absolute top="120%" left="120%" width="100"  alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes."}
+![](images/not-clippy.png){.absolute top="120%" left="120%" width="100"  alt="An unofficial version of the Microsoft Office mascot Clippy, a paperclip with eyes."}
 
 ::: {.notes}
 * Defra's ['Latest UK egg statistics'](https://www.gov.uk/government/statistics/egg-statistics).
@@ -104,7 +105,7 @@ It looks like you're trying to improve a spreadsheet.
 It looks like you're trying to improve a spreadsheet.
 :::
 
-![](images/not-clippy.png){.absolute top="30%" left="65%" width="100" alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes."}
+![](images/not-clippy.png){.absolute top="30%" left="65%" width="100" alt="An unofficial version of the Microsoft Office mascot Clippy, a paperclip with eyes."}
 
 ::: {.notes}
 * This is unofficial use of the celebrity digital assistant, Clippy (apologies to Microsoft staff in the audience, please don't sue me).
@@ -113,7 +114,7 @@ It looks like you're trying to improve a spreadsheet.
 
 ## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/spreadsheet_old-eggs-1.png" alt="Screenshot of an Excel file that contains egg data. There are some accessibility issues such as blank cells. Other issues include inconsistent cell borders."}
 
-![](images/not-clippy.png){.absolute top="3%" left="55%" width="100" alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes."}
+![](images/not-clippy.png){.absolute top="3%" left="55%" width="100" alt="An unofficial version of the Microsoft Office mascot Clippy, a paperclip with eyes."}
 
 ::: {.notes}
 * This is the 'UK egg packing station throughput and prices dataset' spreadsheet.
@@ -130,7 +131,7 @@ It looks like you're trying to improve a spreadsheet.
 
 ## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/spreadsheet_old-eggs-2.png" alt="Screenshot of an Excel file that contains egg data. There are some accessibility issues such as blank cells. Other issues include unlabelled footnotes."}
 
-![](images/not-clippy.png){.absolute top="75%" left="45%" width="100" alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes."}
+![](images/not-clippy.png){.absolute top="75%" left="45%" width="100" alt="An unofficial version of the Microsoft Office mascot Clippy, a paperclip with eyes."}
 
 ::: {.notes}
 * Second tab: 'Packers_Annual'.
@@ -143,7 +144,7 @@ It looks like you're trying to improve a spreadsheet.
 
 ## {background-image="images/spreadsheet_old-eggs-3.png" auto-animate="true" auto-animate-easing="ease-in-out" alt="Screenshot of an Excel file that contains egg data. This is a tab labelled 'information' that contains important information, except it's the final tab and the data are held in text boxes rather than in cells."}
 
-![](images/not-clippy.png){.absolute top="25%" left="27%" width="100" alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes."}
+![](images/not-clippy.png){.absolute top="25%" left="27%" width="100" alt="An unofficial version of the Microsoft Office mascot Clippy, a paperclip with eyes."}
 
 ::: {.notes}
 * Third tab: 'Information'.
@@ -168,6 +169,7 @@ It looks like you're trying to improve a spreadsheet.
 * The Analysis Function has a webpage with [some bumper advice](https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/) on releasing data in spreadsheet format. This was coordinated by Hannah Thomas.
 * This is important role of the newly-formed Analysis Function: unify guidance across the analytical professions. 
 * Promotes consistency and usability, but particularly accessibility.
+* This guidance is being used already in publications.
 :::
 
 ## {background-image="images/website_af-checklist.png" alt="Screenshot of a page of the UK government's Analysis Function website, which contains guidance called 'making spreadsheets accessible: a checklist of the basics'."}
@@ -242,20 +244,21 @@ It looks like you're trying to improve a spreadsheet.
 1. Simple: interface has only two main functions; only two dependencies are {openxlsx} and {pillar}; familiarity of dataframes and pipes; user brings data and information, {a11ytables} does the rest.
 2. Opinionated: the package makes some choices for you so you don't have to think very hard; some flexibly is lost, not all spreadsheets are simple, but you can intervene.
 3. Compliant: a vignette compares the package's functionality to to the accessibility checklist in the guidance and shows that it meets the guidance.
-4. Known: have been sharing this in cross-government fora, Twitter, presentation champions meeting, Scottish government. And here I am.
+4. Known: have been sharing this in cross-government fora, Twitter, government presentation champions meeting, Scottish government. It' sbeing used for sure in MoJ, ONS, Scottich Government and Cabient Office.
 :::
 
 # Fresh eggs?
 
 ::: {.notes}
-* A demo: let's convert the published eggs spreadsheet with {a11ytables}.
-* From installing the package to a vanilla spreadsheet output.
+* A demo: let's use {a11ytables} on the data from the published eggs spreadsheet.
+* Walkthrough, starting with package installation.
+* You can't make a best practice spreadsheet without breaking some eggs, lololol.
 :::
 
 ## Install {auto-animate="true"}
 
 ```{r}
-install.packages("remotes")
+install.packages("remotes")  # if not yet installed
 
 remotes::install_github(
   "co-analysis/a11ytables",
@@ -268,9 +271,8 @@ library(a11ytables)
 ```
 
 ::: {.notes}
-* The package hasn't reached a v1 yet; there's more to do.
-* So it's GitHub only for now.
-* Is this a barrier in some orgs?
+* Package is GitHub only, version 0.1.
+* Useable but still more to do.
 * CRAN is a future goal, maybe.
 :::
 
@@ -283,9 +285,9 @@ create_a11ytable() |>
 ```
 
 ::: {.notes}
-1. Organise all the required information into a special dataframe with additional class 'a11ytable'
-1. Convert to {openxlsx} 'Workbook' class with structure and style information
-1. Write that object to an xlsx file
+1. Organise all the required information into a special dataframe with additional class 'a11ytable'.
+1. Convert to {openxlsx} 'Workbook' class with structure and style information.
+1. Write that object to an xlsx file.
 :::
 
 ## Overview {auto-animate="true"}
@@ -314,8 +316,8 @@ create_a11ytable(
 
 ```{r}
 #| eval: true
-source("eggs/eggs.R")
-ls()
+source("eggs/eggs.R")  # for demo purposes
+ls()  # available objects
 ```
 
 ::: {.notes}
@@ -331,10 +333,10 @@ ls()
 
 ```{r}
 #| eval: true
-source("eggs/eggs.R")
-ls()
-egg_sheet_titles[1:4]
-class(egg_tables)
+source("eggs/eggs.R")  # for demo purposes
+ls()  # available objects
+egg_sheet_titles[1:4]  # first few titles
+class(egg_tables)  # a list of tables
 ```
 
 ::: {.notes}
@@ -598,25 +600,17 @@ openxlsx::saveWorkbook(
 
 :::: {.columns}
 
-::: {.column width="40%"}
-Help for generating best-practice spreadsheets
+::: {.column width="70%"}
+Generate best-practice spreadsheets with help from {a11ytables}
 
-`r fontawesome::fa('twitter')` [@mattdray](https://www.twitter.com/mattdray)
+`r fontawesome::fa('globe')` [co-analysis.github.io/a11ytables](https://co-analysis.github.io/a11ytables)
 
-`r fontawesome::fa('globe')` [matt-dray.com](https://www.matt-dray.com) 
+`r fontawesome::fa('github')` [github.com/co-analysis/a11ytables](https://www.github.com/co-analysis/a11ytables)
+
+`r fontawesome::fa('twitter')` [@mattdray](https://www.twitter.com/mattdray) `r fontawesome::fa('globe')` [matt-dray.com](https://www.matt-dray.com) 
 :::
 
-::: {.column width="5%"}
-:::
-
-::: {.column width="25%"}
-![](images/hex_a11ytables-logo.png){width="85%" height="85%" alt="Hex logo for the a11ytables R package. Letters of the word are split into separatae cells of a grid."}
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="25%"}
+::: {.column width="30%"}
 ![](images/qr_a11ytables-docs.png){alt="QR code that points to the documentation website of the R package 'a11ytables'."}
 :::
 
