@@ -5,18 +5,20 @@
 [![Blog post](https://img.shields.io/badge/rostrum.blog-post-008900?labelColor=000000&logo=data%3Aimage%2Fgif%3Bbase64%2CR0lGODlhEAAQAPEAAAAAABWCBAAAAAAAACH5BAlkAAIAIf8LTkVUU0NBUEUyLjADAQAAACwAAAAAEAAQAAAC55QkISIiEoQQQgghRBBCiCAIgiAIgiAIQiAIgSAIgiAIQiAIgRAEQiAQBAQCgUAQEAQEgYAgIAgIBAKBQBAQCAKBQEAgCAgEAoFAIAgEBAKBIBAQCAQCgUAgEAgCgUBAICAgICAgIBAgEBAgEBAgEBAgECAgICAgECAQIBAQIBAgECAgICAgICAgECAQECAQICAgICAgICAgEBAgEBAgEBAgICAgICAgECAQIBAQIBAgECAgICAgIBAgECAQECAQIBAgICAgIBAgIBAgEBAgECAgECAgICAgICAgECAgECAgQIAAAQIKAAAh%2BQQJZAACACwAAAAAEAAQAAAC55QkIiESIoQQQgghhAhCBCEIgiAIgiAIQiAIgSAIgiAIQiAIgRAEQiAQBAQCgUAQEAQEgYAgIAgIBAKBQBAQCAKBQEAgCAgEAoFAIAgEBAKBIBAQCAQCgUAgEAgCgUBAICAgICAgIBAgEBAgEBAgEBAgECAgICAgECAQIBAQIBAgECAgICAgICAgECAQECAQICAgICAgICAgEBAgEBAgEBAgICAgICAgECAQIBAQIBAgECAgICAgIBAgECAQECAQIBAgICAgIBAgIBAgEBAgECAgECAgICAgICAgECAgECAgQIAAAQIKAAA7)](https://www.rostrum.blog/2022/09/07/earl22/)
 <!-- badges: end -->
 
-My talk at [EARL 2022](https://www.ascent.io/earl/) about [the {a11ytables} R package](https://co-analysis.github.io/a11ytables/index.html), titled 'Create reproducible and accessible spreadsheets with {a11ytables}'.
+My talk, originally for [EARL 2022](https://www.ascent.io/earl/), about [the {a11ytables} R package](https://co-analysis.github.io/a11ytables/index.html), titled 'Create reproducible and accessible spreadsheets with {a11ytables}'.
 
 Presented at:
 
-* EARL 2022, Thursday 8 September 2022, 1100 (session 2) in Stream 1 Tower 1
-* Scottish Government R User Day, Wednesday 5 October, 2022 (remote)
+* [EARL 2022](https://www.ascent.io/earl/), 8 September 2022
+* Scottish Government R User Day, 5 October 2022
+* [NHS-R Community webinar](https://nhsrcommunity.com/events/january-2023-webinar-create-reproducible-and-accessible-spreadsheets-with-a11ytables/), 18 January 2023
 
 You can:
 
-* [view the slides online](https://matt-dray.github.io/earl22-presentation/) (made with [Quarto]())
-* download a PDF version from this repo
+* [view the slides online](https://matt-dray.github.io/earl22-presentation/) (made with [Quarto](https://quarto.org/docs/presentations/))
+* [download a PDF version](https://github.com/matt-dray/earl22-presentation/blob/main/index.pdf)
 * [read the accompanying blogpost](https://www.rostrum.blog/2022/09/07/earl22/)
+* [watch the video](https://videos.ctfassets.net/k26sw1bgepr3/6QYherR2skslFhYvbWWuYR/d5f0cda59597cb1bfa0d163662ce5a01/Stream_1_Matt_Dray.mp4) from EARL 2022
 
 For more on {a11ytables}, see the:
 
