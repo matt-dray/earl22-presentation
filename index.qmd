@@ -1,6 +1,6 @@
 ---
 title: '{a11ytables}'
-subtitle: '#EarlConf, September 2022'
+subtitle: 'Originally for #EarlConf, Sep 2022'
 author: 'Matt Dray, Civil Service'
 format:
   revealjs: 
@@ -54,9 +54,7 @@ Generate best-practice spreadsheets with help from {a11ytables}
 * R for reproducibility (official)
 * Off-piste R (personal)
 
-
-
-`r fontawesome::fa('twitter')` [@mattdray](https://www.twitter.com/mattdray)
+<br>
 
 `r fontawesome::fa('globe')` [matt-dray.com](https://www.matt-dray.com) 
 :::
@@ -603,11 +601,11 @@ openxlsx::saveWorkbook(
 ::: {.column width="70%"}
 Generate best-practice spreadsheets with help from {a11ytables}
 
+<br>
+
 `r fontawesome::fa('globe')` [co-analysis.github.io/a11ytables](https://co-analysis.github.io/a11ytables)
 
-`r fontawesome::fa('github')` [github.com/co-analysis/a11ytables](https://www.github.com/co-analysis/a11ytables)
-
-`r fontawesome::fa('twitter')` [@mattdray](https://www.twitter.com/mattdray) `r fontawesome::fa('globe')` [matt-dray.com](https://www.matt-dray.com) 
+`r fontawesome::fa('globe')` [matt-dray.com](https://www.matt-dray.com) 
 :::
 
 ::: {.column width="30%"}

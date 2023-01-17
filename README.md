@@ -7,6 +7,10 @@
 
 My talk, originally for [EARL 2022](https://www.ascent.io/earl/), about [the {a11ytables} R package](https://co-analysis.github.io/a11ytables/index.html), titled 'Create reproducible and accessible spreadsheets with {a11ytables}'.
 
+<div class="figure">
+<img src="images/slides-preview.gif" alt="An animated preview of the slides in the presentation." width="25%"/>
+</div>
+
 Presented at:
 
 * [EARL 2022](https://www.ascent.io/earl/), 8 September 2022
