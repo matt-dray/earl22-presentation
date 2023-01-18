@@ -16,7 +16,6 @@ Presented at:
 You can:
 
 * [view the slides online](https://matt-dray.github.io/earl22-presentation/) (made with [Quarto](https://quarto.org/docs/presentations/))
-* [download a PDF version](https://github.com/matt-dray/earl22-presentation/blob/main/index.pdf)
 * [read the accompanying blogpost](https://www.rostrum.blog/2022/09/07/earl22/)
 * [watch the video](https://videos.ctfassets.net/k26sw1bgepr3/6QYherR2skslFhYvbWWuYR/d5f0cda59597cb1bfa0d163662ce5a01/Stream_1_Matt_Dray.mp4) from EARL 2022
 
