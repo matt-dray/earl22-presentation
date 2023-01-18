@@ -1,6 +1,6 @@
 ---
 title: '{a11ytables}'
-subtitle: '#EarlConf, September 2022'
+subtitle: '<s>#EarlConf, September 2022</s><br>NHS-R, January 2023'
 author: 'Matt Dray, Civil Service'
 format:
   revealjs: 
@@ -56,7 +56,7 @@ Generate best-practice spreadsheets with help from {a11ytables}
 
 
 
-`r fontawesome::fa('twitter')` [@mattdray](https://www.twitter.com/mattdray)
+`r fontawesome::fa('mastodon')` [@mattdray@fosstodon.org](https://fosstodon.org/@mattdray)
 
 `r fontawesome::fa('globe')` [matt-dray.com](https://www.matt-dray.com) 
 :::
@@ -74,10 +74,11 @@ Generate best-practice spreadsheets with help from {a11ytables}
 * You can [read blogposts at rostrum.blog](https://www.rostrum.blog/) about building an interactive roguelike videogame in R; making a Twitterbot with R and GitHub Actions; trolling about assignment operators; and more.
 :::
 
-# An opportunity 
+# An opportunity
 
 ::: {.notes}
-* The UK government has an extremely pressing problem... spreadhseets.
+* Not in a multilevel-marketing way. 
+* The UK government has an extremely pressing problem... spreadsheets.
 * Who has opened an 'official' spreadsheet and immediately winced?
 * Yes, they sometimes hurt my eyes too, but rather than complain, maybe we can see the opportunity. 
 * I'll show an example of a government spreadsheet that could be improved. It was one of the first ones that came up in my search of GOV.UK statistics.
@@ -96,7 +97,7 @@ It looks like you're trying to improve a spreadsheet.
 * Defra's ['Latest UK egg statistics'](https://www.gov.uk/government/statistics/egg-statistics).
 * Mundane? Definitely a classic government spreadsheet.
 * Collects data on egg production and prices from a survey.
-* Branded as National Statistics. That's important.
+* Branded as National Statistics. That's important, particularly when it comes to thinking about the Code of Practice.
 :::
 
 ## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/website_defra-eggs.png" alt="Screenshot of the GOV.UK webpage containing data released as part of the latest UK egg statistics, which has the National Statistics badge."}
@@ -110,6 +111,7 @@ It looks like you're trying to improve a spreadsheet.
 ::: {.notes}
 * This is unofficial use of the celebrity digital assistant, Clippy (apologies to Microsoft staff in the audience, please don't sue me).
 * Yes, for the lolz, but also because I want to suggest some areas to improve in a non-threatening manner (depending on how threatening you think Clippy is).
+* Also this presentation was made in Quarto (the sort-of successor to R Markdown), which makes this type of animation fairly straightforward.
 :::
 
 ## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/spreadsheet_old-eggs-1.png" alt="Screenshot of an Excel file that contains egg data. There are some accessibility issues such as blank cells. Other issues include inconsistent cell borders."}
@@ -137,6 +139,7 @@ It looks like you're trying to improve a spreadsheet.
 * Second tab: 'Packers_Annual'.
 * Look out for same as previous tab, plus:
   - notes in a footer, not labelled
+  - the year is '20212'
   - two 'year' columns?
   - some rogue values on the far right
   - shorthand not fully conforming to guidance ('c' rather than '[c]'?)
@@ -155,12 +158,25 @@ It looks like you're trying to improve a spreadsheet.
   - GOV.UK link way off to the right
 :::
 
-# Guidance
+## Improve {.center}
+
+1. User experience
+2. Producer experience
+
+::: {.notes}
+* There's two main areas of focus to improve.
+* (1) Useability and accessibility for the people consuming the stats.
+* (2) The creators and developers of the publication.
+* Sometimes the producers are the users too!
+:::
+
+# User experience
 
 ::: {.notes}
 * Maybe you can see the things you'd like to fix, maybe some are obvious, maybe some are more subjective.
 * But there are a thousand reasons why teams can't just improve things overnight, like lack of staff, lack of time, inertia from pre-existing point-and-click solutions, etc.
-* However, there is a place to start: some codified and exhaustive guidance on the preferred outcomes.
+* However, there is a place to start: some codified and exhaustive guidance on the useability and accessibility of the output.
+* In other words, the user experience aspect is 'solved'.
 :::
 
 ## {background-image="images/website_af-spreadsheet.png" alt="Screenshot of a page of the UK government's Analysis Function website, which contains guidance called 'releasing statistics in spreadsheets'."}
@@ -198,20 +214,27 @@ It looks like you're trying to improve a spreadsheet.
 * There's now [a formal strategy for adoption](https://analysisfunction.civilservice.gov.uk/policy-store/reproducible-analytical-pipelines-strategy/) that should empower publishers to improve their outputs.
 :::
 
-# Building a tool
+## {background-image="images/website_code.png" alt="Screenshot of the UK Statistics Authority's website, on the homepage for the Code of Practice for Official Statistics."}
 
 ::: {.notes}
-* Many teams have applied the advice to their publications
-* There are still opportunities
-* How can we make things easier:
-  - as part of a RAP (we're not converting 'bad' spreadsheets, we're adding a tool into the process)?
+* The UK Statistics Authority's Code of Practice for Official Statistics.
+* As producers of statistical publications, we should adhere to the three pillars of trustworthiness, quality and value.
+:::
+
+# Producer experience
+
+::: {.notes}
+* Many teams have applied this advice to their publications, but not all.
+* How can we make enacting the guidance easier on the producer side:
+  - as part of a RAP?
   - for entry-level coders?
   - by taking into account the realities of 'at the coalface' production?
   - by taking the initiative?
   - to prevent duplication of effort?
+* A tool might help people do this consistently.
 :::
 
-## Requirements {.center}
+## Tool requirements {.center}
 
 1. Simple
 2. Opinionated
@@ -219,105 +242,112 @@ It looks like you're trying to improve a spreadsheet.
 4. Known
 
 ::: {.notes}
-1. Simple user-interface/API, internal structure should be understood by devs
-2. Decisions should be taken for you to help speed things up and maintain consistency.
-3. The whole point is to meet the guidance, {a11ytables} accessibility checklist vignette.
-4. Should try to be a generic cross-government, unified solution to prevent duplicated effort (perhaps easier for my department, which is a the centre of government); it needs to put out there for discussion and improvement. (Also because I wanted the acronym to spell 'SOCK'.)
+* What would be the requirements of a tool to help analysts?
+* We want a tool that starts with data and information and arranges and styles it for us. 
+* We aren't _converting_ an existing spreadsheet to meet guidance. It would be very hard to make a general tool to do that.
+1. Simple user-interface/API for users; internal structure should be understood/maintainable by devs.
+2. I don't mean I'm going to exert my personal will on the design. Just that some decisions should be taken on the user's behalf to help speed things up and maintain consistency.
+3. The whole point is to meet the guidance (see the {a11ytables} accessibility checklist vignette).
+4. We have centralised/open guidance, why not a centralised/open tool? This will help prevent duplicated effort; it needs to put out there for discussion and improvement. (Also because I wanted the acronym to spell 'SOCK'.)
 :::
 
 ## {background-image="images/website_gptables.png" alt="Screesnhot of the documentation website for the Python package called 'gptables', which is open on the README page."}
 
 ::: {.notes}
-* [Documentation](https://gptables.readthedocs.io/en/latest/)
-* Written for Python, convert pandas dataframes.
-* {a11ytables} was created to comply with the _latest_ best practice guidance for releasing stats in spreadsheets, which gptables did not do at the time.
-* Can be accessed from R via the {reticulate} package, but requires a Python installation and understanding of {reticulate}.
-* Slight differences between {a11ytables} and gptables exist, hopefully will clear these up.
+* Good news! The problem is already solved!
+* [gptables](https://gptables.readthedocs.io/en/latest/) is an official Python solution from the Analysis Function.
+* But: Python (though accessible via {reticulate}), wasn't up-to-date with best-practice guidance when I needed it (it is now).
 :::
 
 ## {background-image="images/website_a11ytables.png" alt="Screesnhot of the documentation website for the R package called 'a11ytables', which is open on the README page."}
 
 ::: {.notes}
-* 'A11y' is short for 'accessibility' (there's 11 letters betrween the 'A' and the 'Y').
+* So there was a gap in the market for an up-to-date R native solution.
+* But actually, I initially created this gradually 'bottom-up' to solve my own needs.
+* 'A11y' is short for 'accessibility' (there's 11 letters between the 'A' and the 'Y').
 * This is the [documentation website (co-analysis.github.io/a11ytables/)](https://co-analysis.github.io/a11ytables/),  made with {pkgdown}.
-* Bottom-up to solve my own needs, with wider implications.
 1. Simple: interface has only two main functions; only two dependencies are {openxlsx} and {pillar}; familiarity of dataframes and pipes; user brings data and information, {a11ytables} does the rest.
 2. Opinionated: the package makes some choices for you so you don't have to think very hard; some flexibly is lost, not all spreadsheets are simple, but you can intervene.
 3. Compliant: a vignette compares the package's functionality to to the accessibility checklist in the guidance and shows that it meets the guidance.
-4. Known: have been sharing this in cross-government fora, Twitter, government presentation champions meeting, Scottish government. It' sbeing used for sure in MoJ, ONS, Scottich Government and Cabient Office.
+4. Known: have been sharing this in cross-government fora, Twitter, government presentation champions meeting, Scottish government. It's being used for sure in MoJ, ONS, Scottish Government and Cabinet Office.
 :::
 
-# Fresh eggs?
+# Fresh eggs
 
 ::: {.notes}
 * A demo: let's use {a11ytables} on the data from the published eggs spreadsheet.
 * Walkthrough, starting with package installation.
+* Remember: we aren't _converting_ that spreadsheet. We'll pretend we have the extracted egg data already.
 * You can't make a best practice spreadsheet without breaking some eggs, lololol.
 :::
 
 ## Install {auto-animate="true"}
 
 ```{r}
-install.packages("remotes")  # if not yet installed
+install.packages("remotes")
 
 remotes::install_github(
   "co-analysis/a11ytables",
   build_vignettes = TRUE
 )
 
-# also installs {openxlsx}, {pillar}
-
 library(a11ytables)
 ```
 
 ::: {.notes}
 * Package is GitHub only, version 0.1.
-* Useable but still more to do.
+* Usable but still more to do.
+* Also installs {openxlsx} and {pillar}
 * CRAN is a future goal, maybe.
 :::
 
-## Overview {auto-animate="true"}
+## Workflow {auto-animate="true"}
 
 ```{r}
 create_a11ytable() |>
   generate_workbook() |>
-  openxlsx::saveWorkbook("file.xlsx")
+  openxlsx::saveWorkbook()
 ```
 
 ::: {.notes}
+* There's only two major functions in the package, plus one from the {openxlsx} package.
 1. Organise all the required information into a special dataframe with additional class 'a11ytable'.
 1. Convert to {openxlsx} 'Workbook' class with structure and style information.
 1. Write that object to an xlsx file.
+* I haven't added any arguments here, because I want to show you the simplicity of the pipeline. Let's add those in.
 :::
 
-## Overview {auto-animate="true"}
+## Workflow {auto-animate="true"}
 
 ```{r}
 create_a11ytable(
   tab_titles, sheet_types, sheet_titles, # required char vectors
   blank_cells, sources,                  # optional char vectors
-  tables                                 # required listcol of dataframes
+  tables                                 # required list of dataframes
 ) |>
   generate_workbook() |>
   openxlsx::saveWorkbook("file.xlsx")
+
+# The package also has an RStudio Addin with templates
 ```
 
 ::: {.notes}
-* The `create_a11ytable()` function takes a few arguments:
+* The `create_a11ytable()` function takes a few arguments that represent the data you need.
+* These are:
   - `tab_titles` is a required character vector for the text that goes on the tabs
   - `sheet_types` is a required character vector (one of `"cover"`, `"contents"`, `"notes"`, `"tables"`) that provides information about how the sheet will be styled
   - `sheet_titles` is a required character vector of the worksheet titles that will go in cell A1
-  - `blank_cells` optional character vector of meta-information that explains the meaning of any blank cells in the sheet
+  - `blank_cells` is an optional character vector of meta-information that explains the meaning of any blank cells in the sheet
   - `sources` is an optional character vector of meta-information that contains 
-  - `tables` is a required list-column of dataframes that contain the main bulk of each sheet (stats tables are obviously tables, but the cover and notes are also given as tables; you also provide the cover as a dataframe, where each row becomes a subsection with a title and body)
+  - `tables` is a required list of dataframes that contain the main bulk of each sheet (stats tables are obviously tables, but the cover and notes are also given as tables; you also provide the cover as a dataframe, where each row becomes a subsection with a title and body)
 :::
 
-## Prep inputs {auto-animate="true"}
+## Pre-prepared inputs {auto-animate="true"}
 
 ```{r}
 #| eval: true
-source("eggs/eggs.R")  # for demo purposes
-ls()  # available objects
+source("eggs/eggs.R")  # load pre-prepared data objects
+ls()                   # print environment objects
 ```
 
 ::: {.notes}
@@ -325,18 +355,16 @@ ls()  # available objects
 * You can find the code and original spreadsheet in [the repo that hosts these slides](https://www.github.com/matt-dray/earl22-presentation).
 * Importantly, I didn't mimic the whole process of production for this example; I just copied the data out of the pre-existing spreadsheet.
 * The code outputs some objects that are ready to be passed to the arguments of `create_a11ytable()`.
-* I recommend generating each object outside of the call to `create_a11ytable()` where possible; it keeps things cleaner.
-* For smaller spreadsheets it would be fine to provide the arguments in the function call itself.
 :::
 
-## Prep inputs {auto-animate="true"}
+## Pre-prepared inputs {auto-animate="true"}
 
 ```{r}
 #| eval: true
-source("eggs/eggs.R")  # for demo purposes
-ls()  # available objects
-egg_sheet_titles[1:4]  # first few titles
-class(egg_tables)  # a list of tables
+source("eggs/eggs.R")  # pre-prepared data objects
+ls()                   # print environment objects
+egg_sheet_titles[1:4]  # first few sheet titles
+class(egg_tables)      # a list of tables
 ```
 
 ::: {.notes}
@@ -351,6 +379,9 @@ create_a11ytable()
 
 ::: {.notes}
 * Now we can pass our egg objects to the arguments of `create_a11ytable()`.
+* Basically, this combines all the data and information together into a single object.
+* I recommend generating each object outside of the call to `create_a11ytable()` where possible *which I've done here), it keeps things cleaner.
+* For smaller spreadsheets it would be fine to provide the arguments in the function call itself.
 :::
 
 ## Combine {auto-animate="true"}
@@ -365,11 +396,14 @@ create_a11ytable(
   sources      = egg_sources,
   tables       = egg_tables
 ) -> egg_at
+
+# Provides warnings/errors if there's problems
 ```
 
 ::: {.notes}
 * Basically, each arg becomes a column in a dataframe.
 * User is warned and/or errors raised and/or corrections applied if the provided information is insufficient.
+* That's an important feature for error-checking and to help keep things simpler for developers.
 * User provides the info, function does the rest.
 :::
 
@@ -385,6 +419,8 @@ create_a11ytable(
   sources      = egg_sources,
   tables       = egg_tables
 ) -> egg_at
+
+# Provides warnings/errors if there's problems
 
 class(egg_at)
 ```
@@ -404,13 +440,15 @@ egg_at
 ```
 
 ::: {.notes}
+* This is an 'a11ytable'. It's just a dataframe, really.
 * Familiar dataframe structure holds all the information.
 * You can see a row per sheet.
 * Each argument has become a column.
 * The list of dataframes has become a list-column.
+* Empty content (NA) is allowed.
 :::
 
-## One row, one sheet {auto-animate="true"}
+## One row is one sheet {auto-animate="true"}
 
 ```{r}
 #| echo: true
@@ -465,7 +503,11 @@ openxlsx::saveWorkbook(
 * There's also a handy `openXL()` function for opening a temporary copy.
 :::
 
-# Output 
+# Crack it open
+
+::: {.notes}
+* Lets take a look at the output spreadsheet.
+:::
 
 ## {auto-animate="true" auto-animate-easing="ease-in-out" background-image="images/spreadsheet_new-eggs-cover.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is the cover page with information structured and styled for usability and accessibility."}
 
@@ -538,7 +580,7 @@ openxlsx::saveWorkbook(
 
 # But 
 
-## Outputs are imperfect {.center}
+## Not perfect {.center}
 
 * Final tweaks needed
 * Assumes simple spreadsheets
@@ -546,7 +588,7 @@ openxlsx::saveWorkbook(
 
 ::: {.notes}
 * The package doesn't get you a 100% compliant output.
-* To keep the package simple, certain choices may not suit the user; some extra editing of the a11ytable or Workbook may be required, but this can be made part of the analyst pipeline.
+* To keep the package simple, certain choices may not suit the user; some extra editing of the a11ytable or Workbook may be required, but you can intervene by editing the a11ytable or the Workbook.
 * The package is opinionated for simplicity and is not completely flexible as a result (e.g. each cover subsection has only a single body row, the pre-table metadata is only table count, note presence, blank-cell meaning and data source).
 * Thousands of spreadsheets are produced; there's likely more complicated ones out there.
 * Can't completely protect from bad user input.
@@ -556,18 +598,18 @@ openxlsx::saveWorkbook(
 
 * {openxlsx} has limitations
 * Output isn't ODS
-* Prep is fiddly
+* Fiddly prep?
 
 ::: {.notes}
 * {openxlsx} is versatile, but some things are tricky (placeholder zeroes in decimals, filling in file properties, etc), but I'm keeping an eye on {openxlsx2}.
-* In particular, published spreadsheets should be in an open format, but {openxlsx} nor other packages write Workbook-class objects to ODS.
+* In particular, published spreadsheets should be in an open format, but {openxlsx} nor other packages write Workbook-class objects to ODS. Turns out ODS is a pretty clunky file format.
 * A more focused example: notes are pretty clunky to add; might be a better solution?
 :::
 
 ## Future {.center}
 
 * Bugfixes, requests, user testing
-* YAML input
+* YAML input?
 * Converge with gptables
 
 ::: {.notes}
@@ -578,22 +620,28 @@ openxlsx::saveWorkbook(
 * The problem is I have no time! PRs always welcome.
 :::
 
-# So
+# So what?
 
 ::: {.notes}
 * So what am I telling you to do?
+* To use the package? Sure.
+* 
 :::
 
-## Can you {.center}
+## Forget spreadsheets! {.center}
 
-* improve user experience?
-* make it easier for you?
-* create common tools?
+1. Improve user experience
+1. Make things easier for you
+1. Create common tools
 
 ::: {.notes}
-* Improve accessibility.
-* Simplify creation of complex things.
-* Stop divided, wasted effort to solve the same problem.
+* Syke! What I really want you to do is consider three things.
+1. Guiding principle: improve accessibility, usability.
+1. Simplify complex things, make reproducible, reusable, maintainable.
+1. Stop divided, wasted effort to solve the same problem.
+* Are you a manager that can encourage this type of work?
+* Are you an analyst that could improve one small thing?
+* Do you know someone who knows someone who might be interested in helping?
 :::
 
 ## tl;dr {.center}
@@ -607,7 +655,7 @@ Generate best-practice spreadsheets with help from {a11ytables}
 
 `r fontawesome::fa('github')` [github.com/co-analysis/a11ytables](https://www.github.com/co-analysis/a11ytables)
 
-`r fontawesome::fa('twitter')` [@mattdray](https://www.twitter.com/mattdray) `r fontawesome::fa('globe')` [matt-dray.com](https://www.matt-dray.com) 
+`r fontawesome::fa('globe')` [matt-dray.com](https://www.matt-dray.com) 
 :::
 
 ::: {.column width="30%"}
@@ -624,6 +672,7 @@ Generate best-practice spreadsheets with help from {a11ytables}
 * gptables: Rowan Hemsi and contributors
 * {a11ytables} contributors: Tim Taylor, Matt Kerlogue
 * {openxlsx} and {pillar} contributors/maintainers
+* [Quarto presentations with Revealjs](https://quarto.org/docs/presentations/revealjs/) 
 * [OpenMoji](https://openmoji.org/): paperclip, heart (edited, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/#))
 
 ## {background-image="images/website_smungs.png" alt="Screenshot of the website for the book 'Spreadsheet Munging Strategies' by Duncan Garmonsway, which advises people how to extract data from spreadsheets using his packages 'unpivotr' and 'tidyxl'."}

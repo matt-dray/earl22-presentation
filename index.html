@@ -7,7 +7,7 @@
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.0.32">
+  <meta name="generator" content="quarto-1.2.269">
 
   <meta name="author" content="Matt Dray, Civil Service">
   <title>{a11ytables}</title>
@@ -19,10 +19,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -382,12 +387,19 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="center">
+<section id="title-slide" class="quarto-title-block center">
   <h1 class="title">{a11ytables}</h1>
-  <p class="subtitle">#EarlConf, September 2022</p>
-  <p class="author">Matt Dray, Civil Service</p>
-</section>
+  <p class="subtitle"><s>#EarlConf, September 2022</s><br>NHS-R, January 2023</p>
 
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Matt Dray, Civil Service 
+</div>
+</div>
+</div>
+
+</section>
 <section id="tldr" class="slide level2 center">
 <h2>tl;dr</h2>
 <div class="columns">
@@ -426,7 +438,7 @@
 <li>R for reproducibility (official)</li>
 <li>Off-piste R (personal)</li>
 </ul>
-<p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M459.4 151.7c.325 4.548 .325 9.097 .325 13.65 0 138.7-105.6 298.6-298.6 298.6-59.45 0-114.7-17.22-161.1-47.11 8.447 .974 16.57 1.299 25.34 1.299 49.06 0 94.21-16.57 130.3-44.83-46.13-.975-84.79-31.19-98.11-72.77 6.498 .974 12.99 1.624 19.82 1.624 9.421 0 18.84-1.3 27.61-3.573-48.08-9.747-84.14-51.98-84.14-102.1v-1.299c13.97 7.797 30.21 12.67 47.43 13.32-28.26-18.84-46.78-51.01-46.78-87.39 0-19.49 5.197-37.36 14.29-52.95 51.65 63.67 129.3 105.3 216.4 109.8-1.624-7.797-2.599-15.92-2.599-24.04 0-57.83 46.78-104.9 104.9-104.9 30.21 0 57.5 12.67 76.67 33.14 23.72-4.548 46.46-13.32 66.6-25.34-7.798 24.37-24.37 44.83-46.13 57.83 21.12-2.273 41.58-8.122 60.43-16.24-14.29 20.79-32.16 39.31-52.63 54.25z"></path></svg> <a href="https://www.twitter.com/mattdray"><span class="citation" data-cites="mattdray">@mattdray</span></a></p>
+<p><svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M433 179.1c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.6-28.4-290.5 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.6 289.1 40.51 10.7 75.32 13 103.3 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.5 102.5 0 0 1 -.9-13.9c85.63 20.9 158.6 9.1 178.8 6.7 56.12-6.7 105-41.3 111.2-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.8 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.8-6.1 23.71 27.3 18.4 53 18.4 175z"></path></svg> <a href="https://fosstodon.org/@mattdray"><span class="citation" data-cites="mattdray">@mattdray</span><span class="citation" data-cites="fosstodon.org">@fosstodon.org</span></a></p>
 <p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M352 256C352 278.2 350.8 299.6 348.7 320H163.3C161.2 299.6 159.1 278.2 159.1 256C159.1 233.8 161.2 212.4 163.3 192H348.7C350.8 212.4 352 233.8 352 256zM503.9 192C509.2 212.5 512 233.9 512 256C512 278.1 509.2 299.5 503.9 320H380.8C382.9 299.4 384 277.1 384 256C384 234 382.9 212.6 380.8 192H503.9zM493.4 160H376.7C366.7 96.14 346.9 42.62 321.4 8.442C399.8 29.09 463.4 85.94 493.4 160zM344.3 160H167.7C173.8 123.6 183.2 91.38 194.7 65.35C205.2 41.74 216.9 24.61 228.2 13.81C239.4 3.178 248.7 0 256 0C263.3 0 272.6 3.178 283.8 13.81C295.1 24.61 306.8 41.74 317.3 65.35C328.8 91.38 338.2 123.6 344.3 160H344.3zM18.61 160C48.59 85.94 112.2 29.09 190.6 8.442C165.1 42.62 145.3 96.14 135.3 160H18.61zM131.2 192C129.1 212.6 127.1 234 127.1 256C127.1 277.1 129.1 299.4 131.2 320H8.065C2.8 299.5 0 278.1 0 256C0 233.9 2.8 212.5 8.065 192H131.2zM194.7 446.6C183.2 420.6 173.8 388.4 167.7 352H344.3C338.2 388.4 328.8 420.6 317.3 446.6C306.8 470.3 295.1 487.4 283.8 498.2C272.6 508.8 263.3 512 255.1 512C248.7 512 239.4 508.8 228.2 498.2C216.9 487.4 205.2 470.3 194.7 446.6H194.7zM190.6 503.6C112.2 482.9 48.59 426.1 18.61 352H135.3C145.3 415.9 165.1 469.4 190.6 503.6V503.6zM321.4 503.6C346.9 469.4 366.7 415.9 376.7 352H493.4C463.4 426.1 399.8 482.9 321.4 503.6V503.6z"></path></svg> <a href="https://www.matt-dray.com">matt-dray.com</a></p>
 </div><div class="column" style="width:30%;">
 <p><img data-src="images/mattdray-avatar.png" alt="16 by 16 pixelated image of the author's face, which has big eyebrows and a goatee."></p>
@@ -456,7 +468,8 @@
 <h1>An opportunity</h1>
 <aside class="notes">
 <ul>
-<li>The UK government has an extremely pressing problem… spreadhseets.</li>
+<li>Not in a multilevel-marketing way.</li>
+<li>The UK government has an extremely pressing problem… spreadsheets.</li>
 <li>Who has opened an ‘official’ spreadsheet and immediately winced?</li>
 <li>Yes, they sometimes hurt my eyes too, but rather than complain, maybe we can see the opportunity.</li>
 <li>I’ll show an example of a government spreadsheet that could be improved. It was one of the first ones that came up in my search of GOV.UK statistics.</li>
@@ -479,13 +492,13 @@
 <div class="clippy-speech absolute" data-id="speech" alt="A yellow speech bubble that says 'it looks like you're trying to improve a spreadsheet', which is being spoken by the Microsoft Office mascot Clippy." style="top: 120%; left: 120%; ">
 <p>It looks like you’re trying to improve a spreadsheet.</p>
 </div>
-<p><img data-src="images/not-clippy.png" class="absolute" alt="An unofficial version of the Microsoft Office mascot Clippy, a paperclip with eyes." style="top: 120%; left: 120%; width: 100px; "></p>
+<p><img data-src="images/not-clippy.png" class="absolute" style="top: 120%; left: 120%; width: 100px; " alt="An unofficial version of the Microsoft Office mascot Clippy, a paperclip with eyes."></p>
 <aside class="notes">
 <ul>
 <li>Defra’s <a href="https://www.gov.uk/government/statistics/egg-statistics">‘Latest UK egg statistics’</a>.</li>
 <li>Mundane? Definitely a classic government spreadsheet.</li>
 <li>Collects data on egg production and prices from a survey.</li>
-<li>Branded as National Statistics. That’s important.</li>
+<li>Branded as National Statistics. That’s important, particularly when it comes to thinking about the Code of Practice.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -504,11 +517,12 @@
 <div class="clippy-speech absolute" data-id="speech" alt="A yellow speech bubble that says 'it looks like you're trying to improve a spreadsheet', which is being spoken by the Microsoft Office mascot Clippy." style="top: 10%; left: 45%; ">
 <p>It looks like you’re trying to improve a spreadsheet.</p>
 </div>
-<p><img data-src="images/not-clippy.png" class="absolute" alt="An unofficial version of the Microsoft Office mascot Clippy, a paperclip with eyes." style="top: 30%; left: 65%; width: 100px; "></p>
+<p><img data-src="images/not-clippy.png" class="absolute" style="top: 30%; left: 65%; width: 100px; " alt="An unofficial version of the Microsoft Office mascot Clippy, a paperclip with eyes."></p>
 <aside class="notes">
 <ul>
 <li>This is unofficial use of the celebrity digital assistant, Clippy (apologies to Microsoft staff in the audience, please don’t sue me).</li>
 <li>Yes, for the lolz, but also because I want to suggest some areas to improve in a non-threatening manner (depending on how threatening you think Clippy is).</li>
+<li>Also this presentation was made in Quarto (the sort-of successor to R Markdown), which makes this type of animation fairly straightforward.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -524,7 +538,7 @@
 </section>
 <section id="section-2" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out" data-background-image="images/spreadsheet_old-eggs-1.png" alt="Screenshot of an Excel file that contains egg data. There are some accessibility issues such as blank cells. Other issues include inconsistent cell borders.">
 <h2 data-id="quarto-animate-title"></h2>
-<p><img data-src="images/not-clippy.png" class="absolute" alt="An unofficial version of the Microsoft Office mascot Clippy, a paperclip with eyes." style="top: 3%; left: 55%; width: 100px; "></p>
+<p><img data-src="images/not-clippy.png" class="absolute" style="top: 3%; left: 55%; width: 100px; " alt="An unofficial version of the Microsoft Office mascot Clippy, a paperclip with eyes."></p>
 <aside class="notes">
 <ul>
 <li>This is the ‘UK egg packing station throughput and prices dataset’ spreadsheet.</li>
@@ -554,13 +568,14 @@
 </section>
 <section id="section-3" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out" data-background-image="images/spreadsheet_old-eggs-2.png" alt="Screenshot of an Excel file that contains egg data. There are some accessibility issues such as blank cells. Other issues include unlabelled footnotes.">
 <h2 data-id="quarto-animate-title"></h2>
-<p><img data-src="images/not-clippy.png" class="absolute" alt="An unofficial version of the Microsoft Office mascot Clippy, a paperclip with eyes." style="top: 75%; left: 45%; width: 100px; "></p>
+<p><img data-src="images/not-clippy.png" class="absolute" style="top: 75%; left: 45%; width: 100px; " alt="An unofficial version of the Microsoft Office mascot Clippy, a paperclip with eyes."></p>
 <aside class="notes">
 <ul>
 <li>Second tab: ‘Packers_Annual’.</li>
 <li>Look out for same as previous tab, plus:
 <ul>
 <li>notes in a footer, not labelled</li>
+<li>the year is ‘20212’</li>
 <li>two ‘year’ columns?</li>
 <li>some rogue values on the far right</li>
 <li>shorthand not fully conforming to guidance (‘c’ rather than ‘[c]’?)</li>
@@ -580,7 +595,7 @@
 </section>
 <section id="section-4" class="slide level2" data-background-image="images/spreadsheet_old-eggs-3.png" data-auto-animate="true" data-auto-animate-easing="ease-in-out" alt="Screenshot of an Excel file that contains egg data. This is a tab labelled 'information' that contains important information, except it's the final tab and the data are held in text boxes rather than in cells.">
 <h2 data-id="quarto-animate-title"></h2>
-<p><img data-src="images/not-clippy.png" class="absolute" alt="An unofficial version of the Microsoft Office mascot Clippy, a paperclip with eyes." style="top: 25%; left: 27%; width: 100px; "></p>
+<p><img data-src="images/not-clippy.png" class="absolute" style="top: 25%; left: 27%; width: 100px; " alt="An unofficial version of the Microsoft Office mascot Clippy, a paperclip with eyes."></p>
 <aside class="notes">
 <ul>
 <li>Third tab: ‘Information’.</li>
@@ -603,15 +618,45 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section id="improve" class="slide level2 center">
+<h2>Improve</h2>
+<ol type="1">
+<li>User experience</li>
+<li>Producer experience</li>
+</ol>
+<aside class="notes">
+<ul>
+<li>There’s two main areas of focus to improve.</li>
+<li><ol type="1">
+<li>Useability and accessibility for the people consuming the stats.</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>The creators and developers of the publication.</li>
+</ol></li>
+<li>Sometimes the producers are the users too!</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section></section>
 <section>
-<section id="guidance" class="title-slide slide level1 center">
-<h1>Guidance</h1>
+<section id="user-experience" class="title-slide slide level1 center">
+<h1>User experience</h1>
 <aside class="notes">
 <ul>
 <li>Maybe you can see the things you’d like to fix, maybe some are obvious, maybe some are more subjective.</li>
 <li>But there are a thousand reasons why teams can’t just improve things overnight, like lack of staff, lack of time, inertia from pre-existing point-and-click solutions, etc.</li>
-<li>However, there is a place to start: some codified and exhaustive guidance on the preferred outcomes.</li>
+<li>However, there is a place to start: some codified and exhaustive guidance on the useability and accessibility of the output.</li>
+<li>In other words, the user experience aspect is ‘solved’.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -707,22 +752,41 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section></section>
-<section>
-<section id="building-a-tool" class="title-slide slide level1 center">
-<h1>Building a tool</h1>
+</section>
+<section id="section-9" class="slide level2" data-background-image="images/website_code.png" alt="Screenshot of the UK Statistics Authority's website, on the homepage for the Code of Practice for Official Statistics.">
+<h2></h2>
 <aside class="notes">
 <ul>
-<li>Many teams have applied the advice to their publications</li>
-<li>There are still opportunities</li>
-<li>How can we make things easier:
+<li>The UK Statistics Authority’s Code of Practice for Official Statistics.</li>
+<li>As producers of statistical publications, we should adhere to the three pillars of trustworthiness, quality and value.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="producer-experience" class="title-slide slide level1 center">
+<h1>Producer experience</h1>
+<aside class="notes">
 <ul>
-<li>as part of a RAP (we’re not converting ‘bad’ spreadsheets, we’re adding a tool into the process)?</li>
+<li>Many teams have applied this advice to their publications, but not all.</li>
+<li>How can we make enacting the guidance easier on the producer side:
+<ul>
+<li>as part of a RAP?</li>
 <li>for entry-level coders?</li>
 <li>by taking into account the realities of ‘at the coalface’ production?</li>
 <li>by taking the initiative?</li>
 <li>to prevent duplication of effort?</li>
 </ul></li>
+<li>A tool might help people do this consistently.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -736,8 +800,8 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="requirements" class="slide level2 center">
-<h2>Requirements</h2>
+<section id="tool-requirements" class="slide level2 center">
+<h2>Tool requirements</h2>
 <ol type="1">
 <li>Simple</li>
 <li>Opinionated</li>
@@ -745,11 +809,16 @@
 <li>Known</li>
 </ol>
 <aside class="notes">
+<ul>
+<li>What would be the requirements of a tool to help analysts?</li>
+<li>We want a tool that starts with data and information and arranges and styles it for us.</li>
+<li>We aren’t <em>converting</em> an existing spreadsheet to meet guidance. It would be very hard to make a general tool to do that.</li>
+</ul>
 <ol type="1">
-<li>Simple user-interface/API, internal structure should be understood by devs</li>
-<li>Decisions should be taken for you to help speed things up and maintain consistency.</li>
-<li>The whole point is to meet the guidance, {a11ytables} accessibility checklist vignette.</li>
-<li>Should try to be a generic cross-government, unified solution to prevent duplicated effort (perhaps easier for my department, which is a the centre of government); it needs to put out there for discussion and improvement. (Also because I wanted the acronym to spell ‘SOCK’.)</li>
+<li>Simple user-interface/API for users; internal structure should be understood/maintainable by devs.</li>
+<li>I don’t mean I’m going to exert my personal will on the design. Just that some decisions should be taken on the user’s behalf to help speed things up and maintain consistency.</li>
+<li>The whole point is to meet the guidance (see the {a11ytables} accessibility checklist vignette).</li>
+<li>We have centralised/open guidance, why not a centralised/open tool? This will help prevent duplicated effort; it needs to put out there for discussion and improvement. (Also because I wanted the acronym to spell ‘SOCK’.)</li>
 </ol>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -763,15 +832,13 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-9" class="slide level2" data-background-image="images/website_gptables.png" alt="Screesnhot of the documentation website for the Python package called 'gptables', which is open on the README page.">
+<section id="section-10" class="slide level2" data-background-image="images/website_gptables.png" alt="Screesnhot of the documentation website for the Python package called 'gptables', which is open on the README page.">
 <h2></h2>
 <aside class="notes">
 <ul>
-<li><a href="https://gptables.readthedocs.io/en/latest/">Documentation</a></li>
-<li>Written for Python, convert pandas dataframes.</li>
-<li>{a11ytables} was created to comply with the <em>latest</em> best practice guidance for releasing stats in spreadsheets, which gptables did not do at the time.</li>
-<li>Can be accessed from R via the {reticulate} package, but requires a Python installation and understanding of {reticulate}.</li>
-<li>Slight differences between {a11ytables} and gptables exist, hopefully will clear these up.</li>
+<li>Good news! The problem is already solved!</li>
+<li><a href="https://gptables.readthedocs.io/en/latest/">gptables</a> is an official Python solution from the Analysis Function.</li>
+<li>But: Python (though accessible via {reticulate}), wasn’t up-to-date with best-practice guidance when I needed it (it is now).</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -785,19 +852,20 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-10" class="slide level2" data-background-image="images/website_a11ytables.png" alt="Screesnhot of the documentation website for the R package called 'a11ytables', which is open on the README page.">
+<section id="section-11" class="slide level2" data-background-image="images/website_a11ytables.png" alt="Screesnhot of the documentation website for the R package called 'a11ytables', which is open on the README page.">
 <h2></h2>
 <aside class="notes">
 <ul>
-<li>‘A11y’ is short for ‘accessibility’ (there’s 11 letters betrween the ‘A’ and the ‘Y’).</li>
+<li>So there was a gap in the market for an up-to-date R native solution.</li>
+<li>But actually, I initially created this gradually ‘bottom-up’ to solve my own needs.</li>
+<li>‘A11y’ is short for ‘accessibility’ (there’s 11 letters between the ‘A’ and the ‘Y’).</li>
 <li>This is the <a href="https://co-analysis.github.io/a11ytables/">documentation website (co-analysis.github.io/a11ytables/)</a>, made with {pkgdown}.</li>
-<li>Bottom-up to solve my own needs, with wider implications.</li>
 </ul>
 <ol type="1">
 <li>Simple: interface has only two main functions; only two dependencies are {openxlsx} and {pillar}; familiarity of dataframes and pipes; user brings data and information, {a11ytables} does the rest.</li>
 <li>Opinionated: the package makes some choices for you so you don’t have to think very hard; some flexibly is lost, not all spreadsheets are simple, but you can intervene.</li>
 <li>Compliant: a vignette compares the package’s functionality to to the accessibility checklist in the guidance and shows that it meets the guidance.</li>
-<li>Known: have been sharing this in cross-government fora, Twitter, government presentation champions meeting, Scottish government. It’ sbeing used for sure in MoJ, ONS, Scottich Government and Cabient Office.</li>
+<li>Known: have been sharing this in cross-government fora, Twitter, government presentation champions meeting, Scottish government. It’s being used for sure in MoJ, ONS, Scottish Government and Cabinet Office.</li>
 </ol>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -813,11 +881,12 @@
 </section></section>
 <section>
 <section id="fresh-eggs" class="title-slide slide level1 center">
-<h1>Fresh eggs?</h1>
+<h1>Fresh eggs</h1>
 <aside class="notes">
 <ul>
 <li>A demo: let’s use {a11ytables} on the data from the published eggs spreadsheet.</li>
 <li>Walkthrough, starting with package installation.</li>
+<li>Remember: we aren’t <em>converting</em> that spreadsheet. We’ll pretend we have the extracted egg data already.</li>
 <li>You can’t make a best practice spreadsheet without breaking some eggs, lololol.</li>
 </ul>
 <style type="text/css">
@@ -835,21 +904,20 @@
 <section id="install" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Install</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb1-1" class="hljs-ln-code"><a href="#cb1-1"></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)  <span class="co"># if not yet installed</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb1-1" class="hljs-ln-code"><a href="#cb1-1"></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
 <span id="cb1-2" class="hljs-ln-code"><a href="#cb1-2"></a></span>
 <span id="cb1-3" class="hljs-ln-code"><a href="#cb1-3"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(</span>
 <span id="cb1-4" class="hljs-ln-code"><a href="#cb1-4"></a>  <span class="st">"co-analysis/a11ytables"</span>,</span>
 <span id="cb1-5" class="hljs-ln-code"><a href="#cb1-5"></a>  <span class="at">build_vignettes =</span> <span class="cn">TRUE</span></span>
 <span id="cb1-6" class="hljs-ln-code"><a href="#cb1-6"></a>)</span>
 <span id="cb1-7" class="hljs-ln-code"><a href="#cb1-7"></a></span>
-<span id="cb1-8" class="hljs-ln-code"><a href="#cb1-8"></a><span class="co"># also installs {openxlsx}, {pillar}</span></span>
-<span id="cb1-9" class="hljs-ln-code"><a href="#cb1-9"></a></span>
-<span id="cb1-10" class="hljs-ln-code"><a href="#cb1-10"></a><span class="fu">library</span>(a11ytables)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-8" class="hljs-ln-code"><a href="#cb1-8"></a><span class="fu">library</span>(a11ytables)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
 <ul>
 <li>Package is GitHub only, version 0.1.</li>
-<li>Useable but still more to do.</li>
+<li>Usable but still more to do.</li>
+<li>Also installs {openxlsx} and {pillar}</li>
 <li>CRAN is a future goal, maybe.</li>
 </ul>
 <style type="text/css">
@@ -864,19 +932,25 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="overview" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Overview</h2>
+<section id="workflow" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Workflow</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb2-1" class="hljs-ln-code"><a href="#cb2-1"></a><span class="fu">create_a11ytable</span>() <span class="sc">|&gt;</span></span>
 <span id="cb2-2" class="hljs-ln-code"><a href="#cb2-2"></a>  <span class="fu">generate_workbook</span>() <span class="sc">|&gt;</span></span>
-<span id="cb2-3" class="hljs-ln-code"><a href="#cb2-3"></a>  openxlsx<span class="sc">::</span><span class="fu">saveWorkbook</span>(<span class="st">"file.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3" class="hljs-ln-code"><a href="#cb2-3"></a>  openxlsx<span class="sc">::</span><span class="fu">saveWorkbook</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
+<ul>
+<li>There’s only two major functions in the package, plus one from the {openxlsx} package.</li>
+</ul>
 <ol type="1">
 <li>Organise all the required information into a special dataframe with additional class ‘a11ytable’.</li>
 <li>Convert to {openxlsx} ‘Workbook’ class with structure and style information.</li>
 <li>Write that object to an xlsx file.</li>
 </ol>
+<ul>
+<li>I haven’t added any arguments here, because I want to show you the simplicity of the pipeline. Let’s add those in.</li>
+</ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -889,27 +963,30 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="overview-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Overview</h2>
+<section id="workflow-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Workflow</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb3-1" class="hljs-ln-code"><a href="#cb3-1"></a><span class="fu">create_a11ytable</span>(</span>
 <span id="cb3-2" class="hljs-ln-code"><a href="#cb3-2"></a>  tab_titles, sheet_types, sheet_titles, <span class="co"># required char vectors</span></span>
 <span id="cb3-3" class="hljs-ln-code"><a href="#cb3-3"></a>  blank_cells, sources,                  <span class="co"># optional char vectors</span></span>
-<span id="cb3-4" class="hljs-ln-code"><a href="#cb3-4"></a>  tables                                 <span class="co"># required listcol of dataframes</span></span>
+<span id="cb3-4" class="hljs-ln-code"><a href="#cb3-4"></a>  tables                                 <span class="co"># required list of dataframes</span></span>
 <span id="cb3-5" class="hljs-ln-code"><a href="#cb3-5"></a>) <span class="sc">|&gt;</span></span>
 <span id="cb3-6" class="hljs-ln-code"><a href="#cb3-6"></a>  <span class="fu">generate_workbook</span>() <span class="sc">|&gt;</span></span>
-<span id="cb3-7" class="hljs-ln-code"><a href="#cb3-7"></a>  openxlsx<span class="sc">::</span><span class="fu">saveWorkbook</span>(<span class="st">"file.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-7" class="hljs-ln-code"><a href="#cb3-7"></a>  openxlsx<span class="sc">::</span><span class="fu">saveWorkbook</span>(<span class="st">"file.xlsx"</span>)</span>
+<span id="cb3-8" class="hljs-ln-code"><a href="#cb3-8"></a></span>
+<span id="cb3-9" class="hljs-ln-code"><a href="#cb3-9"></a><span class="co"># The package also has an RStudio Addin with templates</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
 <ul>
-<li>The <code>create_a11ytable()</code> function takes a few arguments:
+<li>The <code>create_a11ytable()</code> function takes a few arguments that represent the data you need.</li>
+<li>These are:
 <ul>
 <li><code>tab_titles</code> is a required character vector for the text that goes on the tabs</li>
 <li><code>sheet_types</code> is a required character vector (one of <code>"cover"</code>, <code>"contents"</code>, <code>"notes"</code>, <code>"tables"</code>) that provides information about how the sheet will be styled</li>
 <li><code>sheet_titles</code> is a required character vector of the worksheet titles that will go in cell A1</li>
-<li><code>blank_cells</code> optional character vector of meta-information that explains the meaning of any blank cells in the sheet</li>
+<li><code>blank_cells</code> is an optional character vector of meta-information that explains the meaning of any blank cells in the sheet</li>
 <li><code>sources</code> is an optional character vector of meta-information that contains</li>
-<li><code>tables</code> is a required list-column of dataframes that contain the main bulk of each sheet (stats tables are obviously tables, but the cover and notes are also given as tables; you also provide the cover as a dataframe, where each row becomes a subsection with a title and body)</li>
+<li><code>tables</code> is a required list of dataframes that contain the main bulk of each sheet (stats tables are obviously tables, but the cover and notes are also given as tables; you also provide the cover as a dataframe, where each row becomes a subsection with a title and body)</li>
 </ul></li>
 </ul>
 <style type="text/css">
@@ -924,11 +1001,11 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="prep-inputs" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Prep inputs</h2>
+<section id="pre-prepared-inputs" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Pre-prepared inputs</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb4-1" class="hljs-ln-code"><a href="#cb4-1"></a><span class="fu">source</span>(<span class="st">"eggs/eggs.R"</span>)  <span class="co"># for demo purposes</span></span>
-<span id="cb4-2" class="hljs-ln-code"><a href="#cb4-2"></a><span class="fu">ls</span>()  <span class="co"># available objects</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb4-1" class="hljs-ln-code"><a href="#cb4-1"></a><span class="fu">source</span>(<span class="st">"eggs/eggs.R"</span>)  <span class="co"># load pre-prepared data objects</span></span>
+<span id="cb4-2" class="hljs-ln-code"><a href="#cb4-2"></a><span class="fu">ls</span>()                   <span class="co"># print environment objects</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "egg_blank_cells"  "egg_sheet_titles" "egg_sheet_types"  "egg_sources"     
 [5] "egg_tab_titles"   "egg_tables"      </code></pre>
@@ -940,8 +1017,6 @@
 <li>You can find the code and original spreadsheet in <a href="https://www.github.com/matt-dray/earl22-presentation">the repo that hosts these slides</a>.</li>
 <li>Importantly, I didn’t mimic the whole process of production for this example; I just copied the data out of the pre-existing spreadsheet.</li>
 <li>The code outputs some objects that are ready to be passed to the arguments of <code>create_a11ytable()</code>.</li>
-<li>I recommend generating each object outside of the call to <code>create_a11ytable()</code> where possible; it keeps things cleaner.</li>
-<li>For smaller spreadsheets it would be fine to provide the arguments in the function call itself.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -955,23 +1030,23 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="prep-inputs-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Prep inputs</h2>
+<section id="pre-prepared-inputs-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Pre-prepared inputs</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">source</span>(<span class="st">"eggs/eggs.R"</span>)  <span class="co"># for demo purposes</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">ls</span>()  <span class="co"># available objects</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">source</span>(<span class="st">"eggs/eggs.R"</span>)  <span class="co"># pre-prepared data objects</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">ls</span>()                   <span class="co"># print environment objects</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "egg_blank_cells"  "egg_sheet_titles" "egg_sheet_types"  "egg_sources"     
 [5] "egg_tab_titles"   "egg_tables"      </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>egg_sheet_titles[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]  <span class="co"># first few titles</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>egg_sheet_titles[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]  <span class="co"># first few sheet titles</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "UK egg packing station throughput and prices"
 [2] "Contents"                                    
 [3] "Notes"                                       
 [4] "Table 1: Throughput by country, quarterly"   </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">class</span>(egg_tables)  <span class="co"># a list of tables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">class</span>(egg_tables)      <span class="co"># a list of tables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "list"</code></pre>
 </div>
@@ -1000,6 +1075,9 @@
 <aside class="notes">
 <ul>
 <li>Now we can pass our egg objects to the arguments of <code>create_a11ytable()</code>.</li>
+<li>Basically, this combines all the data and information together into a single object.</li>
+<li>I recommend generating each object outside of the call to <code>create_a11ytable()</code> where possible *which I’ve done here), it keeps things cleaner.</li>
+<li>For smaller spreadsheets it would be fine to provide the arguments in the function call itself.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1023,12 +1101,15 @@
 <span id="cb13-5" class="hljs-ln-code"><a href="#cb13-5"></a>  <span class="at">blank_cells  =</span> egg_blank_cells, </span>
 <span id="cb13-6" class="hljs-ln-code"><a href="#cb13-6"></a>  <span class="at">sources      =</span> egg_sources,</span>
 <span id="cb13-7" class="hljs-ln-code"><a href="#cb13-7"></a>  <span class="at">tables       =</span> egg_tables</span>
-<span id="cb13-8" class="hljs-ln-code"><a href="#cb13-8"></a>) <span class="ot">-&gt;</span> egg_at</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-8" class="hljs-ln-code"><a href="#cb13-8"></a>) <span class="ot">-&gt;</span> egg_at</span>
+<span id="cb13-9" class="hljs-ln-code"><a href="#cb13-9"></a></span>
+<span id="cb13-10" class="hljs-ln-code"><a href="#cb13-10"></a><span class="co"># Provides warnings/errors if there's problems</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
 <ul>
 <li>Basically, each arg becomes a column in a dataframe.</li>
 <li>User is warned and/or errors raised and/or corrections applied if the provided information is insufficient.</li>
+<li>That’s an important feature for error-checking and to help keep things simpler for developers.</li>
 <li>User provides the info, function does the rest.</li>
 </ul>
 <style type="text/css">
@@ -1055,7 +1136,9 @@
 <span id="cb14-7" class="hljs-ln-code"><a href="#cb14-7"></a>  <span class="at">tables       =</span> egg_tables</span>
 <span id="cb14-8" class="hljs-ln-code"><a href="#cb14-8"></a>) <span class="ot">-&gt;</span> egg_at</span>
 <span id="cb14-9" class="hljs-ln-code"><a href="#cb14-9"></a></span>
-<span id="cb14-10" class="hljs-ln-code"><a href="#cb14-10"></a><span class="fu">class</span>(egg_at)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-10" class="hljs-ln-code"><a href="#cb14-10"></a><span class="co"># Provides warnings/errors if there's problems</span></span>
+<span id="cb14-11" class="hljs-ln-code"><a href="#cb14-11"></a></span>
+<span id="cb14-12" class="hljs-ln-code"><a href="#cb14-12"></a><span class="fu">class</span>(egg_at)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "a11ytable"  "tbl"        "data.frame"</code></pre>
 </div>
@@ -1100,10 +1183,12 @@
 </div>
 <aside class="notes">
 <ul>
+<li>This is an ‘a11ytable’. It’s just a dataframe, really.</li>
 <li>Familiar dataframe structure holds all the information.</li>
 <li>You can see a row per sheet.</li>
 <li>Each argument has become a column.</li>
 <li>The list of dataframes has become a list-column.</li>
+<li>Empty content (NA) is allowed.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1117,8 +1202,8 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="one-row-one-sheet" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">One row, one sheet</h2>
+<section id="one-row-is-one-sheet" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">One row is one sheet</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb18-1" class="hljs-ln-code"><a href="#cb18-1"></a><span class="fu">str</span>(egg_at[egg_at<span class="sc">$</span>tab_title <span class="sc">==</span> <span class="st">"Table_2"</span>, ] )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1297,13 +1382,27 @@ Worksheets:
       }</style></aside>
 </section></section>
 <section>
-<section id="output" class="title-slide slide level1 center">
-<h1>Output</h1>
-
+<section id="crack-it-open" class="title-slide slide level1 center">
+<h1>Crack it open</h1>
+<aside class="notes">
+<ul>
+<li>Lets take a look at the output spreadsheet.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="section-11" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out" data-background-image="images/spreadsheet_new-eggs-cover.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is the cover page with information structured and styled for usability and accessibility.">
+<section id="section-12" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out" data-background-image="images/spreadsheet_new-eggs-cover.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is the cover page with information structured and styled for usability and accessibility.">
 <h2 data-id="quarto-animate-title"></h2>
-<p><img data-src="images/not-clippy-heart.png" class="absolute" alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head." style="top: 40%; left: 35%; width: 100px; "></p>
+<p><img data-src="images/not-clippy-heart.png" class="absolute" style="top: 40%; left: 35%; width: 100px; " alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head."></p>
 <aside class="notes">
 <ul>
 <li>Most of this information was in the ‘information’ tab or footnotes of the original spreadsheet.</li>
@@ -1330,9 +1429,9 @@ Worksheets:
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-12" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out" data-background-image="images/spreadsheet_new-eggs-contents.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is the contents page, which lets users navigate the workbook.">
+<section id="section-13" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out" data-background-image="images/spreadsheet_new-eggs-contents.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is the contents page, which lets users navigate the workbook.">
 <h2 data-id="quarto-animate-title"></h2>
-<p><img data-src="images/not-clippy-heart.png" class="absolute" alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head." style="top: 2%; left: 25%; width: 100px; "></p>
+<p><img data-src="images/not-clippy-heart.png" class="absolute" style="top: 2%; left: 25%; width: 100px; " alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head."></p>
 <aside class="notes">
 <ul>
 <li>Note in the contents that:
@@ -1355,9 +1454,9 @@ Worksheets:
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-13" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out" data-background-image="images/spreadsheet_new-eggs-notes.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is the notes page, which centralises and numbers the notes in the workbook.">
+<section id="section-14" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out" data-background-image="images/spreadsheet_new-eggs-notes.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is the notes page, which centralises and numbers the notes in the workbook.">
 <h2 data-id="quarto-animate-title"></h2>
-<p><img data-src="images/not-clippy-heart.png" class="absolute" alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head." style="top: 20%; left: 35%; width: 100px; "></p>
+<p><img data-src="images/not-clippy-heart.png" class="absolute" style="top: 20%; left: 35%; width: 100px; " alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head."></p>
 <aside class="notes">
 <ul>
 <li>On the notes page, note that:
@@ -1378,9 +1477,9 @@ Worksheets:
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-14" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out" data-background-image="images/spreadsheet_new-eggs-t1.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is Table 5, which demonstrates how the 'a11ytables' package automatically widens columns with long names and also right-aligns numeric columns even if they contain text, like shorthand for missing or confidential data.">
+<section id="section-15" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out" data-background-image="images/spreadsheet_new-eggs-t1.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is Table 5, which demonstrates how the 'a11ytables' package automatically widens columns with long names and also right-aligns numeric columns even if they contain text, like shorthand for missing or confidential data.">
 <h2 data-id="quarto-animate-title"></h2>
-<p><img data-src="images/not-clippy-heart.png" class="absolute" alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head." style="top: 3%; left: 35%; width: 100px; "></p>
+<p><img data-src="images/not-clippy-heart.png" class="absolute" style="top: 3%; left: 35%; width: 100px; " alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head."></p>
 <aside class="notes">
 <ul>
 <li>Note in Table 1 that:
@@ -1403,9 +1502,9 @@ Worksheets:
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-15" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out" data-background-image="images/spreadsheet_new-eggs-t2.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is Table 2, which demonstrates how the meta information above a table can be inserted dynamically without leaving blank rows. There is a row with the message that 'this table contains notes', which was absent in Table 1.">
+<section id="section-16" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out" data-background-image="images/spreadsheet_new-eggs-t2.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is Table 2, which demonstrates how the meta information above a table can be inserted dynamically without leaving blank rows. There is a row with the message that 'this table contains notes', which was absent in Table 1.">
 <h2 data-id="quarto-animate-title"></h2>
-<p><img data-src="images/not-clippy-heart.png" class="absolute" alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head." style="top: 5%; left: 35%; width: 100px; "></p>
+<p><img data-src="images/not-clippy-heart.png" class="absolute" style="top: 5%; left: 35%; width: 100px; " alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head."></p>
 <aside class="notes">
 <ul>
 <li>Note in Table 2 that:
@@ -1426,9 +1525,9 @@ Worksheets:
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-16" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out" data-background-image="images/spreadsheet_new-eggs-t5.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is Table 1, which has a header with information that's useful for screenreaders, like 'this worksheet contains 1 table'. The data are in a flat table with no blank cells..">
+<section id="section-17" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out" data-background-image="images/spreadsheet_new-eggs-t5.png" alt="Screenshot of an Excel file, a reinterpretation of the eggs stats from earlier in the presentation. This is Table 1, which has a header with information that's useful for screenreaders, like 'this worksheet contains 1 table'. The data are in a flat table with no blank cells..">
 <h2 data-id="quarto-animate-title"></h2>
-<p><img data-src="images/not-clippy-heart.png" class="absolute" alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head." style="top: 30%; left: 15%; width: 100px; "></p>
+<p><img data-src="images/not-clippy-heart.png" class="absolute" style="top: 30%; left: 15%; width: 100px; " alt="An unofficial version of the The Microsoft Office mascot Clippy, a paperclip with eyes, with a red heart above his head."></p>
 <aside class="notes">
 <ul>
 <li>Table 5 has something different again, which is that the long header has led to an opinionated decision for the column to be widened</li>
@@ -1451,8 +1550,8 @@ Worksheets:
 <h1>But</h1>
 
 </section>
-<section id="outputs-are-imperfect" class="slide level2 center">
-<h2>Outputs are imperfect</h2>
+<section id="not-perfect" class="slide level2 center">
+<h2>Not perfect</h2>
 <ul>
 <li>Final tweaks needed</li>
 <li>Assumes simple spreadsheets</li>
@@ -1461,7 +1560,7 @@ Worksheets:
 <aside class="notes">
 <ul>
 <li>The package doesn’t get you a 100% compliant output.</li>
-<li>To keep the package simple, certain choices may not suit the user; some extra editing of the a11ytable or Workbook may be required, but this can be made part of the analyst pipeline.</li>
+<li>To keep the package simple, certain choices may not suit the user; some extra editing of the a11ytable or Workbook may be required, but you can intervene by editing the a11ytable or the Workbook.</li>
 <li>The package is opinionated for simplicity and is not completely flexible as a result (e.g.&nbsp;each cover subsection has only a single body row, the pre-table metadata is only table count, note presence, blank-cell meaning and data source).</li>
 <li>Thousands of spreadsheets are produced; there’s likely more complicated ones out there.</li>
 <li>Can’t completely protect from bad user input.</li>
@@ -1483,12 +1582,12 @@ Worksheets:
 <ul>
 <li>{openxlsx} has limitations</li>
 <li>Output isn’t ODS</li>
-<li>Prep is fiddly</li>
+<li>Fiddly prep?</li>
 </ul>
 <aside class="notes">
 <ul>
 <li>{openxlsx} is versatile, but some things are tricky (placeholder zeroes in decimals, filling in file properties, etc), but I’m keeping an eye on {openxlsx2}.</li>
-<li>In particular, published spreadsheets should be in an open format, but {openxlsx} nor other packages write Workbook-class objects to ODS.</li>
+<li>In particular, published spreadsheets should be in an open format, but {openxlsx} nor other packages write Workbook-class objects to ODS. Turns out ODS is a pretty clunky file format.</li>
 <li>A more focused example: notes are pretty clunky to add; might be a better solution?</li>
 </ul>
 <style type="text/css">
@@ -1507,7 +1606,7 @@ Worksheets:
 <h2>Future</h2>
 <ul>
 <li>Bugfixes, requests, user testing</li>
-<li>YAML input</li>
+<li>YAML input?</li>
 <li>Converge with gptables</li>
 </ul>
 <aside class="notes">
@@ -1531,11 +1630,13 @@ Worksheets:
       }</style></aside>
 </section></section>
 <section>
-<section id="so" class="title-slide slide level1 center">
-<h1>So</h1>
+<section id="so-what" class="title-slide slide level1 center">
+<h1>So what?</h1>
 <aside class="notes">
 <ul>
 <li>So what am I telling you to do?</li>
+<li>To use the package? Sure.</li>
+<li></li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1549,18 +1650,26 @@ Worksheets:
           display:block!important;
       }</style></aside>
 </section>
-<section id="can-you" class="slide level2 center">
-<h2>Can you</h2>
-<ul>
-<li>improve user experience?</li>
-<li>make it easier for you?</li>
-<li>create common tools?</li>
-</ul>
+<section id="forget-spreadsheets" class="slide level2 center">
+<h2>Forget spreadsheets!</h2>
+<ol type="1">
+<li>Improve user experience</li>
+<li>Make things easier for you</li>
+<li>Create common tools</li>
+</ol>
 <aside class="notes">
 <ul>
-<li>Improve accessibility.</li>
-<li>Simplify creation of complex things.</li>
+<li>Syke! What I really want you to do is consider three things.</li>
+</ul>
+<ol type="1">
+<li>Guiding principle: improve accessibility, usability.</li>
+<li>Simplify complex things, make reproducible, reusable, maintainable.</li>
 <li>Stop divided, wasted effort to solve the same problem.</li>
+</ol>
+<ul>
+<li>Are you a manager that can encourage this type of work?</li>
+<li>Are you an analyst that could improve one small thing?</li>
+<li>Do you know someone who knows someone who might be interested in helping?</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1581,13 +1690,13 @@ Worksheets:
 <p>Generate best-practice spreadsheets with help from {a11ytables}</p>
 <p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M352 256C352 278.2 350.8 299.6 348.7 320H163.3C161.2 299.6 159.1 278.2 159.1 256C159.1 233.8 161.2 212.4 163.3 192H348.7C350.8 212.4 352 233.8 352 256zM503.9 192C509.2 212.5 512 233.9 512 256C512 278.1 509.2 299.5 503.9 320H380.8C382.9 299.4 384 277.1 384 256C384 234 382.9 212.6 380.8 192H503.9zM493.4 160H376.7C366.7 96.14 346.9 42.62 321.4 8.442C399.8 29.09 463.4 85.94 493.4 160zM344.3 160H167.7C173.8 123.6 183.2 91.38 194.7 65.35C205.2 41.74 216.9 24.61 228.2 13.81C239.4 3.178 248.7 0 256 0C263.3 0 272.6 3.178 283.8 13.81C295.1 24.61 306.8 41.74 317.3 65.35C328.8 91.38 338.2 123.6 344.3 160H344.3zM18.61 160C48.59 85.94 112.2 29.09 190.6 8.442C165.1 42.62 145.3 96.14 135.3 160H18.61zM131.2 192C129.1 212.6 127.1 234 127.1 256C127.1 277.1 129.1 299.4 131.2 320H8.065C2.8 299.5 0 278.1 0 256C0 233.9 2.8 212.5 8.065 192H131.2zM194.7 446.6C183.2 420.6 173.8 388.4 167.7 352H344.3C338.2 388.4 328.8 420.6 317.3 446.6C306.8 470.3 295.1 487.4 283.8 498.2C272.6 508.8 263.3 512 255.1 512C248.7 512 239.4 508.8 228.2 498.2C216.9 487.4 205.2 470.3 194.7 446.6H194.7zM190.6 503.6C112.2 482.9 48.59 426.1 18.61 352H135.3C145.3 415.9 165.1 469.4 190.6 503.6V503.6zM321.4 503.6C346.9 469.4 366.7 415.9 376.7 352H493.4C463.4 426.1 399.8 482.9 321.4 503.6V503.6z"></path></svg> <a href="https://co-analysis.github.io/a11ytables">co-analysis.github.io/a11ytables</a></p>
 <p><svg aria-hidden="true" role="img" viewbox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg> <a href="https://www.github.com/co-analysis/a11ytables">github.com/co-analysis/a11ytables</a></p>
-<p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M459.4 151.7c.325 4.548 .325 9.097 .325 13.65 0 138.7-105.6 298.6-298.6 298.6-59.45 0-114.7-17.22-161.1-47.11 8.447 .974 16.57 1.299 25.34 1.299 49.06 0 94.21-16.57 130.3-44.83-46.13-.975-84.79-31.19-98.11-72.77 6.498 .974 12.99 1.624 19.82 1.624 9.421 0 18.84-1.3 27.61-3.573-48.08-9.747-84.14-51.98-84.14-102.1v-1.299c13.97 7.797 30.21 12.67 47.43 13.32-28.26-18.84-46.78-51.01-46.78-87.39 0-19.49 5.197-37.36 14.29-52.95 51.65 63.67 129.3 105.3 216.4 109.8-1.624-7.797-2.599-15.92-2.599-24.04 0-57.83 46.78-104.9 104.9-104.9 30.21 0 57.5 12.67 76.67 33.14 23.72-4.548 46.46-13.32 66.6-25.34-7.798 24.37-24.37 44.83-46.13 57.83 21.12-2.273 41.58-8.122 60.43-16.24-14.29 20.79-32.16 39.31-52.63 54.25z"></path></svg> <a href="https://www.twitter.com/mattdray"><span class="citation" data-cites="mattdray">@mattdray</span></a> <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M352 256C352 278.2 350.8 299.6 348.7 320H163.3C161.2 299.6 159.1 278.2 159.1 256C159.1 233.8 161.2 212.4 163.3 192H348.7C350.8 212.4 352 233.8 352 256zM503.9 192C509.2 212.5 512 233.9 512 256C512 278.1 509.2 299.5 503.9 320H380.8C382.9 299.4 384 277.1 384 256C384 234 382.9 212.6 380.8 192H503.9zM493.4 160H376.7C366.7 96.14 346.9 42.62 321.4 8.442C399.8 29.09 463.4 85.94 493.4 160zM344.3 160H167.7C173.8 123.6 183.2 91.38 194.7 65.35C205.2 41.74 216.9 24.61 228.2 13.81C239.4 3.178 248.7 0 256 0C263.3 0 272.6 3.178 283.8 13.81C295.1 24.61 306.8 41.74 317.3 65.35C328.8 91.38 338.2 123.6 344.3 160H344.3zM18.61 160C48.59 85.94 112.2 29.09 190.6 8.442C165.1 42.62 145.3 96.14 135.3 160H18.61zM131.2 192C129.1 212.6 127.1 234 127.1 256C127.1 277.1 129.1 299.4 131.2 320H8.065C2.8 299.5 0 278.1 0 256C0 233.9 2.8 212.5 8.065 192H131.2zM194.7 446.6C183.2 420.6 173.8 388.4 167.7 352H344.3C338.2 388.4 328.8 420.6 317.3 446.6C306.8 470.3 295.1 487.4 283.8 498.2C272.6 508.8 263.3 512 255.1 512C248.7 512 239.4 508.8 228.2 498.2C216.9 487.4 205.2 470.3 194.7 446.6H194.7zM190.6 503.6C112.2 482.9 48.59 426.1 18.61 352H135.3C145.3 415.9 165.1 469.4 190.6 503.6V503.6zM321.4 503.6C346.9 469.4 366.7 415.9 376.7 352H493.4C463.4 426.1 399.8 482.9 321.4 503.6V503.6z"></path></svg> <a href="https://www.matt-dray.com">matt-dray.com</a></p>
+<p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M352 256C352 278.2 350.8 299.6 348.7 320H163.3C161.2 299.6 159.1 278.2 159.1 256C159.1 233.8 161.2 212.4 163.3 192H348.7C350.8 212.4 352 233.8 352 256zM503.9 192C509.2 212.5 512 233.9 512 256C512 278.1 509.2 299.5 503.9 320H380.8C382.9 299.4 384 277.1 384 256C384 234 382.9 212.6 380.8 192H503.9zM493.4 160H376.7C366.7 96.14 346.9 42.62 321.4 8.442C399.8 29.09 463.4 85.94 493.4 160zM344.3 160H167.7C173.8 123.6 183.2 91.38 194.7 65.35C205.2 41.74 216.9 24.61 228.2 13.81C239.4 3.178 248.7 0 256 0C263.3 0 272.6 3.178 283.8 13.81C295.1 24.61 306.8 41.74 317.3 65.35C328.8 91.38 338.2 123.6 344.3 160H344.3zM18.61 160C48.59 85.94 112.2 29.09 190.6 8.442C165.1 42.62 145.3 96.14 135.3 160H18.61zM131.2 192C129.1 212.6 127.1 234 127.1 256C127.1 277.1 129.1 299.4 131.2 320H8.065C2.8 299.5 0 278.1 0 256C0 233.9 2.8 212.5 8.065 192H131.2zM194.7 446.6C183.2 420.6 173.8 388.4 167.7 352H344.3C338.2 388.4 328.8 420.6 317.3 446.6C306.8 470.3 295.1 487.4 283.8 498.2C272.6 508.8 263.3 512 255.1 512C248.7 512 239.4 508.8 228.2 498.2C216.9 487.4 205.2 470.3 194.7 446.6H194.7zM190.6 503.6C112.2 482.9 48.59 426.1 18.61 352H135.3C145.3 415.9 165.1 469.4 190.6 503.6V503.6zM321.4 503.6C346.9 469.4 366.7 415.9 376.7 352H493.4C463.4 426.1 399.8 482.9 321.4 503.6V503.6z"></path></svg> <a href="https://www.matt-dray.com">matt-dray.com</a></p>
 </div><div class="column" style="width:30%;">
 <p><img data-src="images/qr_a11ytables-docs.png" alt="QR code that points to the documentation website of the R package 'a11ytables'."></p>
 </div>
 </div>
 </section>
-<section id="section-17" class="slide level2">
+<section id="section-18" class="slide level2">
 <h2></h2>
 </section>
 <section id="credits" class="slide level2 center">
@@ -1597,10 +1706,11 @@ Worksheets:
 <li>gptables: Rowan Hemsi and contributors</li>
 <li>{a11ytables} contributors: Tim Taylor, Matt Kerlogue</li>
 <li>{openxlsx} and {pillar} contributors/maintainers</li>
+<li><a href="https://quarto.org/docs/presentations/revealjs/">Quarto presentations with Revealjs</a></li>
 <li><a href="https://openmoji.org/">OpenMoji</a>: paperclip, heart (edited, <a href="https://creativecommons.org/licenses/by-sa/4.0/#">CC BY-SA 4.0</a>)</li>
 </ul>
 </section>
-<section id="section-18" class="slide level2" data-background-image="images/website_smungs.png" alt="Screenshot of the website for the book 'Spreadsheet Munging Strategies' by Duncan Garmonsway, which advises people how to extract data from spreadsheets using his packages 'unpivotr' and 'tidyxl'.">
+<section id="section-19" class="slide level2" data-background-image="images/website_smungs.png" alt="Screenshot of the website for the book 'Spreadsheet Munging Strategies' by Duncan Garmonsway, which advises people how to extract data from spreadsheets using his packages 'unpivotr' and 'tidyxl'.">
 <h2></h2>
 <aside class="notes">
 <ul>
@@ -1847,12 +1957,15 @@ Worksheets:
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
       (function () {
-        function fireSlideChanged(previousSlide, currentSlide) {
-
-          // dispatch for htmlwidgets
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
           const event = window.document.createEvent("Event");
           event.initEvent("slideenter", true, true);
           window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
 
           // dispatch for shiny
           if (window.jQuery) {
@@ -1863,13 +1976,6 @@ Worksheets:
               window.jQuery(currentSlide).trigger("shown");
             }
           }
-        }
-
-        // hookup for reveal
-        if (window.Reveal) {
-          window.Reveal.addEventListener("slidechanged", function(event) {
-            fireSlideChanged(event.previousSlide, event.currentSlide);
-          });
         }
 
         // hookup for slidy
@@ -1921,7 +2027,24 @@ Worksheets:
         button.classList.add('code-copy-button-checked');
         var currentTitle = button.getAttribute("title");
         button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
         setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
           button.setAttribute("title", currentTitle);
           button.classList.remove('code-copy-button-checked');
         }, 1000);
@@ -1951,31 +2074,50 @@ Worksheets:
       for (var i=0; i<noterefs.length; i++) {
         const ref = noterefs[i];
         tippyHover(ref, function() {
-          let href = ref.getAttribute('href');
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
           return note.innerHTML;
         });
       }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
       var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
       for (var i=0; i<bibliorefs.length; i++) {
         const ref = bibliorefs[i];
-        const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-        tippyHover(ref, function() {
-          var popup = window.document.createElement('div');
-          cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
           });
-          return popup.innerHTML;
-        });
+        }
       }
     });
     </script>
