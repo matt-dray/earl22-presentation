@@ -18,6 +18,7 @@ You can:
 * [view the slides online](https://matt-dray.github.io/earl22-presentation/) (made with [Quarto](https://quarto.org/docs/presentations/))
 * [read the accompanying blogpost](https://www.rostrum.blog/2022/09/07/earl22/)
 * [watch the video](https://videos.ctfassets.net/k26sw1bgepr3/6QYherR2skslFhYvbWWuYR/d5f0cda59597cb1bfa0d163662ce5a01/Stream_1_Matt_Dray.mp4) from EARL 2022
+* [watch the video](https://www.youtube.com/watch?v=VcEZBYDBJwo) from the NHS-R Community webinar
 
 For more on {a11ytables}, see the:
 
